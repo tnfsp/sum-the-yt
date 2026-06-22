@@ -431,7 +431,9 @@ def process_video(url: str, cfg: argparse.Namespace) -> dict:
     info = probe(url, cfg.cookies_from_browser)
     title = info.get("title", "(unknown)")
     slug = slugify(title, fallback=info.get("id", "video"))
-    out_dir = Path(cfg.videos_dir) / slug
+    date_dir = _fmt_date(info.get("upload_date"))
+    date_dir = date_dir if date_dir != "未知" else "unknown-date"
+    out_dir = Path(cfg.videos_dir) / date_dir / slug
     summary_path = out_dir / "summary.md"
 
     if summary_path.exists() and not cfg.force:

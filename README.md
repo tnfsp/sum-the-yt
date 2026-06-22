@@ -11,14 +11,16 @@
 
 ## 產出
 
-每支影片產物放在以標題 slug 命名的資料夾：
+產物依**上傳日期**分層，再以標題 slug 命名：
 
 ```
-videos/<slug-of-title>/
+videos/<yyyy-mm-dd>/<slug-of-title>/
 ├── subtitle.srt     # 帶時間軸的字幕（原始語言；Whisper 路徑則為轉錄結果）
 ├── transcript.txt   # 純逐字稿
 └── summary.md       # 繁體中文摘要 + metadata（頻道/時長/上傳日期/ID）
 ```
+
+> 取不到上傳日期時會落在 `videos/unknown-date/`。
 
 ## 需求
 
