@@ -1,0 +1,4639 @@
+1
+00:00:00,000 --> 00:00:04,400
+As AI is getting better at writing
+
+2
+00:00:02,160 --> 00:00:06,280
+front-end code, your only choice to stay
+
+3
+00:00:04,400 --> 00:00:07,920
+relevant and competitive as a front-end
+
+4
+00:00:06,280 --> 00:00:09,960
+engineer is to level up your system
+
+5
+00:00:07,920 --> 00:00:11,440
+design and architecture skills. The
+
+6
+00:00:09,960 --> 00:00:13,280
+problem is that most system design
+
+7
+00:00:11,440 --> 00:00:15,640
+content is way too focused on the
+
+8
+00:00:13,280 --> 00:00:17,200
+back-end while completely ignoring the
+
+9
+00:00:15,640 --> 00:00:18,800
+front-end. So today I'm going to break
+
+10
+00:00:17,200 --> 00:00:19,840
+down every front-end system design
+
+11
+00:00:18,800 --> 00:00:22,120
+concept you need to know from
+
+12
+00:00:19,840 --> 00:00:23,280
+micro-front-ends architectures to system
+
+13
+00:00:22,120 --> 00:00:26,200
+design patterns like back-end for
+
+14
+00:00:23,280 --> 00:00:27,280
+front-end and then go into mono-repos
+
+15
+00:00:26,200 --> 00:00:29,000
+and rendering strategies like
+
+16
+00:00:27,280 --> 00:00:31,120
+server-side rendering. I'll also show
+
+17
+00:00:29,000 --> 00:00:33,560
+you what is the best way to use AI and
+
+18
+00:00:31,120 --> 00:00:35,200
+agentic coding to deploy these systems
+
+19
+00:00:33,560 --> 00:00:37,120
+to production. Now let's start with our
+
+20
+00:00:35,200 --> 00:00:38,920
+first front-end system design concept,
+
+21
+00:00:37,120 --> 00:00:40,880
+micro-front-ends. Now the traditional
+
+22
+00:00:38,920 --> 00:00:42,560
+front-end application will start as a
+
+23
+00:00:40,880 --> 00:00:44,920
+front-end monolith. That means pretty
+
+24
+00:00:42,560 --> 00:00:46,920
+much everything is in the same place.
+
+25
+00:00:44,920 --> 00:00:48,440
+And when it comes to micro-front-ends,
+
+26
+00:00:46,920 --> 00:00:50,400
+it basically means that we will split
+
+27
+00:00:48,440 --> 00:00:52,320
+this application into independent
+
+28
+00:00:50,400 --> 00:00:54,680
+front-end applications and then put them
+
+29
+00:00:52,320 --> 00:00:56,120
+all together. But before we even talk
+
+30
+00:00:54,680 --> 00:00:58,560
+about micro-front-ends, we need to
+
+31
+00:00:56,120 --> 00:01:00,240
+understand microservices and that is a
+
+32
+00:00:58,560 --> 00:01:02,480
+back-end architecture style. And so
+
+33
+00:01:00,240 --> 00:01:04,239
+looking at our client-server model, both
+
+34
+00:01:02,480 --> 00:01:06,720
+the server and the client will be
+
+35
+00:01:04,239 --> 00:01:08,240
+monoliths. That is single applications.
+
+36
+00:01:06,720 --> 00:01:09,560
+And at that point we keep adding
+
+37
+00:01:08,240 --> 00:01:12,040
+features to it because you're in the
+
+38
+00:01:09,560 --> 00:01:14,520
+initial phase of the project. But as you
+
+39
+00:01:12,040 --> 00:01:16,200
+scale, more and more people will have to
+
+40
+00:01:14,520 --> 00:01:18,920
+work on the same code base and your
+
+41
+00:01:16,200 --> 00:01:20,360
+development team becomes huge. And I've
+
+42
+00:01:18,920 --> 00:01:23,440
+worked with developers that told me
+
+43
+00:01:20,360 --> 00:01:25,040
+their development team was 40 people and
+
+44
+00:01:23,440 --> 00:01:27,240
+their daily stand-up took 1 hour and a
+
+45
+00:01:25,040 --> 00:01:29,160
+half just for everybody to speak for 1
+
+46
+00:01:27,240 --> 00:01:31,400
+minute and a half. And that's just not
+
+47
+00:01:29,160 --> 00:01:33,120
+sustainable. So that's where
+
+48
+00:01:31,400 --> 00:01:34,600
+microservices and micro-front-ends come
+
+49
+00:01:33,120 --> 00:01:36,040
+into place because this kind of
+
+50
+00:01:34,600 --> 00:01:37,880
+architecture doesn't scale from a
+
+51
+00:01:36,040 --> 00:01:40,400
+development point of view. Now you've
+
+52
+00:01:37,880 --> 00:01:42,680
+probably heard about the term two pizzas
+
+53
+00:01:40,400 --> 00:01:44,440
+team where Jeff Bezos said that team
+
+54
+00:01:42,680 --> 00:01:46,720
+shouldn't be bigger than five to nine
+
+55
+00:01:44,440 --> 00:01:49,240
+people, which is as many as you can feed
+
+56
+00:01:46,720 --> 00:01:52,440
+with one pizza. Now the two pizzas team
+
+57
+00:01:49,240 --> 00:01:53,960
+becomes a one pizza team with AI.
+
+58
+00:01:52,440 --> 00:01:56,360
+Because nowadays you can do the same
+
+59
+00:01:53,960 --> 00:01:58,560
+work with a lot less people using
+
+60
+00:01:56,360 --> 00:02:00,600
+agentic coding. And so, the ideal size
+
+61
+00:01:58,560 --> 00:02:02,320
+of the team becomes smaller and smaller.
+
+62
+00:02:00,600 --> 00:02:04,280
+Now, do remember that even if coding
+
+63
+00:02:02,320 --> 00:02:06,360
+agents like Cloud Code drive
+
+64
+00:02:04,280 --> 00:02:08,240
+implementation time to zero, they do
+
+65
+00:02:06,360 --> 00:02:10,119
+increase the verification time. So,
+
+66
+00:02:08,240 --> 00:02:12,040
+being an AI savvy front-end engineers it
+
+67
+00:02:10,119 --> 00:02:14,160
+means you design system that decrease
+
+68
+00:02:12,040 --> 00:02:15,880
+the verification time and minimize
+
+69
+00:02:14,160 --> 00:02:18,160
+architectural drift while they maximize
+
+70
+00:02:15,880 --> 00:02:20,160
+velocity. And so, it's not anymore about
+
+71
+00:02:18,160 --> 00:02:23,000
+implementing fast, but rather building a
+
+72
+00:02:20,160 --> 00:02:24,160
+system that is extremely easy to verify.
+
+73
+00:02:23,000 --> 00:02:26,160
+And we'll see how that changes
+
+74
+00:02:24,160 --> 00:02:27,640
+architecture later on. But, keep this
+
+75
+00:02:26,160 --> 00:02:29,920
+principle in mind. And so, in the ideal
+
+76
+00:02:27,640 --> 00:02:32,320
+case we are able to split our monolithic
+
+77
+00:02:29,920 --> 00:02:35,120
+team into feature teams that own a
+
+78
+00:02:32,320 --> 00:02:37,160
+specific feature. And those teams are
+
+79
+00:02:35,120 --> 00:02:38,880
+full stack and they work with coding
+
+80
+00:02:37,160 --> 00:02:40,600
+agents, but they can deliver
+
+81
+00:02:38,880 --> 00:02:42,360
+independently and that's how we can keep
+
+82
+00:02:40,600 --> 00:02:43,640
+our product moving forward. And so,
+
+83
+00:02:42,360 --> 00:02:45,160
+we'll have these different feature
+
+84
+00:02:43,640 --> 00:02:46,959
+teams, but it's also shared
+
+85
+00:02:45,160 --> 00:02:49,040
+infrastructure and that's owned by the
+
+86
+00:02:46,959 --> 00:02:51,280
+platform team. You might have front-end
+
+87
+00:02:49,040 --> 00:02:53,200
+tooling or pure infrastructures like the
+
+88
+00:02:51,280 --> 00:02:55,320
+servers. So, you might have a team for
+
+89
+00:02:53,200 --> 00:02:57,440
+example that is building a design system
+
+90
+00:02:55,320 --> 00:02:59,519
+that the feature teams are using. And
+
+91
+00:02:57,440 --> 00:03:01,600
+all those teams are smaller and they all
+
+92
+00:02:59,519 --> 00:03:03,239
+work with coding agents. That is the new
+
+93
+00:03:01,600 --> 00:03:05,200
+norm in development teams. Now,
+
+94
+00:03:03,239 --> 00:03:06,959
+according to Conway's law, the software
+
+95
+00:03:05,200 --> 00:03:08,880
+architecture of a system will look like
+
+96
+00:03:06,959 --> 00:03:10,640
+the organization of the people. So, if
+
+97
+00:03:08,880 --> 00:03:13,600
+what we want is smaller independent
+
+98
+00:03:10,640 --> 00:03:17,080
+teams, then we need to somehow break our
+
+99
+00:03:13,600 --> 00:03:19,400
+system into small independent vertical
+
+100
+00:03:17,080 --> 00:03:21,519
+slices. And this truly starts in the
+
+101
+00:03:19,400 --> 00:03:24,280
+back-end where we take our monolith and
+
+102
+00:03:21,519 --> 00:03:26,239
+we split out the independent modules to
+
+103
+00:03:24,280 --> 00:03:28,560
+build microservices. Those are
+
+104
+00:03:26,239 --> 00:03:31,040
+independent small back-ends, micro
+
+105
+00:03:28,560 --> 00:03:33,160
+back-ends that expose their own API and
+
+106
+00:03:31,040 --> 00:03:34,640
+can be deployed independently. The code
+
+107
+00:03:33,160 --> 00:03:35,840
+base is independent and you have
+
+108
+00:03:34,640 --> 00:03:37,519
+independent teams that don't need to
+
+109
+00:03:35,840 --> 00:03:39,519
+talk to each other extending those and
+
+110
+00:03:37,519 --> 00:03:41,200
+they only communicate between each other
+
+111
+00:03:39,519 --> 00:03:43,120
+through APIs. And so, a typical
+
+112
+00:03:41,200 --> 00:03:44,720
+microservice blueprint will look like
+
+113
+00:03:43,120 --> 00:03:46,360
+something like this. We have an API,
+
+114
+00:03:44,720 --> 00:03:47,880
+there's a business logic layer, then
+
+115
+00:03:46,360 --> 00:03:49,239
+there's a persistence layer and usually
+
+116
+00:03:47,880 --> 00:03:51,519
+a database. In this case I added a
+
+117
+00:03:49,239 --> 00:03:53,640
+Postgres DB, but it could be a no sequel
+
+118
+00:03:51,519 --> 00:03:55,880
+DB. And so, this is the building unit of
+
+119
+00:03:53,640 --> 00:03:57,280
+your application, and big applications
+
+120
+00:03:55,880 --> 00:03:59,000
+will have thousands of those in
+
+121
+00:03:57,280 --> 00:04:00,680
+productions. A couple of years ago, I
+
+122
+00:03:59,000 --> 00:04:03,080
+used to work for this financial company,
+
+123
+00:04:00,680 --> 00:04:04,600
+and we had around 1,000 microservices in
+
+124
+00:04:03,080 --> 00:04:06,720
+production, and you had different teams
+
+125
+00:04:04,600 --> 00:04:08,720
+only different microservices. My team
+
+126
+00:04:06,720 --> 00:04:10,080
+owned 13 of them. And by the way, if you
+
+127
+00:04:08,720 --> 00:04:11,360
+want to see where do you stand across
+
+128
+00:04:10,080 --> 00:04:12,880
+the full stack, there's a free
+
+129
+00:04:11,360 --> 00:04:15,320
+assessment that you can take in the link
+
+130
+00:04:12,880 --> 00:04:17,160
+below, and you basically understand how
+
+131
+00:04:15,320 --> 00:04:19,160
+much of this full stack knowledge you
+
+132
+00:04:17,160 --> 00:04:21,040
+actually have, where is the gap, and we
+
+133
+00:04:19,160 --> 00:04:22,640
+added a new AI section because a lot of
+
+134
+00:04:21,040 --> 00:04:25,000
+companies are starting to ask AI
+
+135
+00:04:22,640 --> 00:04:26,880
+questions in front-end engineering
+
+136
+00:04:25,000 --> 00:04:28,080
+interviews, also. So, take the
+
+137
+00:04:26,880 --> 00:04:29,520
+assessment and you can see more or less
+
+138
+00:04:28,080 --> 00:04:31,520
+where do you stand in the market and
+
+139
+00:04:29,520 --> 00:04:33,360
+what gaps you need to close. Link it's
+
+140
+00:04:31,520 --> 00:04:35,800
+in the comments. Now, moving on, we
+
+141
+00:04:33,360 --> 00:04:37,800
+split our back end into microservices,
+
+142
+00:04:35,800 --> 00:04:40,200
+but our front end is still a monolith.
+
+143
+00:04:37,800 --> 00:04:42,040
+So, even if our back end teams now could
+
+144
+00:04:40,200 --> 00:04:43,960
+ship independently and be much smaller
+
+145
+00:04:42,040 --> 00:04:45,640
+and go much faster, the front end is
+
+146
+00:04:43,960 --> 00:04:47,400
+pretty much the same. And the problem
+
+147
+00:04:45,640 --> 00:04:49,320
+with the front end is that you have so
+
+148
+00:04:47,400 --> 00:04:51,640
+many people pushing code to the same
+
+149
+00:04:49,320 --> 00:04:53,840
+client that it's so easy for someone to
+
+150
+00:04:51,640 --> 00:04:57,080
+make a mistake or bring the whole system
+
+151
+00:04:53,840 --> 00:04:59,200
+down or change a global CSS rule that
+
+152
+00:04:57,080 --> 00:05:00,760
+then affects everybody. So, as of now,
+
+153
+00:04:59,200 --> 00:05:03,400
+our front end team is still very, very
+
+154
+00:05:00,760 --> 00:05:05,000
+big and totally not sustainable. It gets
+
+155
+00:05:03,400 --> 00:05:06,000
+to a point where we just cannot scale
+
+156
+00:05:05,000 --> 00:05:07,680
+because there's just too much
+
+157
+00:05:06,000 --> 00:05:09,600
+communication overhead between all those
+
+158
+00:05:07,680 --> 00:05:11,000
+people needing to coordinate as they
+
+159
+00:05:09,600 --> 00:05:12,960
+work on the same code base. And that's
+
+160
+00:05:11,000 --> 00:05:14,880
+why we go back to micro front ends,
+
+161
+00:05:12,960 --> 00:05:16,880
+where we have a front end monolith and
+
+162
+00:05:14,880 --> 00:05:18,600
+we split it in different independent
+
+163
+00:05:16,880 --> 00:05:20,560
+front end applications. Now, how do we
+
+164
+00:05:18,600 --> 00:05:22,960
+put all those together? Well, basically,
+
+165
+00:05:20,560 --> 00:05:24,800
+we'll have a shell. And the micro front
+
+166
+00:05:22,960 --> 00:05:27,240
+end shell is the one that takes care of
+
+167
+00:05:24,800 --> 00:05:30,360
+the global functionality, things like
+
+168
+00:05:27,240 --> 00:05:31,640
+auth, routing, language, global state,
+
+169
+00:05:30,360 --> 00:05:34,280
+you know, are the users logged in or
+
+170
+00:05:31,640 --> 00:05:36,040
+not, it's all handled by that. And all
+
+171
+00:05:34,280 --> 00:05:37,680
+the others model applications, they live
+
+172
+00:05:36,040 --> 00:05:40,360
+inside this one. They're basically
+
+173
+00:05:37,680 --> 00:05:41,760
+loaded by this micro front end shell.
+
+174
+00:05:40,360 --> 00:05:44,320
+And this micro front end shell, it's
+
+175
+00:05:41,760 --> 00:05:46,520
+also on passing this global state inside
+
+176
+00:05:44,320 --> 00:05:48,200
+those micro front ends. But remember,
+
+177
+00:05:46,520 --> 00:05:49,760
+those applications are now deployable
+
+178
+00:05:48,200 --> 00:05:51,040
+independently. That means you might have
+
+179
+00:05:49,760 --> 00:05:52,920
+a domain that it's
+
+180
+00:05:51,040 --> 00:05:54,560
+header.theseniordev.com,
+
+181
+00:05:52,920 --> 00:05:56,200
+where, for example, we would host only
+
+182
+00:05:54,560 --> 00:05:57,760
+our header application, and you could
+
+183
+00:05:56,200 --> 00:05:59,480
+load that independently. And then you
+
+184
+00:05:57,760 --> 00:06:00,920
+have the product page and the cart page,
+
+185
+00:05:59,480 --> 00:06:02,480
+but then you have the shell that puts
+
+186
+00:06:00,920 --> 00:06:04,720
+them all together. So, if you look at a
+
+187
+00:06:02,480 --> 00:06:06,600
+big software company like amazon.com,
+
+188
+00:06:04,720 --> 00:06:09,120
+you could basically split the header,
+
+189
+00:06:06,600 --> 00:06:11,840
+and then maybe take out the product page
+
+190
+00:06:09,120 --> 00:06:13,840
+and the payment into two different micro
+
+191
+00:06:11,840 --> 00:06:15,080
+front-ends. But, to be honest, I feel
+
+192
+00:06:13,840 --> 00:06:16,920
+like they have even more granularity
+
+193
+00:06:15,080 --> 00:06:19,080
+there, and they probably split their
+
+194
+00:06:16,920 --> 00:06:21,280
+front-ends into even smaller and more
+
+195
+00:06:19,080 --> 00:06:23,000
+focused micro front-ends. So, once you
+
+196
+00:06:21,280 --> 00:06:24,280
+apply micro front-ends and microservices
+
+197
+00:06:23,000 --> 00:06:26,080
+together, you end up with a micro
+
+198
+00:06:24,280 --> 00:06:28,440
+front-end that will speak to one or
+
+199
+00:06:26,080 --> 00:06:30,000
+several microservices in the same
+
+200
+00:06:28,440 --> 00:06:33,120
+domain. And this is what we call a
+
+201
+00:06:30,000 --> 00:06:35,680
+vertical slice. And this system can now
+
+202
+00:06:33,120 --> 00:06:36,960
+be extended by an independent team. So,
+
+203
+00:06:35,680 --> 00:06:39,800
+we can start releasing changes
+
+204
+00:06:36,960 --> 00:06:41,840
+independently. Our releases are not a
+
+205
+00:06:39,800 --> 00:06:44,560
+bottleneck for another team, and we can
+
+206
+00:06:41,840 --> 00:06:46,560
+work against the APIs of other teams.
+
+207
+00:06:44,560 --> 00:06:48,800
+This is how pretty much every big
+
+208
+00:06:46,560 --> 00:06:50,200
+software company operates. And this is
+
+209
+00:06:48,800 --> 00:06:52,720
+what in software architecture they call
+
+210
+00:06:50,200 --> 00:06:55,520
+vertical slicing, where your features
+
+211
+00:06:52,720 --> 00:06:57,600
+are vertically owned by one team. And
+
+212
+00:06:55,520 --> 00:07:00,440
+I'm going to go even farther and tell
+
+213
+00:06:57,600 --> 00:07:02,040
+you that if you are an engineer, and
+
+214
+00:07:00,440 --> 00:07:03,880
+you're doing only front-end or back-end,
+
+215
+00:07:02,040 --> 00:07:06,080
+you have to move as fast as you can
+
+216
+00:07:03,880 --> 00:07:08,200
+towards becoming a vertically integrated
+
+217
+00:07:06,080 --> 00:07:10,720
+engineer, basically a team of one that
+
+218
+00:07:08,200 --> 00:07:12,320
+can work with a coding agent across the
+
+219
+00:07:10,720 --> 00:07:13,960
+full stack. And we'll see in a second
+
+220
+00:07:12,320 --> 00:07:15,280
+why that happens. But, that's the
+
+221
+00:07:13,960 --> 00:07:17,120
+transition you're going to need to go
+
+222
+00:07:15,280 --> 00:07:18,160
+through to survive in today's market.
+
+223
+00:07:17,120 --> 00:07:19,320
+So, when it comes to traditional
+
+224
+00:07:18,160 --> 00:07:20,840
+front-end engineering and front-end
+
+225
+00:07:19,320 --> 00:07:22,880
+development, we see that moving towards
+
+226
+00:07:20,840 --> 00:07:24,320
+two extremes, where you're either more
+
+227
+00:07:22,880 --> 00:07:26,280
+of a full-stack person that works in a
+
+228
+00:07:24,320 --> 00:07:27,720
+feature team, so they work across these
+
+229
+00:07:26,280 --> 00:07:29,720
+vertical slices, and that's why you need
+
+230
+00:07:27,720 --> 00:07:31,040
+to know a bit more about full-stack. By
+
+231
+00:07:29,720 --> 00:07:33,120
+the way, we do have full-stack videos on
+
+232
+00:07:31,040 --> 00:07:34,800
+this channel. If you want to know, as a
+
+233
+00:07:33,120 --> 00:07:36,760
+front-end engineer, transition slowly
+
+234
+00:07:34,800 --> 00:07:38,400
+towards a full-stack. Or, you're going
+
+235
+00:07:36,760 --> 00:07:39,520
+to be really good at the front-end, and
+
+236
+00:07:38,400 --> 00:07:41,040
+then you're going to the infra team, and
+
+237
+00:07:39,520 --> 00:07:42,760
+you start building it at the shell, or
+
+238
+00:07:41,040 --> 00:07:44,480
+you build a design system, and that's
+
+239
+00:07:42,760 --> 00:07:46,000
+where you do spend a lot of time, you
+
+240
+00:07:44,480 --> 00:07:48,200
+know, doing traditional front-end work
+
+241
+00:07:46,000 --> 00:07:49,680
+with just CSS, and building the building
+
+242
+00:07:48,200 --> 00:07:52,000
+blocks that the feature teams will
+
+243
+00:07:49,680 --> 00:07:54,480
+implement. And pretty much both of those
+
+244
+00:07:52,000 --> 00:07:57,040
+people will work with coding agents.
+
+245
+00:07:54,480 --> 00:07:58,960
+Now, a quick tip about AI and AI coding,
+
+246
+00:07:57,040 --> 00:08:00,600
+micro front-ends and microservices
+
+247
+00:07:58,960 --> 00:08:02,400
+decrease the blast radius of a
+
+248
+00:08:00,600 --> 00:08:04,640
+production bug, and they could use the
+
+249
+00:08:02,400 --> 00:08:07,480
+cognitive load of code changes because
+
+250
+00:08:04,640 --> 00:08:09,480
+you have smaller and localized PRs. You
+
+251
+00:08:07,480 --> 00:08:11,440
+also get less context, which means your
+
+252
+00:08:09,480 --> 00:08:13,200
+AI coding tool would be much more
+
+253
+00:08:11,440 --> 00:08:15,120
+efficient because you work on smaller
+
+254
+00:08:13,200 --> 00:08:16,720
+pieces and the risk is less. So, it's a
+
+255
+00:08:15,120 --> 00:08:18,560
+really good strategy when you have a lot
+
+256
+00:08:16,720 --> 00:08:21,040
+of people pushing a lot of code very
+
+257
+00:08:18,560 --> 00:08:22,520
+frequently as we do with AI to move
+
+258
+00:08:21,040 --> 00:08:25,080
+towards micro front-ends and
+
+259
+00:08:22,520 --> 00:08:27,240
+microservices because the risk is lower
+
+260
+00:08:25,080 --> 00:08:29,440
+and it decrease what we call the
+
+261
+00:08:27,240 --> 00:08:31,240
+verification time. It's just easier to
+
+262
+00:08:29,440 --> 00:08:32,479
+go on the quality when the surface area
+
+263
+00:08:31,240 --> 00:08:34,280
+of the changes you are making is
+
+264
+00:08:32,479 --> 00:08:36,120
+smaller. So, micro front-ends and
+
+265
+00:08:34,280 --> 00:08:37,919
+microservices are usually the way to go
+
+266
+00:08:36,120 --> 00:08:39,640
+if you're building fast with AI. Now,
+
+267
+00:08:37,919 --> 00:08:41,599
+let's move to our next concept, which is
+
+268
+00:08:39,640 --> 00:08:43,520
+only API gateway. Now, whenever we have
+
+269
+00:08:41,599 --> 00:08:45,440
+a micro front-end and a back-end
+
+270
+00:08:43,520 --> 00:08:47,680
+service, we need to end up making a lot
+
+271
+00:08:45,440 --> 00:08:49,440
+of requests. And those requests have
+
+272
+00:08:47,680 --> 00:08:52,160
+what we call edge functions. They need
+
+273
+00:08:49,440 --> 00:08:54,440
+caching, HTTPS, authentication, content
+
+274
+00:08:52,160 --> 00:08:56,600
+negotiation, rate limiting for security,
+
+275
+00:08:54,440 --> 00:08:59,080
+and so all this functionality at the API
+
+276
+00:08:56,600 --> 00:09:00,880
+level it's pretty repetitive. So, having
+
+277
+00:08:59,080 --> 00:09:03,520
+to implement this both on the front-end
+
+278
+00:09:00,880 --> 00:09:05,440
+side and on the back-end side every time
+
+279
+00:09:03,520 --> 00:09:08,120
+we plug in a new microservice to the
+
+280
+00:09:05,440 --> 00:09:10,320
+micro front-end ends up adding a lot of
+
+281
+00:09:08,120 --> 00:09:11,640
+overhead. And it becomes a lot harder to
+
+282
+00:09:10,320 --> 00:09:14,040
+do this if you have a lot of back-end
+
+283
+00:09:11,640 --> 00:09:16,120
+services. So, a typical solution is to
+
+284
+00:09:14,040 --> 00:09:18,360
+add what we call an API gateway, and
+
+285
+00:09:16,120 --> 00:09:20,360
+that would be your gate into the
+
+286
+00:09:18,360 --> 00:09:22,800
+back-end systems. And the advantage of
+
+287
+00:09:20,360 --> 00:09:25,280
+an API gateway is that the client would
+
+288
+00:09:22,800 --> 00:09:26,760
+only implement the edge functions once.
+
+289
+00:09:25,280 --> 00:09:29,520
+So, they basically only implement the
+
+290
+00:09:26,760 --> 00:09:31,520
+HTTPS handshake once, or caching, or
+
+291
+00:09:29,520 --> 00:09:33,040
+rate limiting, and then once the request
+
+292
+00:09:31,520 --> 00:09:34,760
+goes to the API gateway, it gets
+
+293
+00:09:33,040 --> 00:09:36,680
+forwarded to the back-end services,
+
+294
+00:09:34,760 --> 00:09:38,680
+which don't have to care about all this
+
+295
+00:09:36,680 --> 00:09:40,480
+functionality. They can just care about
+
+296
+00:09:38,680 --> 00:09:42,640
+their own logic. And all this usually
+
+297
+00:09:40,480 --> 00:09:44,400
+lives in a virtual private cloud, which
+
+298
+00:09:42,640 --> 00:09:46,280
+means it's totally secure because the
+
+299
+00:09:44,400 --> 00:09:48,360
+only way to go into it is through the
+
+300
+00:09:46,280 --> 00:09:49,960
+API gateway. The other cool feature when
+
+301
+00:09:48,360 --> 00:09:51,360
+you have an API gateway is that you can
+
+302
+00:09:49,960 --> 00:09:53,920
+make the communication between the
+
+303
+00:09:51,360 --> 00:09:55,320
+client and API gateway HTTPS, but the
+
+304
+00:09:53,920 --> 00:09:57,840
+communication between the microservices
+
+305
+00:09:55,320 --> 00:09:59,360
+and the API gateway HTTP because you
+
+306
+00:09:57,840 --> 00:10:01,400
+don't need that security anymore cuz
+
+307
+00:09:59,360 --> 00:10:03,680
+you're in a closed environment. And the
+
+308
+00:10:01,400 --> 00:10:06,280
+advantage here is performance because
+
+309
+00:10:03,680 --> 00:10:08,600
+HTTPS it's likely less performant than
+
+310
+00:10:06,280 --> 00:10:10,960
+the HTTP because you need more round
+
+311
+00:10:08,600 --> 00:10:12,200
+trips to do the HTTPS handshake. So, in
+
+312
+00:10:10,960 --> 00:10:13,640
+general, once you have a couple of
+
+313
+00:10:12,200 --> 00:10:15,440
+microservices in production, it's a good
+
+314
+00:10:13,640 --> 00:10:17,480
+idea to add an API gateway both for
+
+315
+00:10:15,440 --> 00:10:19,360
+security and performance and also less
+
+316
+00:10:17,480 --> 00:10:20,840
+complexity in the front end. Now, let's
+
+317
+00:10:19,360 --> 00:10:22,480
+move on to our next pattern, very
+
+318
+00:10:20,840 --> 00:10:23,920
+similar to the API gateway, we have the
+
+319
+00:10:22,480 --> 00:10:25,520
+backend for frontend. Now, let's
+
+320
+00:10:23,920 --> 00:10:27,440
+remember our setup from before where we
+
+321
+00:10:25,520 --> 00:10:30,080
+have our client and our API gateway and
+
+322
+00:10:27,440 --> 00:10:32,360
+all our microservices. The problem here
+
+323
+00:10:30,080 --> 00:10:34,240
+is that the client has to make a call to
+
+324
+00:10:32,360 --> 00:10:36,400
+all these different microservices that
+
+325
+00:10:34,240 --> 00:10:37,960
+might have a different API and there's
+
+326
+00:10:36,400 --> 00:10:39,320
+so many fetch calls. And if you're in
+
+327
+00:10:37,960 --> 00:10:40,839
+the frontend team, whenever you need a
+
+328
+00:10:39,320 --> 00:10:42,800
+new feature that needs even the
+
+329
+00:10:40,839 --> 00:10:44,760
+slightest backend change, you need to go
+
+330
+00:10:42,800 --> 00:10:46,440
+and talk to that backend team and figure
+
+331
+00:10:44,760 --> 00:10:48,200
+out if that will be a priority for them,
+
+332
+00:10:46,440 --> 00:10:49,480
+add it to their backlog, and maybe
+
+333
+00:10:48,200 --> 00:10:51,240
+something gets done. So, it ends up
+
+334
+00:10:49,480 --> 00:10:52,880
+being very, very slow. And one of the
+
+335
+00:10:51,240 --> 00:10:55,000
+biggest challenge that some of the
+
+336
+00:10:52,880 --> 00:10:56,800
+engineers we work with at the senior dev
+
+337
+00:10:55,000 --> 00:10:58,800
+that work in bigger companies is that
+
+338
+00:10:56,800 --> 00:11:00,040
+it's so hard for them to get things done
+
+339
+00:10:58,800 --> 00:11:01,839
+because they have to talk to key
+
+340
+00:11:00,040 --> 00:11:03,080
+different backend teams that have their
+
+341
+00:11:01,839 --> 00:11:04,600
+own backlog and their own priority. So,
+
+342
+00:11:03,080 --> 00:11:06,600
+they just don't want to implement that
+
+343
+00:11:04,600 --> 00:11:08,600
+small API field that they need. So,
+
+344
+00:11:06,600 --> 00:11:11,600
+better solution is to somehow own your
+
+345
+00:11:08,600 --> 00:11:13,839
+backend as a frontend team, as a client
+
+346
+00:11:11,600 --> 00:11:15,120
+team. There's also a lot of complexity
+
+347
+00:11:13,839 --> 00:11:17,000
+when you have to implement all these
+
+348
+00:11:15,120 --> 00:11:18,360
+different APIs because they all look
+
+349
+00:11:17,000 --> 00:11:20,200
+different, you need a different client
+
+350
+00:11:18,360 --> 00:11:22,040
+and SDK for all these different APIs.
+
+351
+00:11:20,200 --> 00:11:23,839
+And so, that's more frontend complexity.
+
+352
+00:11:22,040 --> 00:11:26,200
+So, the solution for that is to add what
+
+353
+00:11:23,839 --> 00:11:28,160
+we call a backend for frontend. This is
+
+354
+00:11:26,200 --> 00:11:30,160
+a backend that will take the frontend
+
+355
+00:11:28,160 --> 00:11:32,760
+request and then just forward it to the
+
+356
+00:11:30,160 --> 00:11:34,760
+microservices. But the advantage here is
+
+357
+00:11:32,760 --> 00:11:37,080
+that whenever you have to implement a
+
+358
+00:11:34,760 --> 00:11:38,320
+feature, you can act as a full-stack
+
+359
+00:11:37,080 --> 00:11:40,520
+developer when you're in the front-end
+
+360
+00:11:38,320 --> 00:11:43,160
+team. So, basically, you have all those
+
+361
+00:11:40,520 --> 00:11:44,720
+microservices, you integrate, like to
+
+362
+00:11:43,160 --> 00:11:45,720
+change the way you equals them from the
+
+363
+00:11:44,720 --> 00:11:47,280
+back-end for front-end, and then you
+
+364
+00:11:45,720 --> 00:11:50,320
+implement your feature, and you kind of
+
+365
+00:11:47,280 --> 00:11:51,960
+own end-to-end the client-side feature.
+
+366
+00:11:50,320 --> 00:11:53,480
+And the back-end teams, they can just
+
+367
+00:11:51,960 --> 00:11:55,240
+work in isolation on the different
+
+368
+00:11:53,480 --> 00:11:57,960
+microservices. So, the front-end team
+
+369
+00:11:55,240 --> 00:11:59,640
+ends up owning both the client and the
+
+370
+00:11:57,960 --> 00:12:01,040
+back-end for front-end, and back-end
+
+371
+00:11:59,640 --> 00:12:02,800
+teams they develop pure back-end
+
+372
+00:12:01,040 --> 00:12:04,000
+services. And this is very important for
+
+373
+00:12:02,800 --> 00:12:06,720
+you as a front-end engineer because it
+
+374
+00:12:04,000 --> 00:12:08,240
+means that you do need to know, at least
+
+375
+00:12:06,720 --> 00:12:09,800
+at the high level, how to extend a
+
+376
+00:12:08,240 --> 00:12:11,600
+microservice, how to build a back-end
+
+377
+00:12:09,800 --> 00:12:13,840
+for front-end. You need to know API
+
+378
+00:12:11,600 --> 00:12:15,720
+design, and you need to know a little
+
+379
+00:12:13,840 --> 00:12:17,280
+bit about GraphQL, for example, which is
+
+380
+00:12:15,720 --> 00:12:19,760
+a great technology to build back-end for
+
+381
+00:12:17,280 --> 00:12:21,560
+front-ends. This is a requirement for
+
+382
+00:12:19,760 --> 00:12:23,240
+all the front-end engineers that you see
+
+383
+00:12:21,560 --> 00:12:25,040
+working at bigger companies, which are
+
+384
+00:12:23,240 --> 00:12:27,040
+usually the ones that also have the best
+
+385
+00:12:25,040 --> 00:12:28,720
+conditions and the most exciting work.
+
+386
+00:12:27,040 --> 00:12:30,720
+So, even if you're in the front-end,
+
+387
+00:12:28,720 --> 00:12:33,280
+make sure that you can also get things
+
+388
+00:12:30,720 --> 00:12:35,920
+done in the back-end. Now, the advantage
+
+389
+00:12:33,280 --> 00:12:37,880
+with BFFs is that you can adapt them to
+
+390
+00:12:35,920 --> 00:12:39,920
+a specific client. So, if in the future
+
+391
+00:12:37,880 --> 00:12:41,360
+we end up building a mobile app that has
+
+392
+00:12:39,920 --> 00:12:43,400
+totally different requirements to our
+
+393
+00:12:41,360 --> 00:12:45,440
+desktop app, we don't need to duplicate
+
+394
+00:12:43,400 --> 00:12:47,560
+API endpoints. So, with back-end for
+
+395
+00:12:45,440 --> 00:12:49,440
+front-ends, every client will have its
+
+396
+00:12:47,560 --> 00:12:51,520
+own dedicated back-end, which means
+
+397
+00:12:49,440 --> 00:12:53,600
+every client team can work independently
+
+398
+00:12:51,520 --> 00:12:55,800
+and is completely decoupled from the
+
+399
+00:12:53,600 --> 00:12:57,839
+back-end services that can just focus on
+
+400
+00:12:55,800 --> 00:12:59,240
+their own service. And so, basically,
+
+401
+00:12:57,839 --> 00:13:01,000
+whenever the desktop client, for
+
+402
+00:12:59,240 --> 00:13:03,200
+example, goes to gateway, they get
+
+403
+00:13:01,000 --> 00:13:05,040
+redirected to the desktop back-end for
+
+404
+00:13:03,200 --> 00:13:07,040
+front-end. And for mobile, we have a
+
+405
+00:13:05,040 --> 00:13:08,800
+completely different API, a completely
+
+406
+00:13:07,040 --> 00:13:10,920
+different mobile back-end for front-end.
+
+407
+00:13:08,800 --> 00:13:13,320
+It uses the same back-end services, but
+
+408
+00:13:10,920 --> 00:13:15,080
+it might expose a total different API to
+
+409
+00:13:13,320 --> 00:13:16,800
+consume them, just because the data
+
+410
+00:13:15,080 --> 00:13:18,560
+needs in mobile are usually different
+
+411
+00:13:16,800 --> 00:13:20,200
+from desktop. Where in desktop, you want
+
+412
+00:13:18,560 --> 00:13:21,760
+to fetch a lot of information at once,
+
+413
+00:13:20,200 --> 00:13:23,600
+but in mobiles, we have smaller screens,
+
+414
+00:13:21,760 --> 00:13:25,200
+so you need different records. And if
+
+415
+00:13:23,600 --> 00:13:27,920
+you try to put all those things together
+
+416
+00:13:25,200 --> 00:13:29,760
+in a single API, it will become bloated,
+
+417
+00:13:27,920 --> 00:13:31,760
+or it will end up not satisfying one of
+
+418
+00:13:29,760 --> 00:13:33,560
+the requests. For example, you'll have a
+
+419
+00:13:31,760 --> 00:13:35,040
+great API for desktop, but when it comes
+
+420
+00:13:33,560 --> 00:13:36,720
+to mobile, you'll fetch too much data, a
+
+421
+00:13:35,040 --> 00:13:37,640
+lot of data you don't really need
+
+422
+00:13:36,720 --> 00:13:39,240
+because the interface is a bit
+
+423
+00:13:37,640 --> 00:13:40,560
+different. Or if you make the smaller
+
+424
+00:13:39,240 --> 00:13:42,400
+endpoints, when it comes to desktop,
+
+425
+00:13:40,560 --> 00:13:44,000
+you'll have to make many requests to get
+
+426
+00:13:42,400 --> 00:13:46,000
+the same data. So, you'll have
+
+427
+00:13:44,000 --> 00:13:47,840
+over-fetching or under-fetching, and
+
+428
+00:13:46,000 --> 00:13:50,240
+it's a lot better if you split those
+
+429
+00:13:47,840 --> 00:13:52,280
+things. On to the next concept, which is
+
+430
+00:13:50,240 --> 00:13:54,400
+load balancing. Now, going back to our
+
+431
+00:13:52,280 --> 00:13:55,920
+client-server model, we had a server and
+
+432
+00:13:54,400 --> 00:13:58,000
+we end up having clients. But, the
+
+433
+00:13:55,920 --> 00:13:59,240
+problem is we might get a lot of users.
+
+434
+00:13:58,000 --> 00:14:02,480
+And so, you have all those clients
+
+435
+00:13:59,240 --> 00:14:04,320
+making requests to a single server. Now,
+
+436
+00:14:02,480 --> 00:14:06,720
+a typical Node.js server is pretty
+
+437
+00:14:04,320 --> 00:14:10,360
+powerful. It can usually satisfy up to
+
+438
+00:14:06,720 --> 00:14:12,240
+2,000 to 10,000 concurrent requests with
+
+439
+00:14:10,360 --> 00:14:13,760
+a well-optimized Node.js server. But,
+
+440
+00:14:12,240 --> 00:14:15,880
+when you go beyond that, you might need
+
+441
+00:14:13,760 --> 00:14:18,680
+different ways to scale it because a
+
+442
+00:14:15,880 --> 00:14:20,640
+single server has its own limits. And
+
+443
+00:14:18,680 --> 00:14:23,040
+the easiest way to scale it is by load
+
+444
+00:14:20,640 --> 00:14:26,360
+balancing. And that means you basically
+
+445
+00:14:23,040 --> 00:14:27,960
+will create identical instances of your
+
+446
+00:14:26,360 --> 00:14:29,800
+servers and then have this component
+
+447
+00:14:27,960 --> 00:14:31,680
+that's an application load balancer
+
+448
+00:14:29,800 --> 00:14:33,200
+splitting traffic between them. Now,
+
+449
+00:14:31,680 --> 00:14:35,120
+load balancing is a topic by itself.
+
+450
+00:14:33,200 --> 00:14:37,160
+There's different ways to split traffic
+
+451
+00:14:35,120 --> 00:14:38,600
+and different criterias. And as a
+
+452
+00:14:37,160 --> 00:14:40,880
+front-end engineer, you don't need to go
+
+453
+00:14:38,600 --> 00:14:42,960
+so deep into it. But, do make sure that
+
+454
+00:14:40,880 --> 00:14:44,640
+you know about it. Ideally, you're even
+
+455
+00:14:42,960 --> 00:14:46,720
+capable of setting up a small load
+
+456
+00:14:44,640 --> 00:14:48,720
+balancer using traditional web servers
+
+457
+00:14:46,720 --> 00:14:51,120
+like Nginx and Docker Compose, you can
+
+458
+00:14:48,720 --> 00:14:52,360
+have this set up on your local machine.
+
+459
+00:14:51,120 --> 00:14:54,720
+Anyhow, the important thing is that you
+
+460
+00:14:52,360 --> 00:14:56,839
+can reason your way through it. Most
+
+461
+00:14:54,720 --> 00:14:58,640
+cloud providers like AWS or Google
+
+462
+00:14:56,839 --> 00:15:00,640
+Cloud, they allow you to provision a
+
+463
+00:14:58,640 --> 00:15:02,680
+load balancer in seconds. So, don't
+
+464
+00:15:00,640 --> 00:15:04,640
+worry about it. It's very uncommon that
+
+465
+00:15:02,680 --> 00:15:06,240
+you need to manually set up one, but
+
+466
+00:15:04,640 --> 00:15:07,480
+it's important that you know about it.
+
+467
+00:15:06,240 --> 00:15:08,800
+Now, congrats on making it this far.
+
+468
+00:15:07,480 --> 00:15:11,160
+Make sure you subscribe so you don't
+
+469
+00:15:08,800 --> 00:15:13,080
+lose any updates in the future, and
+
+470
+00:15:11,160 --> 00:15:15,040
+let's move on to our next concept, which
+
+471
+00:15:13,080 --> 00:15:17,600
+is container systems. So, we basically
+
+472
+00:15:15,040 --> 00:15:20,120
+distributed our architecture into micro
+
+473
+00:15:17,600 --> 00:15:22,400
+front-ends and different microservices,
+
+474
+00:15:20,120 --> 00:15:25,400
+but the problem is that deploying all
+
+475
+00:15:22,400 --> 00:15:27,240
+this would be a headache. Now we need to
+
+476
+00:15:25,400 --> 00:15:29,480
+build up and provision infrastructure
+
+477
+00:15:27,240 --> 00:15:31,360
+and pipelines, and they all might use
+
+478
+00:15:29,480 --> 00:15:33,320
+different technologies. You might have a
+
+479
+00:15:31,360 --> 00:15:36,120
+Python microservice and then a Node.js
+
+480
+00:15:33,320 --> 00:15:37,960
+one. You might have a Vue.js application
+
+481
+00:15:36,120 --> 00:15:39,520
+or a Next.js application. And this is
+
+482
+00:15:37,960 --> 00:15:41,920
+all very complicated to get to
+
+483
+00:15:39,520 --> 00:15:44,640
+production. So, in order to standardize
+
+484
+00:15:41,920 --> 00:15:46,360
+the deployment, we can actually use
+
+485
+00:15:44,640 --> 00:15:48,440
+Docker. And Docker is technology that
+
+486
+00:15:46,360 --> 00:15:50,800
+allows you to package your application
+
+487
+00:15:48,440 --> 00:15:53,120
+to Docker image. And the way you do that
+
+488
+00:15:50,800 --> 00:15:54,520
+is that you take your code, and then you
+
+489
+00:15:53,120 --> 00:15:56,440
+have a Dockerfile where you kind of
+
+490
+00:15:54,520 --> 00:15:59,040
+declare your recipe of how we should
+
+491
+00:15:56,440 --> 00:16:00,560
+package that code. And basically, based
+
+492
+00:15:59,040 --> 00:16:01,880
+on that, you'll create a Docker image.
+
+493
+00:16:00,560 --> 00:16:04,440
+The Docker image will contain all the
+
+494
+00:16:01,880 --> 00:16:06,000
+application code and then the runtime.
+
+495
+00:16:04,440 --> 00:16:08,080
+Let's imagine you're using Next.js, then
+
+496
+00:16:06,000 --> 00:16:09,800
+it will contain Next.js, will have the
+
+497
+00:16:08,080 --> 00:16:12,120
+runtime, which is Node, and then the
+
+498
+00:16:09,800 --> 00:16:14,440
+operating system, which is usually
+
+499
+00:16:12,120 --> 00:16:16,640
+Linux. And that is a full Docker image,
+
+500
+00:16:14,440 --> 00:16:18,720
+and the advantage there is that whenever
+
+501
+00:16:16,640 --> 00:16:20,120
+you find a host that runs Docker, you
+
+502
+00:16:18,720 --> 00:16:22,560
+can run that image. You don't need to
+
+503
+00:16:20,120 --> 00:16:24,080
+worry about the Node.js version or if
+
+504
+00:16:22,560 --> 00:16:25,760
+they need to install PHP and all the
+
+505
+00:16:24,080 --> 00:16:28,160
+dependencies that your application has.
+
+506
+00:16:25,760 --> 00:16:30,040
+It really comes packaged all together.
+
+507
+00:16:28,160 --> 00:16:31,760
+This is Docker image. You run it, open
+
+508
+00:16:30,040 --> 00:16:33,680
+this port, you have a front end running.
+
+509
+00:16:31,760 --> 00:16:36,040
+You don't need to know about what's
+
+510
+00:16:33,680 --> 00:16:37,720
+inside. And this is wonderful for DevOps
+
+511
+00:16:36,040 --> 00:16:40,080
+teams because all of the sudden they can
+
+512
+00:16:37,720 --> 00:16:42,480
+take all those images and push them into
+
+513
+00:16:40,080 --> 00:16:44,240
+a container orchestration system. A
+
+514
+00:16:42,480 --> 00:16:46,560
+container orchestration system usually
+
+515
+00:16:44,240 --> 00:16:48,440
+has a container deployment pipeline,
+
+516
+00:16:46,560 --> 00:16:50,360
+which will run these containers. And so,
+
+517
+00:16:48,440 --> 00:16:52,839
+running a container is not as easy as it
+
+518
+00:16:50,360 --> 00:16:54,240
+sounds. You might need load balancing.
+
+519
+00:16:52,839 --> 00:16:57,240
+Uh you might want to run several
+
+520
+00:16:54,240 --> 00:16:59,040
+instances in parallel and be able to,
+
+521
+00:16:57,240 --> 00:17:01,120
+you know, if a container fails, spin up
+
+522
+00:16:59,040 --> 00:17:03,680
+another one really fast. So, all this
+
+523
+00:17:01,120 --> 00:17:05,240
+kind of hard work it's built into
+
+524
+00:17:03,680 --> 00:17:06,920
+systems like Kubernetes. You probably
+
+525
+00:17:05,240 --> 00:17:08,280
+saw it in job office. Now, do you need
+
+526
+00:17:06,920 --> 00:17:10,800
+to know Kubernetes as a front end
+
+527
+00:17:08,280 --> 00:17:13,079
+engineer? No. But you do need to
+
+528
+00:17:10,800 --> 00:17:14,880
+explain, you do need to know about it,
+
+529
+00:17:13,079 --> 00:17:17,040
+and you will see a lot of front end
+
+530
+00:17:14,880 --> 00:17:20,120
+positions that mention either Kubernetes
+
+531
+00:17:17,040 --> 00:17:22,560
+or container systems or a ECS, which is
+
+532
+00:17:20,120 --> 00:17:24,680
+the AWS alternative to Kubernetes, in
+
+533
+00:17:22,560 --> 00:17:25,760
+the job description. Don't be scared.
+
+534
+00:17:24,680 --> 00:17:27,800
+You don't need to become a DevOps
+
+535
+00:17:25,760 --> 00:17:29,960
+engineer by tomorrow, but you should be
+
+536
+00:17:27,800 --> 00:17:31,720
+able to, at a high level, understand
+
+537
+00:17:29,960 --> 00:17:33,960
+where it fits in your architecture.
+
+538
+00:17:31,720 --> 00:17:36,160
+Finally, a more front-end concept, a
+
+539
+00:17:33,960 --> 00:17:37,800
+CDN, a content delivery network. So,
+
+540
+00:17:36,160 --> 00:17:39,640
+what is a CDN? So, going back to a
+
+541
+00:17:37,800 --> 00:17:42,840
+client-server model, imagine you are a
+
+542
+00:17:39,640 --> 00:17:44,440
+client, you want to go on a website, you
+
+543
+00:17:42,840 --> 00:17:47,600
+usually go to the server and get some
+
+544
+00:17:44,440 --> 00:17:49,160
+static files. Static JavaScript and CSS,
+
+545
+00:17:47,600 --> 00:17:51,760
+and you download that and you run that
+
+546
+00:17:49,160 --> 00:17:53,200
+on your web browser. Let's imagine in a
+
+547
+00:17:51,760 --> 00:17:55,360
+more hypothetical case that you are a
+
+548
+00:17:53,200 --> 00:17:57,160
+user from the US and you want to visit
+
+549
+00:17:55,360 --> 00:17:59,440
+the application that is based in Europe.
+
+550
+00:17:57,160 --> 00:18:01,280
+For you to get the JavaScript and CSS
+
+551
+00:17:59,440 --> 00:18:03,640
+and all the HTML, you have to go all the
+
+552
+00:18:01,280 --> 00:18:05,920
+way to the Atlantic Ocean and come back.
+
+553
+00:18:03,640 --> 00:18:07,840
+And that young trip adds latency, and
+
+554
+00:18:05,920 --> 00:18:10,200
+there's no physical way you can work
+
+555
+00:18:07,840 --> 00:18:12,280
+around it. No matter how performant your
+
+556
+00:18:10,200 --> 00:18:14,160
+application is, there is the limit of
+
+557
+00:18:12,280 --> 00:18:16,280
+the speed of light, because data only
+
+558
+00:18:14,160 --> 00:18:18,240
+travels as fast as the speed of light,
+
+559
+00:18:16,280 --> 00:18:20,160
+and over long distances, light is very
+
+560
+00:18:18,240 --> 00:18:23,760
+fast, but it still will add around,
+
+561
+00:18:20,160 --> 00:18:26,000
+let's say, 200 ms to 250 ms on every
+
+562
+00:18:23,760 --> 00:18:27,440
+request of latency. So, a solution to
+
+563
+00:18:26,000 --> 00:18:29,160
+that is to your client decrease the
+
+564
+00:18:27,440 --> 00:18:31,480
+distance between you and where those
+
+565
+00:18:29,160 --> 00:18:33,200
+files are hosted. And the easiest way is
+
+566
+00:18:31,480 --> 00:18:35,640
+to use a content delivery network. And
+
+567
+00:18:33,200 --> 00:18:37,600
+so, basically, a CDN will be a network
+
+568
+00:18:35,640 --> 00:18:39,800
+of these edge locations that are placed
+
+569
+00:18:37,600 --> 00:18:41,640
+all over the world, and what happens is
+
+570
+00:18:39,800 --> 00:18:43,360
+that the server will push the static
+
+571
+00:18:41,640 --> 00:18:45,040
+assets there, and whenever you make a
+
+572
+00:18:43,360 --> 00:18:46,680
+request, you'll be redirected to the
+
+573
+00:18:45,040 --> 00:18:49,440
+edge location that is closest to you.
+
+574
+00:18:46,680 --> 00:18:51,040
+Now, this mechanism on how exactly are
+
+575
+00:18:49,440 --> 00:18:52,800
+you getting redirected to that edge
+
+576
+00:18:51,040 --> 00:18:54,720
+location that is closest to you, it's
+
+577
+00:18:52,800 --> 00:18:56,920
+very interesting, and I do want to make
+
+578
+00:18:54,720 --> 00:18:58,320
+a video about it, but I'm not sure if
+
+579
+00:18:56,920 --> 00:18:59,640
+it's something you're interested in. If
+
+580
+00:18:58,320 --> 00:19:01,040
+you want a video about it, let me know
+
+581
+00:18:59,640 --> 00:19:02,320
+in the comments. It's a bit more
+
+582
+00:19:01,040 --> 00:19:04,080
+technical, and it's not something you'll
+
+583
+00:19:02,320 --> 00:19:06,000
+get in interviews. But, to be honest,
+
+584
+00:19:04,080 --> 00:19:07,360
+it's really interesting. So, if you want
+
+585
+00:19:06,000 --> 00:19:08,880
+me to make a video about it, just give
+
+586
+00:19:07,360 --> 00:19:10,800
+me an excuse by letting me know in the
+
+587
+00:19:08,880 --> 00:19:13,200
+comments, and I'll go ahead and do that.
+
+588
+00:19:10,800 --> 00:19:15,160
+Now, a CDN is a distributed cache. So,
+
+589
+00:19:13,200 --> 00:19:16,960
+the technical term for whenever you get
+
+590
+00:19:15,160 --> 00:19:19,520
+the asset from the CDN, it's a cache
+
+591
+00:19:16,960 --> 00:19:21,080
+hit. And whenever the server pushes a
+
+592
+00:19:19,520 --> 00:19:23,320
+new version, that's called cache
+
+593
+00:19:21,080 --> 00:19:25,320
+invalidation. And this concept is very
+
+594
+00:19:23,320 --> 00:19:27,120
+closely related to what we call cache
+
+595
+00:19:25,320 --> 00:19:30,200
+busting, which is a mechanism that
+
+596
+00:19:27,120 --> 00:19:31,720
+module bundles use to invalidate your
+
+597
+00:19:30,200 --> 00:19:34,200
+assets. So, we make sure that when you
+
+598
+00:19:31,720 --> 00:19:35,920
+deploy a new version, users really get
+
+599
+00:19:34,200 --> 00:19:37,680
+the latest one, not a previous version
+
+600
+00:19:35,920 --> 00:19:40,120
+that is probably still sitting somewhere
+
+601
+00:19:37,680 --> 00:19:41,440
+in the CDN. I do have other videos in
+
+602
+00:19:40,120 --> 00:19:43,160
+the channel talking about it, so I'm not
+
+603
+00:19:41,440 --> 00:19:44,440
+going to go deep into it. But make sure
+
+604
+00:19:43,160 --> 00:19:46,280
+you're able to relate those things
+
+605
+00:19:44,440 --> 00:19:48,320
+across the stack. Now, keep in mind that
+
+606
+00:19:46,280 --> 00:19:49,760
+a CDN is the fastest and most
+
+607
+00:19:48,320 --> 00:19:52,400
+cost-effective to increase web
+
+608
+00:19:49,760 --> 00:19:53,960
+performance by serving optimized assets
+
+609
+00:19:52,400 --> 00:19:56,160
+with the right cache policy out of the
+
+610
+00:19:53,960 --> 00:19:58,040
+box. Because nowadays, CDNs do a lot
+
+611
+00:19:56,160 --> 00:19:59,600
+more than just placing the asset close
+
+612
+00:19:58,040 --> 00:20:01,920
+to the client. They also compress it,
+
+613
+00:19:59,600 --> 00:20:04,120
+and they also take care of the caching
+
+614
+00:20:01,920 --> 00:20:07,000
+policy. So, it's a really cheap way for
+
+615
+00:20:04,120 --> 00:20:08,520
+you to fix most performance problems.
+
+616
+00:20:07,000 --> 00:20:10,280
+Now, let's talk about design systems.
+
+617
+00:20:08,520 --> 00:20:12,320
+And going back to our micro front-end
+
+618
+00:20:10,280 --> 00:20:14,040
+discussions, we have a feature team,
+
+619
+00:20:12,320 --> 00:20:15,720
+that's a product feature team, and then
+
+620
+00:20:14,040 --> 00:20:18,360
+we might have the payments feature team,
+
+621
+00:20:15,720 --> 00:20:20,480
+and they work separately and release
+
+622
+00:20:18,360 --> 00:20:22,560
+independently. Those are completely
+
+623
+00:20:20,480 --> 00:20:23,920
+separate product teams. And the problem
+
+624
+00:20:22,560 --> 00:20:26,360
+there is that you might get code
+
+625
+00:20:23,920 --> 00:20:28,440
+repetition or what we call visual
+
+626
+00:20:26,360 --> 00:20:30,880
+divergence. You can have this silos
+
+627
+00:20:28,440 --> 00:20:32,160
+mentality. And so, basically, a button
+
+628
+00:20:30,880 --> 00:20:34,080
+in the product page will look
+
+629
+00:20:32,160 --> 00:20:35,680
+differently than a button on the payment
+
+630
+00:20:34,080 --> 00:20:37,640
+page. And so, you will lose what we call
+
+631
+00:20:35,680 --> 00:20:39,200
+visual coherence, and people will start
+
+632
+00:20:37,640 --> 00:20:40,800
+to notice that those are actually
+
+633
+00:20:39,200 --> 00:20:43,640
+separate front-ends because they look
+
+634
+00:20:40,800 --> 00:20:45,200
+differently. And that's not good from a
+
+635
+00:20:43,640 --> 00:20:46,600
+product perspective, but it's also not
+
+636
+00:20:45,200 --> 00:20:48,440
+good from a technical perspective
+
+637
+00:20:46,600 --> 00:20:49,880
+because you have too much repeated code.
+
+638
+00:20:48,440 --> 00:20:51,360
+And so, the solution is to have a design
+
+639
+00:20:49,880 --> 00:20:52,840
+system. And in a design system, the
+
+640
+00:20:51,360 --> 00:20:55,640
+first thing you do is to define your
+
+641
+00:20:52,840 --> 00:20:57,120
+design tokens. That's basically your
+
+642
+00:20:55,640 --> 00:20:59,840
+team information. What's your primary
+
+643
+00:20:57,120 --> 00:21:02,120
+color, what is your border definition,
+
+644
+00:20:59,840 --> 00:21:04,240
+your fonts families, and so on and so
+
+645
+00:21:02,120 --> 00:21:07,000
+forth. And the modern way to do that is
+
+646
+00:21:04,240 --> 00:21:09,120
+you add them as CSS custom properties,
+
+647
+00:21:07,000 --> 00:21:11,120
+basically variables, at the global level
+
+648
+00:21:09,120 --> 00:21:13,720
+in your CSS, probably in the shell micro
+
+649
+00:21:11,120 --> 00:21:15,200
+front end, and then it gets fed into all
+
+650
+00:21:13,720 --> 00:21:16,840
+the other micro front ends. But, you can
+
+651
+00:21:15,200 --> 00:21:18,560
+go a bit farther and build reusable
+
+652
+00:21:16,840 --> 00:21:21,440
+components that then the feature teams
+
+653
+00:21:18,560 --> 00:21:23,840
+can use to assemble their features. So,
+
+654
+00:21:21,440 --> 00:21:25,240
+you could build inputs and buttons, and
+
+655
+00:21:23,840 --> 00:21:26,800
+basically they would consume that UI
+
+656
+00:21:25,240 --> 00:21:28,360
+package and use it in all these
+
+657
+00:21:26,800 --> 00:21:29,720
+different micro front ends. So,
+
+658
+00:21:28,360 --> 00:21:32,240
+basically what you achieve is that the
+
+659
+00:21:29,720 --> 00:21:33,920
+UI looks consistent, but also you don't
+
+660
+00:21:32,240 --> 00:21:35,440
+repeat your code. The cool thing about
+
+661
+00:21:33,920 --> 00:21:37,360
+the design system is you can take care
+
+662
+00:21:35,440 --> 00:21:39,600
+of accessibility, you can have all those
+
+663
+00:21:37,360 --> 00:21:41,080
+components unit tested, and basically
+
+664
+00:21:39,600 --> 00:21:44,120
+you are applying at an architectural
+
+665
+00:21:41,080 --> 00:21:46,840
+level the do not repeat yourself dry
+
+666
+00:21:44,120 --> 00:21:48,600
+principle. And going back to AI coding,
+
+667
+00:21:46,840 --> 00:21:50,040
+a solid design system really makes the
+
+668
+00:21:48,600 --> 00:21:52,720
+difference between generating some
+
+669
+00:21:50,040 --> 00:21:54,720
+component slob and having inconsistent
+
+670
+00:21:52,720 --> 00:21:56,960
+styles and bugs that need a lot of
+
+671
+00:21:54,720 --> 00:21:59,640
+rework, and really having a consistent,
+
+672
+00:21:56,960 --> 00:22:01,240
+reliable coding agent output. Trust me,
+
+673
+00:21:59,640 --> 00:22:02,640
+I've been building a lot of AI in the
+
+674
+00:22:01,240 --> 00:22:04,640
+last couple of months, and the first
+
+675
+00:22:02,640 --> 00:22:06,200
+thing I do when I make a new project is
+
+676
+00:22:04,640 --> 00:22:08,600
+to tell to extract from whatever the
+
+677
+00:22:06,200 --> 00:22:11,080
+design is the design system, because
+
+678
+00:22:08,600 --> 00:22:13,000
+then you feed that into your coding
+
+679
+00:22:11,080 --> 00:22:14,960
+agent through different sessions, and
+
+680
+00:22:13,000 --> 00:22:16,800
+you still get consistent output. If you
+
+681
+00:22:14,960 --> 00:22:18,800
+don't do that, the agent will make
+
+682
+00:22:16,800 --> 00:22:20,320
+things up, and your UI would just look
+
+683
+00:22:18,800 --> 00:22:22,200
+different, and it'll be obvious that it
+
+684
+00:22:20,320 --> 00:22:24,600
+was live coded. Now, our next concept is
+
+685
+00:22:22,200 --> 00:22:26,680
+a design to code MCP, that's a model
+
+686
+00:22:24,600 --> 00:22:28,000
+context protocol server. And so,
+
+687
+00:22:26,680 --> 00:22:29,720
+basically, you remember we have our
+
+688
+00:22:28,000 --> 00:22:31,520
+design system, and normally you would
+
+689
+00:22:29,720 --> 00:22:33,040
+import that to start building with it.
+
+690
+00:22:31,520 --> 00:22:34,960
+But, nowadays, let's imagine that your
+
+691
+00:22:33,040 --> 00:22:37,240
+designers built your design system
+
+692
+00:22:34,960 --> 00:22:38,840
+initially in Figma, and then you
+
+693
+00:22:37,240 --> 00:22:41,680
+implement it in your library. You can
+
+694
+00:22:38,840 --> 00:22:45,080
+use the Figma MCP server with a coding
+
+695
+00:22:41,680 --> 00:22:46,520
+agent to very quickly assemble features
+
+696
+00:22:45,080 --> 00:22:48,280
+into the feature teams, into the
+
+697
+00:22:46,520 --> 00:22:49,720
+vertical slices of your product. And
+
+698
+00:22:48,280 --> 00:22:51,800
+this is the kind of workflow that most
+
+699
+00:22:49,720 --> 00:22:53,560
+companies are moving towards. So, if you
+
+700
+00:22:51,800 --> 00:22:55,760
+are a front end engineer, you got to
+
+701
+00:22:53,560 --> 00:22:57,760
+make sure that you know how to use an
+
+702
+00:22:55,760 --> 00:23:00,120
+MCP server, you know what an MCP server
+
+703
+00:22:57,760 --> 00:23:02,200
+is, and ideally, whatever design tool
+
+704
+00:23:00,120 --> 00:23:03,840
+your team is using, you can plug an MCP
+
+705
+00:23:02,200 --> 00:23:06,640
+into that or you might have to even
+
+706
+00:23:03,840 --> 00:23:08,840
+build that connection yourself. And then
+
+707
+00:23:06,640 --> 00:23:10,520
+plug that into your AI coding agent like
+
+708
+00:23:08,840 --> 00:23:13,360
+Cloud Code, which is the most used in
+
+709
+00:23:10,520 --> 00:23:15,960
+enterprise or Codex. Now, a quick note
+
+710
+00:23:13,360 --> 00:23:17,400
+on CSS architecture and design tokens.
+
+711
+00:23:15,960 --> 00:23:19,040
+What you can do to take things even
+
+712
+00:23:17,400 --> 00:23:21,520
+further is to apply the Atomic CSS
+
+713
+00:23:19,040 --> 00:23:23,320
+methodology and with your design tokens,
+
+714
+00:23:21,520 --> 00:23:25,000
+create atomic classes that you can use
+
+715
+00:23:23,320 --> 00:23:26,560
+in your code base. So, basically, you
+
+716
+00:23:25,000 --> 00:23:28,800
+define what the border would be, but
+
+717
+00:23:26,560 --> 00:23:30,720
+then you create a dot border class that
+
+718
+00:23:28,800 --> 00:23:32,520
+has that property. And then the only
+
+719
+00:23:30,720 --> 00:23:34,360
+thing that other developers have to do
+
+720
+00:23:32,520 --> 00:23:37,120
+is to use that class. And this is how
+
+721
+00:23:34,360 --> 00:23:40,200
+Tailwind CSS works. So, keep this in
+
+722
+00:23:37,120 --> 00:23:43,120
+mind. Tailwind CSS is an implementation
+
+723
+00:23:40,200 --> 00:23:45,000
+of the Atomic CSS architecture style for
+
+724
+00:23:43,120 --> 00:23:46,960
+CSS. And there's three more
+
+725
+00:23:45,000 --> 00:23:49,280
+architectural styles, which I won't get
+
+726
+00:23:46,960 --> 00:23:51,200
+into right now, but who knows, maybe
+
+727
+00:23:49,280 --> 00:23:53,000
+I'll make a video about it later on.
+
+728
+00:23:51,200 --> 00:23:55,240
+Next front end system design concept,
+
+729
+00:23:53,000 --> 00:23:56,560
+the monorepo. So, basically, our
+
+730
+00:23:55,240 --> 00:23:58,040
+applications right now are sitting in
+
+731
+00:23:56,560 --> 00:24:00,040
+all these different repos where you have
+
+732
+00:23:58,040 --> 00:24:01,800
+a GitHub repo for the shell, one for the
+
+733
+00:24:00,040 --> 00:24:04,000
+payment micro front end, inventory micro
+
+734
+00:24:01,800 --> 00:24:06,320
+front end, and it's all spread out into
+
+735
+00:24:04,000 --> 00:24:07,800
+thousands of repos. And the problem
+
+736
+00:24:06,320 --> 00:24:09,320
+there is that you end up with different
+
+737
+00:24:07,800 --> 00:24:10,840
+code styles, different dependencies, and
+
+738
+00:24:09,320 --> 00:24:12,600
+different quality standards. Some people
+
+739
+00:24:10,840 --> 00:24:14,960
+might be using TypeScript, they might be
+
+740
+00:24:12,600 --> 00:24:16,800
+using different linter configurations,
+
+741
+00:24:14,960 --> 00:24:19,440
+and it's so easy to have what we call
+
+742
+00:24:16,800 --> 00:24:21,600
+architectural drift or code style drift
+
+743
+00:24:19,440 --> 00:24:22,800
+where two projects diverge too much.
+
+744
+00:24:21,600 --> 00:24:24,720
+What's the problem with that? If you're
+
+745
+00:24:22,800 --> 00:24:27,000
+a developer and you change teams, you
+
+746
+00:24:24,720 --> 00:24:29,280
+have to relearn everything. So, you
+
+747
+00:24:27,000 --> 00:24:31,200
+don't really leverage standardization.
+
+748
+00:24:29,280 --> 00:24:33,720
+And the way to is to put everything into
+
+749
+00:24:31,200 --> 00:24:35,560
+a single repository. So, basically, you
+
+750
+00:24:33,720 --> 00:24:37,320
+have a big repository that contains all
+
+751
+00:24:35,560 --> 00:24:39,200
+the other small applications, and you
+
+752
+00:24:37,320 --> 00:24:40,840
+have tooling that works with both of
+
+753
+00:24:39,200 --> 00:24:43,000
+them. So, for example, when you run NPM
+
+754
+00:24:40,840 --> 00:24:45,600
+run build in a monorepo, all your
+
+755
+00:24:43,000 --> 00:24:47,120
+applications will build individually.
+
+756
+00:24:45,600 --> 00:24:49,400
+Now, when it comes to AI coding, a
+
+757
+00:24:47,120 --> 00:24:51,880
+monorepo gives coding agents the context
+
+758
+00:24:49,400 --> 00:24:53,880
+they need to make changes across service
+
+759
+00:24:51,880 --> 00:24:56,160
+boundaries. So, for example, if you're
+
+760
+00:24:53,880 --> 00:24:58,880
+building a micro front and you realize
+
+761
+00:24:56,160 --> 00:25:01,040
+that you run into a reusable use case.
+
+762
+00:24:58,880 --> 00:25:02,680
+You can easily extract that and propose
+
+763
+00:25:01,040 --> 00:25:04,440
+it as a component into your design
+
+764
+00:25:02,680 --> 00:25:05,800
+system. That might be a different repo.
+
+765
+00:25:04,440 --> 00:25:08,400
+And you can do that with the coding
+
+766
+00:25:05,800 --> 00:25:10,200
+agent in a single session if you have
+
+767
+00:25:08,400 --> 00:25:11,880
+everything in a mono repo. If not, you
+
+768
+00:25:10,200 --> 00:25:13,800
+have to somehow feed those two different
+
+769
+00:25:11,880 --> 00:25:16,520
+repositories to your coding agent and
+
+770
+00:25:13,800 --> 00:25:18,600
+everything becomes harder. So, combining
+
+771
+00:25:16,520 --> 00:25:20,440
+micro frontends and microservices with a
+
+772
+00:25:18,600 --> 00:25:22,920
+mono repo, it's usually the most
+
+773
+00:25:20,440 --> 00:25:24,720
+efficient way to work with AI. Now, one
+
+774
+00:25:22,920 --> 00:25:27,160
+thing I'm really excited about is also
+
+775
+00:25:24,720 --> 00:25:29,000
+MC PUI. So, MC PUI is basically
+
+776
+00:25:27,160 --> 00:25:30,960
+combining the traditional website with
+
+777
+00:25:29,000 --> 00:25:33,040
+an LLM-powered app, and that's basically
+
+778
+00:25:30,960 --> 00:25:35,280
+the glue in between them, the duct tape,
+
+779
+00:25:33,040 --> 00:25:37,360
+let's say that. And so, basically, in a
+
+780
+00:25:35,280 --> 00:25:39,160
+chat application, you usually send a
+
+781
+00:25:37,360 --> 00:25:41,400
+chat query, and then that goes to the
+
+782
+00:25:39,160 --> 00:25:42,920
+LLM, and the LLM will answer back, but
+
+783
+00:25:41,400 --> 00:25:44,840
+in this case, it can actually answer
+
+784
+00:25:42,920 --> 00:25:46,960
+with UI components. It can actually
+
+785
+00:25:44,840 --> 00:25:49,320
+render products, for example, in the
+
+786
+00:25:46,960 --> 00:25:51,560
+answer, not only text. But to do that,
+
+787
+00:25:49,320 --> 00:25:53,280
+it has to somehow talk to the backend,
+
+788
+00:25:51,560 --> 00:25:55,560
+and then we need to render some
+
+789
+00:25:53,280 --> 00:25:57,080
+components. And that is what MC PUI
+
+790
+00:25:55,560 --> 00:25:58,520
+solves. And this is an example I found
+
+791
+00:25:57,080 --> 00:26:00,400
+in a recent website where I was looking
+
+792
+00:25:58,520 --> 00:26:02,280
+for venues for events because we are
+
+793
+00:26:00,400 --> 00:26:03,200
+organizing our annual in-person meetups
+
+794
+00:26:02,280 --> 00:26:04,960
+at the Senior Dev, so we're going to
+
+795
+00:26:03,200 --> 00:26:06,640
+meet all the engineers we work with
+
+796
+00:26:04,960 --> 00:26:08,400
+around Europe or in the US, and I was
+
+797
+00:26:06,640 --> 00:26:10,240
+looking for different cool venues where
+
+798
+00:26:08,400 --> 00:26:11,640
+we could actually meet up. And so, I was
+
+799
+00:26:10,240 --> 00:26:13,560
+talking to this chat UI, and all of a
+
+800
+00:26:11,640 --> 00:26:15,720
+sudden, after a couple of questions, it
+
+801
+00:26:13,560 --> 00:26:17,480
+started rendering those venues, and it's
+
+802
+00:26:15,720 --> 00:26:19,480
+asking me for input, and then it would
+
+803
+00:26:17,480 --> 00:26:21,600
+go into a deep search and give me even
+
+804
+00:26:19,480 --> 00:26:23,400
+more venues. And as you see there, it
+
+805
+00:26:21,600 --> 00:26:25,200
+can even render a map. And all this
+
+806
+00:26:23,400 --> 00:26:26,720
+happens in a chat application. And I
+
+807
+00:26:25,200 --> 00:26:28,720
+think this is the direction front end
+
+808
+00:26:26,720 --> 00:26:30,720
+will go with LLMs, where we will
+
+809
+00:26:28,720 --> 00:26:32,880
+integrate LLMs in web applications would
+
+810
+00:26:30,720 --> 00:26:35,240
+be. A lot of people were saying that
+
+811
+00:26:32,880 --> 00:26:37,720
+there's no more need for UI now that we
+
+812
+00:26:35,240 --> 00:26:39,720
+have a chat. I disagree. I think the UI
+
+813
+00:26:37,720 --> 00:26:41,080
+is a very useful way to communicate
+
+814
+00:26:39,720 --> 00:26:43,600
+things, and I think you need front end
+
+815
+00:26:41,080 --> 00:26:45,440
+developers, but we'll be able to combine
+
+816
+00:26:43,600 --> 00:26:47,200
+the LLM approach with the traditional
+
+817
+00:26:45,440 --> 00:26:50,080
+web approach. So, this component was
+
+818
+00:26:47,200 --> 00:26:53,200
+rendered because the front end parsed it
+
+819
+00:26:50,080 --> 00:26:55,520
+from the answers of the LLM. At a high
+
+820
+00:26:53,200 --> 00:26:57,640
+level, the way this works is that the
+
+821
+00:26:55,520 --> 00:26:59,440
+model harness will provide in the
+
+822
+00:26:57,640 --> 00:27:01,800
+context the tool registries and all the
+
+823
+00:26:59,440 --> 00:27:03,840
+MCP servers and then as a user prompt,
+
+824
+00:27:01,800 --> 00:27:06,320
+and the LLM will send an answer back to
+
+825
+00:27:03,840 --> 00:27:07,920
+the tool UI with the text answer, but
+
+826
+00:27:06,320 --> 00:27:10,160
+also with an instruction to render a
+
+827
+00:27:07,920 --> 00:27:12,200
+certain div, and then the tool, the web
+
+828
+00:27:10,160 --> 00:27:13,240
+application has to follow that and
+
+829
+00:27:12,200 --> 00:27:14,600
+render it.
+
+830
+00:27:13,240 --> 00:27:17,160
+And just to really bring this to the
+
+831
+00:27:14,600 --> 00:27:19,640
+code, the way we declare a resource or
+
+832
+00:27:17,160 --> 00:27:21,320
+an MCP UI is we basically tell the LLM,
+
+833
+00:27:19,640 --> 00:27:24,160
+"Hey, there's this resource, and you can
+
+834
+00:27:21,320 --> 00:27:25,920
+use it in this case scenario, and this
+
+835
+00:27:24,160 --> 00:27:27,640
+is the answer you can give." And then
+
+836
+00:27:25,920 --> 00:27:29,400
+our front end has to take that and parse
+
+837
+00:27:27,640 --> 00:27:31,920
+that and then render it. If you want me
+
+838
+00:27:29,400 --> 00:27:34,320
+to make an in-depth video on how exactly
+
+839
+00:27:31,920 --> 00:27:36,240
+MCP UI works, let me know, but this is
+
+840
+00:27:34,320 --> 00:27:37,840
+one of those patterns that if you know
+
+841
+00:27:36,240 --> 00:27:39,760
+really well, you'll really stand out
+
+842
+00:27:37,840 --> 00:27:41,760
+because I believe it goes way beyond the
+
+843
+00:27:39,760 --> 00:27:44,320
+current AI hype and it's actually
+
+844
+00:27:41,760 --> 00:27:45,400
+something very useful for specific edge
+
+845
+00:27:44,320 --> 00:27:47,520
+cases, and you'll see a lot of
+
+846
+00:27:45,400 --> 00:27:50,760
+applications actually implementing this
+
+847
+00:27:47,520 --> 00:27:52,280
+hybrid solutions. Now, to wrap up this
+
+848
+00:27:50,760 --> 00:27:54,280
+talk a bit about performance, and the
+
+849
+00:27:52,280 --> 00:27:56,480
+most important pattern that you'll ever
+
+850
+00:27:54,280 --> 00:27:58,080
+see out mentioned in job descriptions
+
+851
+00:27:56,480 --> 00:27:59,840
+for front end engineers, it's the Core
+
+852
+00:27:58,080 --> 00:28:02,320
+Web Vitals. And so basically the Core
+
+853
+00:27:59,840 --> 00:28:04,880
+Web Vitals are three metrics that
+
+854
+00:28:02,320 --> 00:28:07,680
+quantify the three dimensions in which
+
+855
+00:28:04,880 --> 00:28:09,440
+we measure the performance of a website,
+
+856
+00:28:07,680 --> 00:28:11,000
+and those are the loading speed, the
+
+857
+00:28:09,440 --> 00:28:13,240
+interactivity speed, and the visual
+
+858
+00:28:11,000 --> 00:28:14,600
+stability. And the three Core Web Vitals
+
+859
+00:28:13,240 --> 00:28:15,920
+that measure this are the Largest
+
+860
+00:28:14,600 --> 00:28:17,360
+Contentful Paint, the Interaction to
+
+861
+00:28:15,920 --> 00:28:19,960
+Next Paint, and the Cumulative Layout
+
+862
+00:28:17,360 --> 00:28:21,720
+Shift. Basically, those are measured by
+
+863
+00:28:19,960 --> 00:28:23,200
+Google, and they tell us what a good
+
+864
+00:28:21,720 --> 00:28:24,640
+number would be. So, when you look at
+
+865
+00:28:23,200 --> 00:28:27,080
+the Largest Contentful Paint, it would
+
+866
+00:28:24,640 --> 00:28:29,640
+be the time it takes from when you hit
+
+867
+00:28:27,080 --> 00:28:31,240
+enter to when the largest element in the
+
+868
+00:28:29,640 --> 00:28:32,760
+web page is rendered. The Interaction to
+
+869
+00:28:31,240 --> 00:28:34,680
+Next Paint, it's slightly different, and
+
+870
+00:28:32,760 --> 00:28:36,200
+it has to do to when you interact. So,
+
+871
+00:28:34,680 --> 00:28:38,560
+you do something, and then when do we
+
+872
+00:28:36,200 --> 00:28:41,120
+repaint the UI? And the CLS is basically
+
+873
+00:28:38,560 --> 00:28:43,200
+how much the UI changes when it loads.
+
+874
+00:28:41,120 --> 00:28:45,640
+And so, the LCP and CLS have to do with
+
+875
+00:28:43,200 --> 00:28:47,240
+the initial render, and the INP has to
+
+876
+00:28:45,640 --> 00:28:49,040
+do with the re-renderings, which is very
+
+877
+00:28:47,240 --> 00:28:50,880
+important when you talk about component
+
+878
+00:28:49,040 --> 00:28:52,120
+frameworks. Now, to understand those,
+
+879
+00:28:50,880 --> 00:28:54,040
+you need to understand the critical
+
+880
+00:28:52,120 --> 00:28:56,720
+rendering path, which is all the steps
+
+881
+00:28:54,040 --> 00:28:58,040
+you go from downloading some HTML to
+
+882
+00:28:56,720 --> 00:29:00,280
+actually showing something on the
+
+883
+00:28:58,040 --> 00:29:02,680
+screen. And that involves building the
+
+884
+00:29:00,280 --> 00:29:04,880
+DOM, and then building the CSSOM, then
+
+885
+00:29:02,680 --> 00:29:06,520
+building a render tree, then computing
+
+886
+00:29:04,880 --> 00:29:09,200
+the layout tree, which is basically a
+
+887
+00:29:06,520 --> 00:29:11,320
+tree of where all your nodes are and the
+
+888
+00:29:09,200 --> 00:29:13,080
+positions and the width, and then
+
+889
+00:29:11,320 --> 00:29:15,200
+transforming that into what we call
+
+890
+00:29:13,080 --> 00:29:17,760
+paint operations that goes through to
+
+891
+00:29:15,200 --> 00:29:19,240
+the GPU, then going to the composite
+
+892
+00:29:17,760 --> 00:29:21,240
+phase, which has its own complexity, and
+
+893
+00:29:19,240 --> 00:29:23,000
+I'm not going to talk about it, but just
+
+894
+00:29:21,240 --> 00:29:25,080
+to summarize this, all those steps will
+
+895
+00:29:23,000 --> 00:29:26,840
+happen, and then you have some
+
+896
+00:29:25,080 --> 00:29:28,320
+re-renders because we use component
+
+897
+00:29:26,840 --> 00:29:29,960
+frameworks, you get data, you start
+
+898
+00:29:28,320 --> 00:29:31,880
+re-rendering, you finally finish, and
+
+899
+00:29:29,960 --> 00:29:33,960
+then that's when you paint the LCP. So,
+
+900
+00:29:31,880 --> 00:29:35,600
+all that time is measured in the LCP,
+
+901
+00:29:33,960 --> 00:29:37,480
+and the bottom line here is, if you're
+
+902
+00:29:35,600 --> 00:29:39,320
+shipping a lot of JavaScript, if you're
+
+903
+00:29:37,480 --> 00:29:41,480
+shipping a lot of CSS, if you have to
+
+904
+00:29:39,320 --> 00:29:43,280
+fetch a lot of data, and your server is
+
+905
+00:29:41,480 --> 00:29:45,520
+slow, your application will be slow, and
+
+906
+00:29:43,280 --> 00:29:46,920
+you'll get a very poor score in the LCP.
+
+907
+00:29:45,520 --> 00:29:48,400
+The other thing that will happen if your
+
+908
+00:29:46,920 --> 00:29:50,560
+application is poorly optimized is that
+
+909
+00:29:48,400 --> 00:29:52,320
+you'll have layout switching all the
+
+910
+00:29:50,560 --> 00:29:54,320
+time as you start loading things because
+
+911
+00:29:52,320 --> 00:29:56,040
+CSS comes too late, and then fonts come
+
+912
+00:29:54,320 --> 00:29:57,600
+in, and then some data comes in, and the
+
+913
+00:29:56,040 --> 00:29:59,000
+browser will take screenshots of that
+
+914
+00:29:57,600 --> 00:30:00,680
+and try to figure out if you are moving
+
+915
+00:29:59,000 --> 00:30:02,880
+things too much. That would be the
+
+916
+00:30:00,680 --> 00:30:04,680
+cumulative layout shift. And finally,
+
+917
+00:30:02,880 --> 00:30:05,800
+the interaction to next paint is
+
+918
+00:30:04,680 --> 00:30:07,480
+basically whenever you have a user
+
+919
+00:30:05,800 --> 00:30:09,720
+event, and you have to go to the
+
+920
+00:30:07,480 --> 00:30:11,960
+reconciliation and re-render after state
+
+921
+00:30:09,720 --> 00:30:14,000
+update in your framework, and then you
+
+922
+00:30:11,960 --> 00:30:16,320
+start again, you modify the DOM, and
+
+923
+00:30:14,000 --> 00:30:19,400
+that triggers a re-paint. So, all that
+
+924
+00:30:16,320 --> 00:30:21,560
+time it's quantified as the interaction
+
+925
+00:30:19,400 --> 00:30:23,840
+to next paint. So, basically, if you
+
+926
+00:30:21,560 --> 00:30:25,760
+have very slow re-renders or you're
+
+927
+00:30:23,840 --> 00:30:27,960
+re-rendering too many components when
+
+928
+00:30:25,760 --> 00:30:30,240
+users do something, then you have a very
+
+929
+00:30:27,960 --> 00:30:31,560
+slow IMP. You can measure those metrics
+
+930
+00:30:30,240 --> 00:30:33,360
+like house, and they go a lot deeper
+
+931
+00:30:31,560 --> 00:30:35,040
+into this video on this channel about
+
+932
+00:30:33,360 --> 00:30:36,800
+it, so make sure you check out that one.
+
+933
+00:30:35,040 --> 00:30:38,880
+Our next concept also has to do with
+
+934
+00:30:36,800 --> 00:30:40,640
+performance, and it's called splitting.
+
+935
+00:30:38,880 --> 00:30:42,480
+Now, traditionally, a module bundler
+
+936
+00:30:40,640 --> 00:30:44,920
+will take all our JavaScript and put it
+
+937
+00:30:42,480 --> 00:30:47,680
+together in a single big file. But
+
+938
+00:30:44,920 --> 00:30:50,640
+loading that single file will totally
+
+939
+00:30:47,680 --> 00:30:53,240
+mess our core web vitals because we load
+
+940
+00:30:50,640 --> 00:30:55,520
+too much JavaScript. So code splitting
+
+941
+00:30:53,240 --> 00:30:57,120
+allows us to split our JavaScript to
+
+942
+00:30:55,520 --> 00:30:59,200
+where it's being needed so we can really
+
+943
+00:30:57,120 --> 00:31:01,000
+ship only the JavaScript that's needed
+
+944
+00:30:59,200 --> 00:31:03,280
+to a specific page. And the easiest way
+
+945
+00:31:01,000 --> 00:31:05,080
+to code split is by out. So basically,
+
+946
+00:31:03,280 --> 00:31:06,200
+you would only ship to the slash login
+
+947
+00:31:05,080 --> 00:31:08,680
+page the components that are
+
+948
+00:31:06,200 --> 00:31:10,040
+specifically needed for the login. And
+
+949
+00:31:08,680 --> 00:31:12,160
+if you have a dashboard that's very
+
+950
+00:31:10,040 --> 00:31:14,080
+heavy with a lot of graphs, for example,
+
+951
+00:31:12,160 --> 00:31:15,840
+you don't ship all that. So you
+
+952
+00:31:14,080 --> 00:31:16,920
+selectively ship your JavaScript to
+
+953
+00:31:15,840 --> 00:31:18,640
+where it's being needed instead of
+
+954
+00:31:16,920 --> 00:31:20,880
+putting it together all in a single
+
+955
+00:31:18,640 --> 00:31:23,120
+file. And all this is achieved with a
+
+956
+00:31:20,880 --> 00:31:25,640
+module bundler like Webpack or Vit,
+
+957
+00:31:23,120 --> 00:31:28,160
+which understands your bundle, splits
+
+958
+00:31:25,640 --> 00:31:30,040
+it, and then dynamically loads it based
+
+959
+00:31:28,160 --> 00:31:31,680
+on the path you're on, working together
+
+960
+00:31:30,040 --> 00:31:33,960
+with your application router. And the
+
+961
+00:31:31,680 --> 00:31:35,480
+higher overarching mental model here is
+
+962
+00:31:33,960 --> 00:31:37,880
+lazy loading, which is the opposite of
+
+963
+00:31:35,480 --> 00:31:39,920
+eager loading. Eager loading means you
+
+964
+00:31:37,880 --> 00:31:42,400
+are really loading everything when a
+
+965
+00:31:39,920 --> 00:31:44,760
+user lands on the page. And lazy loading
+
+966
+00:31:42,400 --> 00:31:45,960
+means you load things as they needed. So
+
+967
+00:31:44,760 --> 00:31:48,040
+for example, you might load certain
+
+968
+00:31:45,960 --> 00:31:49,360
+things on scroll, or you might load
+
+969
+00:31:48,040 --> 00:31:51,080
+certain things when they visit a certain
+
+970
+00:31:49,360 --> 00:31:52,840
+page, or you might load certain things
+
+971
+00:31:51,080 --> 00:31:54,520
+when they click on something. So you
+
+972
+00:31:52,840 --> 00:31:56,040
+kind of wait for that user interaction,
+
+973
+00:31:54,520 --> 00:31:58,200
+and when they land on the page, you
+
+974
+00:31:56,040 --> 00:32:00,080
+really only ship the things they need.
+
+975
+00:31:58,200 --> 00:32:02,320
+And all this is done in order to make
+
+976
+00:32:00,080 --> 00:32:04,120
+this core web vitals better and working
+
+977
+00:32:02,320 --> 00:32:05,360
+across the critical learning path. And
+
+978
+00:32:04,120 --> 00:32:07,920
+finally, let's talk about rendering
+
+979
+00:32:05,360 --> 00:32:09,600
+strategies. And nowadays, we usually
+
+980
+00:32:07,920 --> 00:32:11,440
+work with modern component frameworks
+
+981
+00:32:09,600 --> 00:32:12,960
+like React, Vue, and Angular. And the
+
+982
+00:32:11,440 --> 00:32:14,640
+problem with those is that when you land
+
+983
+00:32:12,960 --> 00:32:15,920
+on the page, you see a white screen. And
+
+984
+00:32:14,640 --> 00:32:17,920
+the reason for that is because, you
+
+985
+00:32:15,920 --> 00:32:19,760
+know, you load that empty HTML, and
+
+986
+00:32:17,920 --> 00:32:21,840
+until you don't really run whatever
+
+987
+00:32:19,760 --> 00:32:23,920
+render function they have, you don't
+
+988
+00:32:21,840 --> 00:32:26,360
+really see much on the screen. That's
+
+989
+00:32:23,920 --> 00:32:28,360
+what they call client-side rendering. So
+
+990
+00:32:26,360 --> 00:32:30,520
+in an SPA architecture, in a single-page
+
+991
+00:32:28,360 --> 00:32:32,520
+application with client-side rendering,
+
+992
+00:32:30,520 --> 00:32:34,320
+you'd go, get your static file, and then
+
+993
+00:32:32,520 --> 00:32:36,280
+you need to go get some dynamic data,
+
+994
+00:32:34,320 --> 00:32:38,200
+and then finally render. And all that
+
+995
+00:32:36,280 --> 00:32:40,280
+takes a lot of time. So, if you want to
+
+996
+00:32:38,200 --> 00:32:42,560
+have a very performant website or a
+
+997
+00:32:40,280 --> 00:32:44,600
+website that's ready to be crawled by a
+
+998
+00:32:42,560 --> 00:32:46,360
+search engine, then client-side
+
+999
+00:32:44,600 --> 00:32:47,960
+rendering is not the best choice for
+
+1000
+00:32:46,360 --> 00:32:49,680
+you. An alternative to this, if you have
+
+1001
+00:32:47,960 --> 00:32:51,520
+a static website where there's not a lot
+
+1002
+00:32:49,680 --> 00:32:53,600
+of interactivity, is to pre-render it on
+
+1003
+00:32:51,520 --> 00:32:55,080
+the server and ship it already rendered.
+
+1004
+00:32:53,600 --> 00:32:57,760
+So, when your client goes to get the
+
+1005
+00:32:55,080 --> 00:32:59,600
+static files, they already get HTML CSS
+
+1006
+00:32:57,760 --> 00:33:01,800
+and they don't need to run so much
+
+1007
+00:32:59,600 --> 00:33:04,400
+JavaScript. Now, again, this only works
+
+1008
+00:33:01,800 --> 00:33:06,080
+with static sites. If your static site
+
+1009
+00:33:04,400 --> 00:33:07,440
+will change often, let's say you have a
+
+1010
+00:33:06,080 --> 00:33:09,600
+blog and you want to publish new
+
+1011
+00:33:07,440 --> 00:33:11,520
+articles, then what you can do is
+
+1012
+00:33:09,600 --> 00:33:14,000
+incremental static generation. That
+
+1013
+00:33:11,520 --> 00:33:16,200
+means you only regenerate the pages that
+
+1014
+00:33:14,000 --> 00:33:18,320
+have changed. So, basically, your CMS
+
+1015
+00:33:16,200 --> 00:33:20,400
+will trigger a rebuild when you add a
+
+1016
+00:33:18,320 --> 00:33:22,680
+new blog post and that will get the
+
+1017
+00:33:20,400 --> 00:33:24,800
+dynamic data and go to a build pipeline
+
+1018
+00:33:22,680 --> 00:33:26,800
+and regenerate the only portion of the
+
+1019
+00:33:24,800 --> 00:33:29,160
+static files that change. So, it's a bit
+
+1020
+00:33:26,800 --> 00:33:30,400
+of a partial rebuilding of the website.
+
+1021
+00:33:29,160 --> 00:33:32,280
+The advantage here is not only that
+
+1022
+00:33:30,400 --> 00:33:34,040
+makes the build faster, but if I'm a
+
+1023
+00:33:32,280 --> 00:33:35,320
+client and I already downloaded part of
+
+1024
+00:33:34,040 --> 00:33:37,880
+your CSS and JavaScript, but I don't
+
+1025
+00:33:35,320 --> 00:33:40,240
+need to download re-download only the
+
+1026
+00:33:37,880 --> 00:33:42,720
+parts that change. Now, in most cases,
+
+1027
+00:33:40,240 --> 00:33:44,760
+this is built into a framework like
+
+1028
+00:33:42,720 --> 00:33:46,520
+Next.js, so you never have to worry
+
+1029
+00:33:44,760 --> 00:33:48,160
+about this yourself. And finally, we
+
+1030
+00:33:46,520 --> 00:33:49,760
+have server-side rendering. And in
+
+1031
+00:33:48,160 --> 00:33:51,520
+server-side rendering, the client will
+
+1032
+00:33:49,760 --> 00:33:52,840
+make a request to the front-end server,
+
+1033
+00:33:51,520 --> 00:33:55,640
+but then the front-end server will
+
+1034
+00:33:52,840 --> 00:33:57,880
+request the back-end server and get some
+
+1035
+00:33:55,640 --> 00:34:00,680
+data and then render the application on
+
+1036
+00:33:57,880 --> 00:34:03,240
+the server and then send it back
+
+1037
+00:34:00,680 --> 00:34:05,440
+pre-rendered. So, the client receives a
+
+1038
+00:34:03,240 --> 00:34:07,760
+full HTML page. So, you don't have this
+
+1039
+00:34:05,440 --> 00:34:10,040
+problem of the white screen. The problem
+
+1040
+00:34:07,760 --> 00:34:12,560
+you still have is that this page is not
+
+1041
+00:34:10,040 --> 00:34:14,200
+interactive yet because you haven't went
+
+1042
+00:34:12,560 --> 00:34:15,520
+through building the virtual DOM and
+
+1043
+00:34:14,200 --> 00:34:17,399
+attaching, for example, in the case of
+
+1044
+00:34:15,520 --> 00:34:18,840
+React, your virtual DOM to the actual
+
+1045
+00:34:17,399 --> 00:34:20,879
+DOM pre-built. And that's why you need
+
+1046
+00:34:18,840 --> 00:34:23,440
+to hydrate. And so, basically, you
+
+1047
+00:34:20,879 --> 00:34:25,600
+render that HTML page and then you have
+
+1048
+00:34:23,440 --> 00:34:27,360
+to execute your JavaScript, create
+
+1049
+00:34:25,600 --> 00:34:29,159
+internally the virtual DOM and then that
+
+1050
+00:34:27,360 --> 00:34:30,760
+virtual DOM is attached to the existing
+
+1051
+00:34:29,159 --> 00:34:32,720
+HTML markdown. That's what we call
+
+1052
+00:34:30,760 --> 00:34:34,480
+hydration. And finally, when you're
+
+1053
+00:34:32,720 --> 00:34:36,080
+hydrated, you might have to do some
+
+1054
+00:34:34,480 --> 00:34:38,480
+extra data fetching, so you might still
+
+1055
+00:34:36,080 --> 00:34:40,919
+need to go to the back. And again, this
+
+1056
+00:34:38,480 --> 00:34:43,879
+is one of the most complex approaches,
+
+1057
+00:34:40,919 --> 00:34:45,639
+so be careful with it. It's only useful
+
+1058
+00:34:43,879 --> 00:34:48,320
+whenever you need very, very fast
+
+1059
+00:34:45,639 --> 00:34:50,159
+performance or you need SEO. And a lot
+
+1060
+00:34:48,320 --> 00:34:51,520
+of people and a lot of companies jumped
+
+1061
+00:34:50,159 --> 00:34:53,399
+into this and they're doing server-side
+
+1062
+00:34:51,520 --> 00:34:56,240
+rendering, but that's like building an
+
+1063
+00:34:53,399 --> 00:34:58,280
+F1 car to go to the groceries. It's
+
+1064
+00:34:56,240 --> 00:34:59,560
+over-engineering and it creates a lot of
+
+1065
+00:34:58,280 --> 00:35:01,440
+problems and then everything gets
+
+1066
+00:34:59,560 --> 00:35:03,280
+slower. There's so many issues that will
+
+1067
+00:35:01,440 --> 00:35:04,920
+appear when you have this kind of setup.
+
+1068
+00:35:03,280 --> 00:35:07,560
+Technology to make it work is very
+
+1069
+00:35:04,920 --> 00:35:08,880
+complex. Bugs are harder to solve, so
+
+1070
+00:35:07,560 --> 00:35:11,040
+you want to stay away from it. And I
+
+1071
+00:35:08,880 --> 00:35:13,120
+really prefer simple solutions unless
+
+1072
+00:35:11,040 --> 00:35:15,040
+your use case really needs the highest
+
+1073
+00:35:13,120 --> 00:35:16,440
+performance. Oh, finally, let's talk
+
+1074
+00:35:15,040 --> 00:35:18,120
+about data fetching and I know we are
+
+1075
+00:35:16,440 --> 00:35:19,600
+front-end engineers, but it's very
+
+1076
+00:35:18,120 --> 00:35:21,280
+important that you also can work at a
+
+1077
+00:35:19,600 --> 00:35:22,840
+data layer. As I said before, we are
+
+1078
+00:35:21,280 --> 00:35:24,760
+moving towards front-end engineers being
+
+1079
+00:35:22,840 --> 00:35:27,000
+more full stack. And that is server-sent
+
+1080
+00:35:24,760 --> 00:35:28,960
+events. And all this has to do with
+
+1081
+00:35:27,000 --> 00:35:31,160
+real-time communication. When it comes
+
+1082
+00:35:28,960 --> 00:35:33,680
+to real-time communication that is not
+
+1083
+00:35:31,160 --> 00:35:35,720
+following the request-response cycle
+
+1084
+00:35:33,680 --> 00:35:37,120
+that I showed until now, you basically
+
+1085
+00:35:35,720 --> 00:35:38,840
+have to give it to it. You can do
+
+1086
+00:35:37,120 --> 00:35:40,920
+polling, you can do web sockets or
+
+1087
+00:35:38,840 --> 00:35:42,320
+server-sent events. And so polling would
+
+1088
+00:35:40,920 --> 00:35:44,600
+mean that you keep calling a specific
+
+1089
+00:35:42,320 --> 00:35:46,840
+endpoint until something happens. So,
+
+1090
+00:35:44,600 --> 00:35:48,600
+let's say we have a transaction that's
+
+1091
+00:35:46,840 --> 00:35:51,200
+processing, I can keep calling the
+
+1092
+00:35:48,600 --> 00:35:53,000
+status endpoint until it becomes
+
+1093
+00:35:51,200 --> 00:35:54,640
+completed. That's very easy to do with
+
+1094
+00:35:53,000 --> 00:35:56,120
+plain JavaScript and set timeout.
+
+1095
+00:35:54,640 --> 00:35:57,680
+There's nothing complex about it. The
+
+1096
+00:35:56,120 --> 00:35:59,520
+problem is you're calling your server
+
+1097
+00:35:57,680 --> 00:36:01,200
+way too much. And so it doesn't scale
+
+1098
+00:35:59,520 --> 00:36:03,160
+really well. You can have race
+
+1099
+00:36:01,200 --> 00:36:05,240
+conditions. So, it's a very simple
+
+1100
+00:36:03,160 --> 00:36:06,840
+solution, but not the most performant
+
+1101
+00:36:05,240 --> 00:36:09,320
+one. The next alternative would be web
+
+1102
+00:36:06,840 --> 00:36:10,960
+sockets, where you open a channel
+
+1103
+00:36:09,320 --> 00:36:12,400
+between the server and the browser and
+
+1104
+00:36:10,960 --> 00:36:14,160
+you can send updates and they can send
+
+1105
+00:36:12,400 --> 00:36:16,200
+you updates back. The problem here is
+
+1106
+00:36:14,160 --> 00:36:18,040
+that again, it's a lot of overhead and
+
+1107
+00:36:16,200 --> 00:36:19,560
+it's extremely good whenever you have
+
+1108
+00:36:18,040 --> 00:36:20,960
+bi-directional communication. Like
+
+1109
+00:36:19,560 --> 00:36:22,480
+you're working for a chat application,
+
+1110
+00:36:20,960 --> 00:36:24,600
+for example, where both the client and
+
+1111
+00:36:22,480 --> 00:36:27,160
+the server would keep sending chunks of
+
+1112
+00:36:24,600 --> 00:36:29,280
+messages. Now, for most use cases, this
+
+1113
+00:36:27,160 --> 00:36:31,600
+is not really needed and again, it's
+
+1114
+00:36:29,280 --> 00:36:33,680
+complex and it's very intense on the
+
+1115
+00:36:31,600 --> 00:36:36,240
+server. It needs a lot of resources.
+
+1116
+00:36:33,680 --> 00:36:37,760
+Now, with AI, we do need real-time
+
+1117
+00:36:36,240 --> 00:36:39,440
+communication, but it's only one
+
+1118
+00:36:37,760 --> 00:36:41,160
+direction. Because usually when you send
+
+1119
+00:36:39,440 --> 00:36:43,280
+a query to a chat application, you then
+
+1120
+00:36:41,160 --> 00:36:45,440
+just wait and they start sending you
+
+1121
+00:36:43,280 --> 00:36:47,280
+tokens back. So, it's the server sending
+
+1122
+00:36:45,440 --> 00:36:48,880
+a lot of messages, but you usually only
+
+1123
+00:36:47,280 --> 00:36:50,920
+send one. So, there's a lot of asymmetry
+
+1124
+00:36:48,880 --> 00:36:52,120
+between the client and the server. And
+
+1125
+00:36:50,920 --> 00:36:53,760
+the way to make this happen is with
+
+1126
+00:36:52,120 --> 00:36:55,320
+server-sent events, where you send a
+
+1127
+00:36:53,760 --> 00:36:58,000
+text message and that will create a
+
+1128
+00:36:55,320 --> 00:36:59,640
+conversation and on that endpoint,
+
+1129
+00:36:58,000 --> 00:37:01,080
+you're able to receive updates from the
+
+1130
+00:36:59,640 --> 00:37:03,160
+server. So, you receive all these
+
+1131
+00:37:01,080 --> 00:37:05,280
+tokens, but you don't send so many. And
+
+1132
+00:37:03,160 --> 00:37:07,400
+this approach is the one used by most
+
+1133
+00:37:05,280 --> 00:37:09,920
+LLM applications. If you've ever used
+
+1134
+00:37:07,400 --> 00:37:11,520
+the OpenAI NPM package in a React
+
+1135
+00:37:09,920 --> 00:37:13,400
+application to build a chat app with an
+
+1136
+00:37:11,520 --> 00:37:14,760
+LLM, that's exactly what they use under
+
+1137
+00:37:13,400 --> 00:37:16,800
+the hood. And you can actually figure
+
+1138
+00:37:14,760 --> 00:37:19,360
+this out if you go to your network when
+
+1139
+00:37:16,800 --> 00:37:20,760
+you use ChatGPT or Claude and find that
+
+1140
+00:37:19,360 --> 00:37:23,200
+conversation request and you'll see that
+
+1141
+00:37:20,760 --> 00:37:25,320
+the answer to that it's all these event
+
+1142
+00:37:23,200 --> 00:37:26,960
+streams. So, you're getting chunks of
+
+1143
+00:37:25,320 --> 00:37:29,600
+the answer. And that's how you build
+
+1144
+00:37:26,960 --> 00:37:32,360
+these cool UIs for LLMs. It's not
+
+1145
+00:37:29,600 --> 00:37:34,360
+WebSockets and it's not pulling, it's
+
+1146
+00:37:32,360 --> 00:37:36,640
+the server-sent event API. Make sure you
+
+1147
+00:37:34,360 --> 00:37:38,560
+look it up because it is something that
+
+1148
+00:37:36,640 --> 00:37:40,440
+will help you build product software
+
+1149
+00:37:38,560 --> 00:37:42,400
+products, software applications with AI
+
+1150
+00:37:40,440 --> 00:37:43,760
+embedded. Thanks so much, folks. If you
+
+1151
+00:37:42,400 --> 00:37:45,480
+want to go even deeper, make sure you
+
+1152
+00:37:43,760 --> 00:37:47,040
+check out these two videos on our
+
+1153
+00:37:45,480 --> 00:37:48,400
+channel. One of them is about all the
+
+1154
+00:37:47,040 --> 00:37:49,920
+front-end architectures that you need to
+
+1155
+00:37:48,400 --> 00:37:52,280
+know as a front-end engineer and the
+
+1156
+00:37:49,920 --> 00:37:55,440
+other one is about in-depth concepts
+
+1157
+00:37:52,280 --> 00:37:57,200
+about web performance, CSS, component
+
+1158
+00:37:55,440 --> 00:37:59,080
+frameworks that you really need and that
+
+1159
+00:37:57,200 --> 00:38:03,400
+show up in interviews at the senior
+
+1160
+00:37:59,080 --> 00:38:03,400
+level. And I'll see you in the next one.

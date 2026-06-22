@@ -1,0 +1,975 @@
+1
+00:00:00,160 --> 00:00:05,040
+You know him. Long ponytail, oval
+
+2
+00:00:02,720 --> 00:00:06,879
+glasses, has been at the company longer
+
+3
+00:00:05,040 --> 00:00:09,120
+than the version control. You show him
+
+4
+00:00:06,879 --> 00:00:11,840
+50 lines, he looks at them, says
+
+5
+00:00:09,120 --> 00:00:14,160
+nothing, and replaces them with one.
+
+6
+00:00:11,840 --> 00:00:16,560
+That is the epic description of this new
+
+7
+00:00:14,160 --> 00:00:18,880
+library called Ponytail, which I guess
+
+8
+00:00:16,560 --> 00:00:21,439
+is kind of relatable. We all know that
+
+9
+00:00:18,880 --> 00:00:23,760
+one 10x developer who matches that
+
+10
+00:00:21,439 --> 00:00:26,000
+description perfectly. But Ponytail is
+
+11
+00:00:23,760 --> 00:00:28,160
+actually a really cool tool. It makes
+
+12
+00:00:26,000 --> 00:00:30,800
+your AI coding agent think like the
+
+13
+00:00:28,160 --> 00:00:32,960
+laziest senior dev in the room. And
+
+14
+00:00:30,800 --> 00:00:34,480
+that's actually a compliment. So, in
+
+15
+00:00:32,960 --> 00:00:37,520
+this video, we'll take a look at
+
+16
+00:00:34,480 --> 00:00:40,239
+Ponytail, see how it works, and run some
+
+17
+00:00:37,520 --> 00:00:42,320
+fun demos to find out if this guy is
+
+18
+00:00:40,239 --> 00:00:47,160
+actually the real deal. It's going to be
+
+19
+00:00:42,320 --> 00:00:47,160
+a lot of fun. So, let's dive into it.
+
+20
+00:00:48,640 --> 00:00:53,680
+So, Ponytail's mission is simple. Keep
+
+21
+00:00:51,280 --> 00:00:56,719
+everything super concise. eliminate the
+
+22
+00:00:53,680 --> 00:00:58,879
+bloat AI agents usually produce and try
+
+23
+00:00:56,719 --> 00:01:01,440
+to come up with the leanest solution to
+
+24
+00:00:58,879 --> 00:01:03,520
+a problem it can possibly find. It's
+
+25
+00:01:01,440 --> 00:01:06,000
+kind of similar to Caveman, which was
+
+26
+00:01:03,520 --> 00:01:07,920
+the library that made AI coding agents
+
+27
+00:01:06,000 --> 00:01:10,400
+talk less, therefore spending less
+
+28
+00:01:07,920 --> 00:01:12,799
+tokens, which James also did a great
+
+29
+00:01:10,400 --> 00:01:15,360
+video on over here. So, the main idea
+
+30
+00:01:12,799 --> 00:01:17,520
+behind it is embracing the Yagy
+
+31
+00:01:15,360 --> 00:01:18,960
+principle, which stands for you ain't
+
+32
+00:01:17,520 --> 00:01:21,360
+going to need it. It's actually a
+
+33
+00:01:18,960 --> 00:01:24,080
+software engineering idea from the '9s.
+
+34
+00:01:21,360 --> 00:01:26,400
+And the core idea of it is don't build
+
+35
+00:01:24,080 --> 00:01:28,560
+something until you actually need it.
+
+36
+00:01:26,400 --> 00:01:30,720
+Don't add an abstraction layer. Don't
+
+37
+00:01:28,560 --> 00:01:32,880
+install a library. Don't write the
+
+38
+00:01:30,720 --> 00:01:34,880
+class. If the problem can be solved
+
+39
+00:01:32,880 --> 00:01:37,280
+without it, then just solve it without
+
+40
+00:01:34,880 --> 00:01:39,759
+it. And Ponytail bakes that directly
+
+41
+00:01:37,280 --> 00:01:42,320
+into your agent by giving it a decision
+
+42
+00:01:39,759 --> 00:01:44,640
+ladder it has to climb before writing
+
+43
+00:01:42,320 --> 00:01:47,280
+anything. Does this need to exist at
+
+44
+00:01:44,640 --> 00:01:49,439
+all? Can a standard library handle it?
+
+45
+00:01:47,280 --> 00:01:51,920
+Is there a native platform feature for
+
+46
+00:01:49,439 --> 00:01:54,079
+this? Is there already a dependency
+
+47
+00:01:51,920 --> 00:01:57,280
+installed that does this? Can it be a
+
+48
+00:01:54,079 --> 00:01:59,920
+oneliner? Only if every single one of
+
+49
+00:01:57,280 --> 00:02:02,560
+those answers is a no, then it actually
+
+50
+00:01:59,920 --> 00:02:04,719
+writes new code. And even then, it just
+
+51
+00:02:02,560 --> 00:02:06,719
+keeps it to the minimum required to get
+
+52
+00:02:04,719 --> 00:02:09,360
+it working. And if we look at some of
+
+53
+00:02:06,719 --> 00:02:11,760
+their examples, especially the modal
+
+54
+00:02:09,360 --> 00:02:14,640
+dialogue example, we get a clear picture
+
+55
+00:02:11,760 --> 00:02:17,840
+of this methodology. A normal agent when
+
+56
+00:02:14,640 --> 00:02:20,160
+asked to add a modal dialogue for the
+
+57
+00:02:17,840 --> 00:02:23,440
+delete confirmation will immediately
+
+58
+00:02:20,160 --> 00:02:26,000
+reach for installing a radex UI library
+
+59
+00:02:23,440 --> 00:02:30,080
+like the React dialogue and give you a
+
+60
+00:02:26,000 --> 00:02:33,360
+dependency and a portal, an overlay, a
+
+61
+00:02:30,080 --> 00:02:35,680
+root, a trigger, a content wrapper just
+
+62
+00:02:33,360 --> 00:02:38,000
+to show a box with two buttons. But
+
+63
+00:02:35,680 --> 00:02:40,239
+Ponytail looks at this and says, "Hey,
+
+64
+00:02:38,000 --> 00:02:43,360
+the browser already has a dialogue
+
+65
+00:02:40,239 --> 00:02:46,080
+element. It traps focus automatically
+
+66
+00:02:43,360 --> 00:02:49,680
+and it closes on escape, renders a
+
+67
+00:02:46,080 --> 00:02:52,560
+backdrop with a single CSS selector and
+
+68
+00:02:49,680 --> 00:02:54,800
+it's supported in every major browser
+
+69
+00:02:52,560 --> 00:02:57,360
+since 20122.
+
+70
+00:02:54,800 --> 00:03:00,239
+So instead of 30 lines in an MPM
+
+71
+00:02:57,360 --> 00:03:02,879
+package, you get eight lines and zero
+
+72
+00:03:00,239 --> 00:03:05,280
+dependencies. And this little ponytail
+
+73
+00:03:02,879 --> 00:03:08,560
+comment right here tells you exactly
+
+74
+00:03:05,280 --> 00:03:11,120
+what it skipped and why it did that. So
+
+75
+00:03:08,560 --> 00:03:13,280
+if one day you actually decide to
+
+76
+00:03:11,120 --> 00:03:14,959
+upgrade it to the radex version or
+
+77
+00:03:13,280 --> 00:03:17,599
+something more fancier, you know where
+
+78
+00:03:14,959 --> 00:03:20,319
+to go and where it was deferred. So it's
+
+79
+00:03:17,599 --> 00:03:22,480
+lazy, but it's not irresponsible. And by
+
+80
+00:03:20,319 --> 00:03:25,440
+embracing this laziness, Ponytail claims
+
+81
+00:03:22,480 --> 00:03:27,920
+to be able to reduce your cost by 47 to
+
+82
+00:03:25,440 --> 00:03:29,920
+77%. And they actually give some
+
+83
+00:03:27,920 --> 00:03:31,840
+benchmarks behind this claim. So let's
+
+84
+00:03:29,920 --> 00:03:34,239
+look at them for a moment. We have three
+
+85
+00:03:31,840 --> 00:03:36,959
+methods here. using no skill, using
+
+86
+00:03:34,239 --> 00:03:40,400
+caveman and using ponytail and three
+
+87
+00:03:36,959 --> 00:03:42,879
+models and five everyday tasks. 10 runs
+
+88
+00:03:40,400 --> 00:03:45,360
+per cell and for each of them the median
+
+89
+00:03:42,879 --> 00:03:48,239
+result. And crucially, they also check
+
+90
+00:03:45,360 --> 00:03:50,640
+for correctness. A broken oneliner that
+
+91
+00:03:48,239 --> 00:03:53,280
+scores great on lines of code will fail
+
+92
+00:03:50,640 --> 00:03:55,840
+on correctness. So it's not just write
+
+93
+00:03:53,280 --> 00:03:57,840
+less stuff, it has to actually work. And
+
+94
+00:03:55,840 --> 00:04:00,319
+there's also an interesting caveat worth
+
+95
+00:03:57,840 --> 00:04:02,720
+noting. cost reflects singleshot calls
+
+96
+00:04:00,319 --> 00:04:04,560
+that resend the skill every time. In
+
+97
+00:04:02,720 --> 00:04:07,519
+other words, the benchmark works by
+
+98
+00:04:04,560 --> 00:04:10,159
+sending a fresh API call for each test
+
+99
+00:04:07,519 --> 00:04:12,400
+and every time it does that, it includes
+
+100
+00:04:10,159 --> 00:04:14,879
+the full ponytail rule set in the
+
+101
+00:04:12,400 --> 00:04:17,199
+prompt. So in the benchmark, ponytail is
+
+102
+00:04:14,879 --> 00:04:19,759
+being penalized for the cost of its own
+
+103
+00:04:17,199 --> 00:04:21,120
+instructions on every single test. In
+
+104
+00:04:19,759 --> 00:04:23,440
+real life, you pay for those
+
+105
+00:04:21,120 --> 00:04:25,440
+instructions roughly once per session
+
+106
+00:04:23,440 --> 00:04:29,040
+and after that they are cashed. That
+
+107
+00:04:25,440 --> 00:04:31,360
+means the 47 to 77% cheaper figure is
+
+108
+00:04:29,040 --> 00:04:33,759
+actually underelling it. In a real
+
+109
+00:04:31,360 --> 00:04:36,160
+working session spread across many
+
+110
+00:04:33,759 --> 00:04:38,320
+prompts, the cost advantage is even
+
+111
+00:04:36,160 --> 00:04:40,400
+bigger because that skill injection cost
+
+112
+00:04:38,320 --> 00:04:42,639
+gets amvertised across the whole
+
+113
+00:04:40,400 --> 00:04:44,880
+conversation. That said, there is a
+
+114
+00:04:42,639 --> 00:04:47,280
+legitimate critique worth mentioning. A
+
+115
+00:04:44,880 --> 00:04:49,680
+recently published blog post by Colin
+
+116
+00:04:47,280 --> 00:04:52,080
+Eberhart points out that if you actually
+
+117
+00:04:49,680 --> 00:04:55,280
+swap out ponytail for three simple
+
+118
+00:04:52,080 --> 00:04:57,759
+words, follow Yagy principles, the
+
+119
+00:04:55,280 --> 00:05:00,320
+results of that almost perfectly matched
+
+120
+00:04:57,759 --> 00:05:03,520
+Ponytail's benchmark score. And when
+
+121
+00:05:00,320 --> 00:05:06,240
+elaborating to seven words, follow Yagy
+
+122
+00:05:03,520 --> 00:05:08,400
+principles and oneliner solutions, it
+
+123
+00:05:06,240 --> 00:05:10,880
+actually beat the benchmark. So is
+
+124
+00:05:08,400 --> 00:05:13,120
+ponytail magic or is it just a well
+
+125
+00:05:10,880 --> 00:05:15,600
+packaged prompt? Well, honestly, that is
+
+126
+00:05:13,120 --> 00:05:18,000
+a fair question, but I would argue that
+
+127
+00:05:15,600 --> 00:05:20,080
+packaging is the product. You get the
+
+128
+00:05:18,000 --> 00:05:22,400
+right rules injected automatically
+
+129
+00:05:20,080 --> 00:05:25,199
+across different agents with commands,
+
+130
+00:05:22,400 --> 00:05:27,440
+audit tools, and a debt ledger on top.
+
+131
+00:05:25,199 --> 00:05:30,000
+Besides, Ponytail has other cool
+
+132
+00:05:27,440 --> 00:05:32,160
+features. Follow Yagy in your system
+
+133
+00:05:30,000 --> 00:05:34,560
+prompt doesn't give you the ponytail
+
+134
+00:05:32,160 --> 00:05:36,560
+audit feature or the ponytail review
+
+135
+00:05:34,560 --> 00:05:38,800
+feature. But now, let's test it out with
+
+136
+00:05:36,560 --> 00:05:41,759
+a simple example. So here I have two
+
+137
+00:05:38,800 --> 00:05:43,919
+claude code instances open and on one of
+
+138
+00:05:41,759 --> 00:05:46,800
+them I'm going to install the ponytail
+
+139
+00:05:43,919 --> 00:05:48,479
+plugin for the local scope only and the
+
+140
+00:05:46,800 --> 00:05:50,479
+other one will be a simple default
+
+141
+00:05:48,479 --> 00:05:52,479
+claude code instance with no plugins
+
+142
+00:05:50,479 --> 00:05:54,880
+activated. I will give them both the
+
+143
+00:05:52,479 --> 00:05:57,600
+same prompt to build a weather dashboard
+
+144
+00:05:54,880 --> 00:05:59,600
+app that detects user location and shows
+
+145
+00:05:57,600 --> 00:06:01,520
+current weather conditions along with
+
+146
+00:05:59,600 --> 00:06:04,319
+some other features. And I'm going to
+
+147
+00:06:01,520 --> 00:06:06,160
+run the same prompt on both instances
+
+148
+00:06:04,319 --> 00:06:08,560
+with the only exception that on the
+
+149
+00:06:06,160 --> 00:06:10,479
+ponytail one I'm going to also ask it to
+
+150
+00:06:08,560 --> 00:06:12,560
+use the ponytail skill because sometimes
+
+151
+00:06:10,479 --> 00:06:14,720
+it doesn't automatically pick it up. So
+
+152
+00:06:12,560 --> 00:06:16,800
+after a few moments we see that ponytail
+
+153
+00:06:14,720 --> 00:06:19,840
+version has already finished the task in
+
+154
+00:06:16,800 --> 00:06:22,160
+under 1 minute while the default one is
+
+155
+00:06:19,840 --> 00:06:24,960
+still crunching. And also we see a very
+
+156
+00:06:22,160 --> 00:06:27,440
+concise overview of what it built and
+
+157
+00:06:24,960 --> 00:06:29,919
+what Ponytail opted out of doing for
+
+158
+00:06:27,440 --> 00:06:32,560
+maximum efficiency. And as we can see
+
+159
+00:06:29,919 --> 00:06:35,520
+here, it chose to have everything in one
+
+160
+00:06:32,560 --> 00:06:38,080
+single HTML file. Meanwhile, on the
+
+161
+00:06:35,520 --> 00:06:40,479
+default window, the task was finished in
+
+162
+00:06:38,080 --> 00:06:42,720
+2 minutes and 30 seconds. And we can
+
+163
+00:06:40,479 --> 00:06:44,560
+already see that this version is much
+
+164
+00:06:42,720 --> 00:06:47,280
+more bloated. We have three separate
+
+165
+00:06:44,560 --> 00:06:50,080
+files. And this version is run using a
+
+166
+00:06:47,280 --> 00:06:52,639
+Python server. So, while this isn't in
+
+167
+00:06:50,080 --> 00:06:55,039
+no means a bad result, it's much more
+
+168
+00:06:52,639 --> 00:06:56,880
+overengineered than the first version.
+
+169
+00:06:55,039 --> 00:06:59,280
+But let's actually look how they
+
+170
+00:06:56,880 --> 00:07:01,680
+operate. So, first off, this is the
+
+171
+00:06:59,280 --> 00:07:04,319
+version without ponytail. And while the
+
+172
+00:07:01,680 --> 00:07:06,800
+app looks great and the UI is beautiful
+
+173
+00:07:04,319 --> 00:07:09,039
+and the API retrieves information as
+
+174
+00:07:06,800 --> 00:07:10,639
+expected, I am quite disappointed that
+
+175
+00:07:09,039 --> 00:07:13,520
+it didn't pick up my location
+
+176
+00:07:10,639 --> 00:07:15,840
+automatically as I asked and instead it
+
+177
+00:07:13,520 --> 00:07:18,319
+shows me London as the default first
+
+178
+00:07:15,840 --> 00:07:20,479
+result. But now if we hop on to the
+
+179
+00:07:18,319 --> 00:07:23,360
+ponytail version here, we can clearly
+
+180
+00:07:20,479 --> 00:07:25,759
+see that upon opening it, it asks to get
+
+181
+00:07:23,360 --> 00:07:28,160
+my current location and then outputs the
+
+182
+00:07:25,759 --> 00:07:30,639
+weather matching that location instead.
+
+183
+00:07:28,160 --> 00:07:33,840
+So while the UI is maybe not as fancy
+
+184
+00:07:30,639 --> 00:07:35,599
+and the app is maybe more bare bones, it
+
+185
+00:07:33,840 --> 00:07:37,759
+did follow the instructions more
+
+186
+00:07:35,599 --> 00:07:39,919
+precisely than the default version,
+
+187
+00:07:37,759 --> 00:07:42,319
+which is quite surprising to be honest.
+
+188
+00:07:39,919 --> 00:07:44,639
+And lastly, let's look at the usage. And
+
+189
+00:07:42,319 --> 00:07:47,919
+here we can see that yes indeed the
+
+190
+00:07:44,639 --> 00:07:50,319
+version with ponytail ended up being 50%
+
+191
+00:07:47,919 --> 00:07:53,039
+cheaper than the default version and it
+
+192
+00:07:50,319 --> 00:07:55,599
+also produced far less lines of code.
+
+193
+00:07:53,039 --> 00:07:57,840
+And as we just saw it was even better in
+
+194
+00:07:55,599 --> 00:08:00,319
+terms of functionality than the default
+
+195
+00:07:57,840 --> 00:08:03,280
+version. So this proves that ponytail
+
+196
+00:08:00,319 --> 00:08:05,759
+does indeed work as expected and it does
+
+197
+00:08:03,280 --> 00:08:07,919
+produce leaner code. So since this test
+
+198
+00:08:05,759 --> 00:08:10,319
+was so successful, I decided to do
+
+199
+00:08:07,919 --> 00:08:14,080
+something even more interesting. What if
+
+200
+00:08:10,319 --> 00:08:16,400
+I combine Caveman and Ponytail together
+
+201
+00:08:14,080 --> 00:08:19,039
+for maximum efficiency? What will that
+
+202
+00:08:16,400 --> 00:08:21,440
+give us? So this time I activated both
+
+203
+00:08:19,039 --> 00:08:23,680
+plugins in a new directory and ran the
+
+204
+00:08:21,440 --> 00:08:26,479
+same prompt again. And once again the
+
+205
+00:08:23,680 --> 00:08:29,039
+task was finished under a minute and the
+
+206
+00:08:26,479 --> 00:08:31,440
+output was fairly similar and I had all
+
+207
+00:08:29,039 --> 00:08:34,080
+the same functionality. So it worked as
+
+208
+00:08:31,440 --> 00:08:35,760
+expected. But if we look at the output,
+
+209
+00:08:34,080 --> 00:08:38,240
+it didn't differ too much from the
+
+210
+00:08:35,760 --> 00:08:41,039
+ponytail version. And the caveman plus
+
+211
+00:08:38,240 --> 00:08:42,880
+ponytail combo ended up being even
+
+212
+00:08:41,039 --> 00:08:45,519
+slightly more expensive than the
+
+213
+00:08:42,880 --> 00:08:47,600
+standalone ponytail version. So this
+
+214
+00:08:45,519 --> 00:08:50,000
+shows that combining them doesn't really
+
+215
+00:08:47,600 --> 00:08:52,240
+give you any big improvement. So you can
+
+216
+00:08:50,000 --> 00:08:55,040
+stick to just using caveman or better
+
+217
+00:08:52,240 --> 00:08:57,040
+yet opted out for using ponytail if we
+
+218
+00:08:55,040 --> 00:08:59,519
+can believe their benchmarks that it is
+
+219
+00:08:57,040 --> 00:09:01,680
+indeed better than caveman. So there you
+
+220
+00:08:59,519 --> 00:09:03,839
+have it folks. That is ponytail in a
+
+221
+00:09:01,680 --> 00:09:06,160
+nutshell. I am honestly genuinely
+
+222
+00:09:03,839 --> 00:09:08,560
+impressed by the positive output Claude
+
+223
+00:09:06,160 --> 00:09:10,720
+was able to produce with the ponytail
+
+224
+00:09:08,560 --> 00:09:12,959
+skill while cutting the bloat and
+
+225
+00:09:10,720 --> 00:09:15,120
+maintaining the quality at the same
+
+226
+00:09:12,959 --> 00:09:17,519
+time. I guess this just goes to show
+
+227
+00:09:15,120 --> 00:09:20,320
+that a lot of our coding solutions are
+
+228
+00:09:17,519 --> 00:09:23,040
+probably overengineered and sometimes
+
+229
+00:09:20,320 --> 00:09:25,040
+less is indeed more if you use it the
+
+230
+00:09:23,040 --> 00:09:27,760
+right way. So, I'm definitely going to
+
+231
+00:09:25,040 --> 00:09:30,399
+be keeping Ponytail as a plug-in in my
+
+232
+00:09:27,760 --> 00:09:32,480
+Claude Code setup and probably use it
+
+233
+00:09:30,399 --> 00:09:34,640
+for future projects. But what do you
+
+234
+00:09:32,480 --> 00:09:36,480
+think about Ponytail? Have you tried it?
+
+235
+00:09:34,640 --> 00:09:38,560
+Will you use it? Let us know in the
+
+236
+00:09:36,480 --> 00:09:40,240
+comments section down below. And folks,
+
+237
+00:09:38,560 --> 00:09:41,920
+if you like these types of technical
+
+238
+00:09:40,240 --> 00:09:43,760
+breakdowns, please let me know by
+
+239
+00:09:41,920 --> 00:09:45,839
+smashing that like button underneath the
+
+240
+00:09:43,760 --> 00:09:47,839
+video. And also, don't forget to
+
+241
+00:09:45,839 --> 00:09:49,839
+subscribe to our channel. This has been
+
+242
+00:09:47,839 --> 00:09:55,399
+Andress from Better Stack, and I will
+
+243
+00:09:49,839 --> 00:09:55,399
+see you in the next videos. Heat.
+
+244
+00:10:01,519 --> 00:10:04,519
+Heat.

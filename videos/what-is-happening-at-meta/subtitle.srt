@@ -1,0 +1,1607 @@
+1
+00:00:00,000 --> 00:00:03,840
+The meta situation is actually somehow
+
+2
+00:00:02,440 --> 00:00:05,800
+worse. For those that don't know
+
+3
+00:00:03,840 --> 00:00:07,400
+anything about meta, Facebook, or the
+
+4
+00:00:05,800 --> 00:00:10,080
+Instagram situation, let me just give
+
+5
+00:00:07,400 --> 00:00:12,800
+you a quick uh speed run of its history.
+
+6
+00:00:10,080 --> 00:00:14,800
+Facebook went super hard in VR, then
+
+7
+00:00:12,800 --> 00:00:17,000
+found out, "Yo, VR is not actually where
+
+8
+00:00:14,800 --> 00:00:18,520
+it's at. It's all about AI." And then
+
+9
+00:00:17,000 --> 00:00:21,080
+decided that it's going to fire a
+
+10
+00:00:18,520 --> 00:00:23,800
+roughly 10% of its company or 8,000
+
+11
+00:00:21,080 --> 00:00:25,600
+employees and focus super hard on AI.
+
+12
+00:00:23,800 --> 00:00:27,640
+And a part of that focusing super hard
+
+13
+00:00:25,600 --> 00:00:29,800
+on AI, it's going to record everybody's
+
+14
+00:00:27,640 --> 00:00:31,840
+desktop and everything you do and then
+
+15
+00:00:29,800 --> 00:00:33,360
+feed that to the AI. Not only that, it's
+
+16
+00:00:31,840 --> 00:00:35,560
+going to create a new organization,
+
+17
+00:00:33,360 --> 00:00:37,840
+Applied AI, where it's going to put
+
+18
+00:00:35,560 --> 00:00:39,440
+approximately 10% of the company into
+
+19
+00:00:37,840 --> 00:00:42,040
+it, where they're going to help train
+
+20
+00:00:39,440 --> 00:00:43,960
+and make the next generation of AI. Of
+
+21
+00:00:42,040 --> 00:00:45,960
+course, during all this, is Zuckerberg
+
+22
+00:00:43,960 --> 00:00:48,320
+on a phone call called everybody super
+
+23
+00:00:45,960 --> 00:00:50,040
+highly intelligent, the most high-IQ
+
+24
+00:00:48,320 --> 00:00:52,080
+people in the valley. And then after
+
+25
+00:00:50,040 --> 00:00:53,520
+saying all of that, said that the reason
+
+26
+00:00:52,080 --> 00:00:55,920
+why they're recording your desktop and
+
+27
+00:00:53,520 --> 00:00:58,200
+not telling you why is because it's for
+
+28
+00:00:55,920 --> 00:01:00,640
+your own best interest.
+
+29
+00:00:58,200 --> 00:01:02,760
+>> Not strategically in your interest for
+
+30
+00:01:00,640 --> 00:01:04,400
+us to communicate everything like in all
+
+31
+00:01:02,760 --> 00:01:04,960
+the detail that we normally would on
+
+32
+00:01:04,400 --> 00:01:07,360
+this.
+
+33
+00:01:04,960 --> 00:01:08,960
+>> But now, the internals are coming out.
+
+34
+00:01:07,360 --> 00:01:11,240
+Employees are coming forward and
+
+35
+00:01:08,960 --> 00:01:13,280
+speaking about what's actually going on
+
+36
+00:01:11,240 --> 00:01:15,320
+inside of Facebook. They They does not
+
+37
+00:01:13,280 --> 00:01:17,760
+look good. It does not look good at all.
+
+38
+00:01:15,320 --> 00:01:20,360
+In fact, this is somehow the least bad
+
+39
+00:01:17,760 --> 00:01:23,040
+thing coming out of Facebook, which is
+
+40
+00:01:20,360 --> 00:01:25,920
+they just shipped JSON that's not even
+
+41
+00:01:23,040 --> 00:01:28,800
+possible to production. The golden age
+
+42
+00:01:25,920 --> 00:01:30,840
+of slop has arrived and it's happening
+
+43
+00:01:28,800 --> 00:01:33,800
+right now live at Facebook. But the
+
+44
+00:01:30,840 --> 00:01:35,440
+internal employee morale is even worse
+
+45
+00:01:33,800 --> 00:01:37,360
+than this. Like imagine working at a
+
+46
+00:01:35,440 --> 00:01:39,440
+place where they're like, "You ain't got
+
+47
+00:01:37,360 --> 00:01:42,000
+time to set up a CI/CD pipeline to make
+
+48
+00:01:39,440 --> 00:01:43,840
+sure JSON parses." That's where we're
+
+49
+00:01:42,000 --> 00:01:45,120
+at. But first, I'd like to say a quick
+
+50
+00:01:43,840 --> 00:01:48,280
+thank you to the sponsors.
+
+51
+00:01:45,120 --> 00:01:50,320
+>> Hey, is that HTTP? Get that out of here.
+
+52
+00:01:48,280 --> 00:01:53,240
+That's not how we order coffee. We order
+
+53
+00:01:50,320 --> 00:01:55,120
+coffee via SSH, terminal.shop. Yeah, you
+
+54
+00:01:53,240 --> 00:01:57,240
+want a real experience? You want real
+
+55
+00:01:55,120 --> 00:01:59,320
+coffee? You want awesome subscription so
+
+56
+00:01:57,240 --> 00:02:01,840
+you never have to remember again? Oh,
+
+57
+00:01:59,320 --> 00:02:05,080
+you want exclusive blends with exclusive
+
+58
+00:02:01,840 --> 00:02:08,080
+coffee and exclusive content? Then check
+
+59
+00:02:05,080 --> 00:02:11,520
+out Crown. You don't know what SSH is?
+
+60
+00:02:08,080 --> 00:02:11,520
+Well, maybe the coffee is not for you.
+
+61
+00:02:12,311 --> 00:02:14,331
+>> [music]
+
+62
+00:02:19,080 --> 00:02:21,000
+>> All right, thank you. The best way to
+
+63
+00:02:20,000 --> 00:02:22,640
+support the channel, check out the
+
+64
+00:02:21,000 --> 00:02:25,320
+sponsors. Links down in the description.
+
+65
+00:02:22,640 --> 00:02:26,560
+Okay, so welcome back. Let's talk about
+
+66
+00:02:25,320 --> 00:02:28,120
+this. We're going to look at this by
+
+67
+00:02:26,560 --> 00:02:30,560
+looking at what the employees are
+
+68
+00:02:28,120 --> 00:02:32,400
+saying. I am going to both laugh at the
+
+69
+00:02:30,560 --> 00:02:33,880
+situation and make fun of an employee or
+
+70
+00:02:32,400 --> 00:02:35,959
+two for this because they describe
+
+71
+00:02:33,880 --> 00:02:38,120
+things rather ridiculously. But then
+
+72
+00:02:35,959 --> 00:02:40,040
+we're going to look at how the company
+
+73
+00:02:38,120 --> 00:02:41,959
+is talking about it. How the management
+
+74
+00:02:40,040 --> 00:02:44,959
+is talking about it, which is also
+
+75
+00:02:41,959 --> 00:02:47,440
+somehow super ridiculous and is even
+
+76
+00:02:44,959 --> 00:02:48,959
+more nuts than how the employees look at
+
+77
+00:02:47,440 --> 00:02:50,200
+it. Now, a lot of this information comes
+
+78
+00:02:48,959 --> 00:02:51,280
+from the Wired article. You got to go
+
+79
+00:02:50,200 --> 00:02:52,959
+check it out. It's linked in the
+
+80
+00:02:51,280 --> 00:02:55,720
+description. But it starts off with the
+
+81
+00:02:52,959 --> 00:02:58,360
+title of tell him he's a piece of
+
+82
+00:02:55,720 --> 00:03:00,320
+Meta's new AI unit is a total mess. Yes,
+
+83
+00:02:58,360 --> 00:03:02,320
+it is absolutely a total mess. So now
+
+84
+00:03:00,320 --> 00:03:05,200
+that that little quote, that little line
+
+85
+00:03:02,320 --> 00:03:08,239
+comes from actually a live town hall in
+
+86
+00:03:05,200 --> 00:03:10,680
+which thousands of employees were all in
+
+87
+00:03:08,239 --> 00:03:12,840
+a single meeting video call with some
+
+88
+00:03:10,680 --> 00:03:15,040
+present presenters going over some sort
+
+89
+00:03:12,840 --> 00:03:17,120
+of information. Someone just joins,
+
+90
+00:03:15,040 --> 00:03:20,080
+flips out a mic, goes hot mic and is
+
+91
+00:03:17,120 --> 00:03:22,400
+just lets out a four-letter rant for the
+
+92
+00:03:20,080 --> 00:03:25,560
+ages finishing up with hey, you know the
+
+93
+00:03:22,400 --> 00:03:27,959
+meta AI executives? Yo, go tell Go tell
+
+94
+00:03:25,560 --> 00:03:29,640
+him he's a piece of Imagine being
+
+95
+00:03:27,959 --> 00:03:31,239
+in that call because the presenters, it
+
+96
+00:03:29,640 --> 00:03:33,400
+even says one of the presenters covered
+
+97
+00:03:31,239 --> 00:03:35,720
+their faces with their hands. A
+
+98
+00:03:33,400 --> 00:03:37,040
+according to a witness. Of course, you
+
+99
+00:03:35,720 --> 00:03:39,080
+know why they were covering their faces.
+
+100
+00:03:37,040 --> 00:03:40,640
+They were laughing, okay? You can't You
+
+101
+00:03:39,080 --> 00:03:42,600
+can't be showing all the people that
+
+102
+00:03:40,640 --> 00:03:44,120
+you're laughing at some profanity-laced
+
+103
+00:03:42,600 --> 00:03:45,600
+AI rant, especially when you're the one
+
+104
+00:03:44,120 --> 00:03:46,800
+presenting. You just got to You just got
+
+105
+00:03:45,600 --> 00:03:48,320
+to cover your face and pretend it
+
+106
+00:03:46,800 --> 00:03:50,760
+doesn't happen. So what's happening is
+
+107
+00:03:48,320 --> 00:03:53,400
+since April a new org has has formed in
+
+108
+00:03:50,760 --> 00:03:54,920
+which about 6,500 employees have joined.
+
+109
+00:03:53,400 --> 00:03:56,760
+Now, they have joined in waves, and it's
+
+110
+00:03:54,920 --> 00:03:59,040
+described as this. The organization has
+
+111
+00:03:56,760 --> 00:04:00,840
+grown in batches since early April. It's
+
+112
+00:03:59,040 --> 00:04:04,240
+crazy to watch people experience the
+
+113
+00:04:00,840 --> 00:04:06,880
+shock of it as each wave comes in. So,
+
+114
+00:04:04,240 --> 00:04:08,880
+this organization is not necessarily
+
+115
+00:04:06,880 --> 00:04:10,600
+known for being fantastic. So, what's
+
+116
+00:04:08,880 --> 00:04:12,959
+actually happening is that they're
+
+117
+00:04:10,600 --> 00:04:14,959
+taking all of their talented engineers,
+
+118
+00:04:12,959 --> 00:04:17,200
+right? These really top talented the
+
+119
+00:04:14,959 --> 00:04:19,519
+best, the most intelligent engineers
+
+120
+00:04:17,200 --> 00:04:21,120
+that are possible at Facebook, and
+
+121
+00:04:19,519 --> 00:04:23,360
+they're assembling them into this team,
+
+122
+00:04:21,120 --> 00:04:25,640
+and they're given about two tasks per
+
+123
+00:04:23,360 --> 00:04:27,600
+week to finish. And these tasks, they
+
+124
+00:04:25,640 --> 00:04:29,760
+involve generating complex software
+
+125
+00:04:27,600 --> 00:04:31,160
+coding problems to help AI scientists
+
+126
+00:04:29,760 --> 00:04:33,120
+better train and evaluate the
+
+127
+00:04:31,160 --> 00:04:35,360
+performance of the latest frontier
+
+128
+00:04:33,120 --> 00:04:37,480
+models. Meaning, they're not actually
+
+129
+00:04:35,360 --> 00:04:40,200
+solving or building anything real.
+
+130
+00:04:37,480 --> 00:04:43,080
+They're coming up with toy examples, toy
+
+131
+00:04:40,200 --> 00:04:45,320
+coding problems, and actually
+
+132
+00:04:43,080 --> 00:04:48,080
+like using their collective power of
+
+133
+00:04:45,320 --> 00:04:51,919
+thousands of engineers to create the
+
+134
+00:04:48,080 --> 00:04:54,240
+ideal coding examples to train the AI.
+
+135
+00:04:51,919 --> 00:04:56,360
+So, that means that employees, not only
+
+136
+00:04:54,240 --> 00:04:57,760
+are they getting their screens recorded,
+
+137
+00:04:56,360 --> 00:04:59,640
+which by the way, just in case you're
+
+138
+00:04:57,760 --> 00:05:01,360
+wondering, the screen recording, the
+
+139
+00:04:59,640 --> 00:05:03,000
+company has scaled the program back
+
+140
+00:05:01,360 --> 00:05:05,240
+slightly, allowing employees to pause
+
+141
+00:05:03,000 --> 00:05:07,240
+the data collection for up to 30 minutes
+
+142
+00:05:05,240 --> 00:05:08,400
+and request specific exemptions. So,
+
+143
+00:05:07,240 --> 00:05:10,040
+just in case they want to do a little
+
+144
+00:05:08,400 --> 00:05:11,880
+bit of Twitter following or whatever or
+
+145
+00:05:10,040 --> 00:05:14,320
+whatever goes on for 30 minutes on an
+
+146
+00:05:11,880 --> 00:05:16,320
+employee laptop that I do not care to
+
+147
+00:05:14,320 --> 00:05:18,320
+want to know, they're just asking for
+
+148
+00:05:16,320 --> 00:05:19,919
+some exemptions, and Facebook has
+
+149
+00:05:18,320 --> 00:05:21,240
+granted it in their infinite wisdom.
+
+150
+00:05:19,919 --> 00:05:24,280
+Facebook is not only recording the
+
+151
+00:05:21,240 --> 00:05:27,280
+desktops, they have thousands of people
+
+152
+00:05:24,280 --> 00:05:29,320
+handcrafting curated beautiful coding
+
+153
+00:05:27,280 --> 00:05:31,160
+challenges to make the greatest coding
+
+154
+00:05:29,320 --> 00:05:34,160
+robot of all time. Like they are
+
+155
+00:05:31,160 --> 00:05:36,720
+literally hiring and making it explicit.
+
+156
+00:05:34,160 --> 00:05:38,400
+They're trying to figure out a way to
+
+157
+00:05:36,720 --> 00:05:39,960
+replace employees, and all these
+
+158
+00:05:38,400 --> 00:05:42,520
+employees work on it. They're They're
+
+159
+00:05:39,960 --> 00:05:44,600
+They're actually trying their darndest.
+
+160
+00:05:42,520 --> 00:05:46,120
+But, how do the engineers feel about
+
+161
+00:05:44,600 --> 00:05:48,640
+this? Well, the engineers selected for
+
+162
+00:05:46,120 --> 00:05:50,000
+the unit have no choice to join or leave
+
+163
+00:05:48,640 --> 00:05:52,040
+the company. That's right. So, if you
+
+164
+00:05:50,000 --> 00:05:54,240
+were an engineer and you were working on
+
+165
+00:05:52,040 --> 00:05:56,200
+say some social media feature for the
+
+166
+00:05:54,240 --> 00:05:58,400
+billions of users of WhatsApp,
+
+167
+00:05:56,200 --> 00:05:59,600
+Instagram, or Facebook, they say, "Hey,
+
+168
+00:05:58,400 --> 00:06:01,240
+by the way,
+
+169
+00:05:59,600 --> 00:06:02,320
+you're in on the new program." And if
+
+170
+00:06:01,240 --> 00:06:03,240
+you say, "I don't want to be in on the
+
+171
+00:06:02,320 --> 00:06:05,160
+new program." They're like, "All right,
+
+172
+00:06:03,240 --> 00:06:07,400
+then leave the company, idiot." An
+
+173
+00:06:05,160 --> 00:06:08,720
+unusual requirement for a highly valued
+
+174
+00:06:07,400 --> 00:06:10,600
+technical employees in the Silicon
+
+175
+00:06:08,720 --> 00:06:13,040
+Valley. That's led some members of the
+
+176
+00:06:10,600 --> 00:06:16,440
+applied AI to describe themselves as
+
+177
+00:06:13,040 --> 00:06:18,720
+draftees. Yes, the employees are
+
+178
+00:06:16,440 --> 00:06:21,040
+actually comparing themselves like this
+
+179
+00:06:18,720 --> 00:06:22,524
+is their Vietnam. They're like, "Bro,
+
+180
+00:06:21,040 --> 00:06:23,040
+it's Vie-
+
+181
+00:06:22,524 --> 00:06:24,400
+>> [laughter]
+
+182
+00:06:23,040 --> 00:06:26,680
+>> I actually can't even say that with a
+
+183
+00:06:24,400 --> 00:06:28,560
+straight face. It's so ridiculous. Like
+
+184
+00:06:26,680 --> 00:06:30,560
+they're actually being forced into this
+
+185
+00:06:28,560 --> 00:06:33,520
+thing or being fired and they're calling
+
+186
+00:06:30,560 --> 00:06:36,600
+themselves draftees. It is
+
+187
+00:06:33,520 --> 00:06:38,280
+It is absolute cinema over there. This,
+
+188
+00:06:36,600 --> 00:06:40,680
+of course, led to one employee saying,
+
+189
+00:06:38,280 --> 00:06:42,800
+"It's literally the gulag.
+
+190
+00:06:40,680 --> 00:06:44,800
+You have zero purpose in life all of a
+
+191
+00:06:42,800 --> 00:06:47,480
+sudden. You barely interact with anyone.
+
+192
+00:06:44,800 --> 00:06:49,440
+You just have these tasks every week."
+
+193
+00:06:47,480 --> 00:06:50,760
+Now, I I do admit that does sound awful.
+
+194
+00:06:49,440 --> 00:06:52,760
+That does not sound like some kind of
+
+195
+00:06:50,760 --> 00:06:54,800
+fulfilling job where you're just simply
+
+196
+00:06:52,760 --> 00:06:56,840
+trying to develop whatever that coding
+
+197
+00:06:54,800 --> 00:06:58,360
+challenge is that you have to develop
+
+198
+00:06:56,840 --> 00:07:01,240
+and you're just kind of answering to
+
+199
+00:06:58,360 --> 00:07:02,680
+this amorphous blob of AI scientists in
+
+200
+00:07:01,240 --> 00:07:04,480
+which you have no light into. You have
+
+201
+00:07:02,680 --> 00:07:05,800
+no real meaning or impact at your job.
+
+202
+00:07:04,480 --> 00:07:07,960
+You have no idea if you're affecting
+
+203
+00:07:05,800 --> 00:07:09,160
+anybody or nobody. And you actually
+
+204
+00:07:07,960 --> 00:07:10,919
+don't even know if you're training your
+
+205
+00:07:09,160 --> 00:07:13,040
+replacement or not. Like I get that.
+
+206
+00:07:10,919 --> 00:07:15,120
+That would not be that great. I would
+
+207
+00:07:13,040 --> 00:07:16,480
+probably find myself pretty unhappy and
+
+208
+00:07:15,120 --> 00:07:19,440
+probably applying around at some
+
+209
+00:07:16,480 --> 00:07:22,440
+different jobs. But to describe it as a
+
+210
+00:07:19,440 --> 00:07:24,360
+gulag, the gulag, just in case anybody's
+
+211
+00:07:22,440 --> 00:07:27,080
+wondering, is best known for random
+
+212
+00:07:24,360 --> 00:07:30,040
+beatings, brutalized torture, high
+
+213
+00:07:27,080 --> 00:07:32,240
+amounts of starvation, absolute exposure
+
+214
+00:07:30,040 --> 00:07:33,920
+to the elements, and lots of diseases
+
+215
+00:07:32,240 --> 00:07:34,160
+and public defecation. Like
+
+216
+00:07:33,920 --> 00:07:36,800
+>> [laughter]
+
+217
+00:07:34,160 --> 00:07:40,080
+>> it is I hate to break this to you, but
+
+218
+00:07:36,800 --> 00:07:43,840
+your sushi lunches and like not
+
+219
+00:07:40,080 --> 00:07:45,055
+meaningful work is just not the same as
+
+220
+00:07:43,840 --> 00:07:46,120
+a gulag.
+
+221
+00:07:45,055 --> 00:07:48,600
+>> [laughter]
+
+222
+00:07:46,120 --> 00:07:49,840
+>> I can't I can't I can't even believe it.
+
+223
+00:07:48,600 --> 00:07:51,240
+I can't believe it. I can't believe I'm
+
+224
+00:07:49,840 --> 00:07:53,600
+defending
+
+225
+00:07:51,240 --> 00:07:54,960
+Facebook [laughter] in this situation.
+
+226
+00:07:53,600 --> 00:07:56,440
+Another employees describe some of these
+
+227
+00:07:54,960 --> 00:07:58,280
+tasks generating puzzles to test how
+
+228
+00:07:56,440 --> 00:08:00,200
+reliable AI models from Meta and other
+
+229
+00:07:58,280 --> 00:08:01,840
+companies can solve them. As easy as
+
+230
+00:08:00,200 --> 00:08:03,640
+compared to software development work
+
+231
+00:08:01,840 --> 00:08:06,040
+they had been doing previously, but the
+
+232
+00:08:03,640 --> 00:08:08,240
+new projects feel menial and almost all
+
+233
+00:08:06,040 --> 00:08:10,400
+employees seem unhappy, they say. Most
+
+234
+00:08:08,240 --> 00:08:12,280
+people find their work soul-crushing, a
+
+235
+00:08:10,400 --> 00:08:13,480
+third employee says. All right, I can't
+
+236
+00:08:12,280 --> 00:08:15,400
+actually make fun of the employees
+
+237
+00:08:13,480 --> 00:08:17,040
+anymore. Like I do understand that
+
+238
+00:08:15,400 --> 00:08:18,640
+boring work can be really, really
+
+239
+00:08:17,040 --> 00:08:20,320
+frustrating. I do remember sitting in my
+
+240
+00:08:18,640 --> 00:08:22,400
+car and actually being like, "God, help
+
+241
+00:08:20,320 --> 00:08:23,880
+me have the patience to do the work at
+
+242
+00:08:22,400 --> 00:08:25,680
+my job." Cuz I too worked at a
+
+243
+00:08:23,880 --> 00:08:26,800
+soul-crushing company for quite some
+
+244
+00:08:25,680 --> 00:08:29,000
+time and
+
+245
+00:08:26,800 --> 00:08:31,120
+like I In some sense, I do get that
+
+246
+00:08:29,000 --> 00:08:32,880
+feeling, but it does seem
+
+247
+00:08:31,120 --> 00:08:35,280
+it does seem a little overblown there.
+
+248
+00:08:32,880 --> 00:08:37,599
+But how is management responding to all
+
+249
+00:08:35,280 --> 00:08:39,360
+this? During a meeting this week to all
+
+250
+00:08:37,599 --> 00:08:41,240
+employees at Instagram, and Meta chief
+
+251
+00:08:39,360 --> 00:08:43,039
+product officer Chris Cox addressed the
+
+252
+00:08:41,240 --> 00:08:45,160
+difficult and brutal environment created
+
+253
+00:08:43,039 --> 00:08:46,520
+by the insanity of this company in the
+
+254
+00:08:45,160 --> 00:08:49,120
+past few months, according to the
+
+255
+00:08:46,520 --> 00:08:50,640
+recording heard by Wired. Cox applauded
+
+256
+00:08:49,120 --> 00:08:52,440
+the Instagram employees for launching
+
+257
+00:08:50,640 --> 00:08:54,560
+features and serving around 2 billion
+
+258
+00:08:52,440 --> 00:08:56,680
+users amid what he compared to running a
+
+259
+00:08:54,560 --> 00:08:58,839
+marathon in the middle of a hailstorm,
+
+260
+00:08:56,680 --> 00:09:01,560
+and then like your teammates get
+
+261
+00:08:58,839 --> 00:09:03,520
+replaced, and then we're recording you.
+
+262
+00:09:01,560 --> 00:09:05,360
+I mean, hey, at least at least he's
+
+263
+00:09:03,520 --> 00:09:06,440
+somewhat honest about the situation. But
+
+264
+00:09:05,360 --> 00:09:09,480
+then, you know what he says right
+
+265
+00:09:06,440 --> 00:09:11,400
+afterwards? He gives a fantastic summary
+
+266
+00:09:09,480 --> 00:09:13,760
+of AI. Cox said that he needed to reckon
+
+267
+00:09:11,400 --> 00:09:15,839
+with how he and other leaders could get
+
+268
+00:09:13,760 --> 00:09:17,800
+in touch with the company again and not
+
+269
+00:09:15,839 --> 00:09:19,960
+be over-earnest about the power of AI.
+
+270
+00:09:17,800 --> 00:09:22,200
+It is neither God nor it's the devil, he
+
+271
+00:09:19,960 --> 00:09:23,760
+said. It's nowhere near as good as you
+
+272
+00:09:22,200 --> 00:09:25,800
+think it is, and it's nowhere near as
+
+273
+00:09:23,760 --> 00:09:27,920
+bad as you think it is, and it changes
+
+274
+00:09:25,800 --> 00:09:29,680
+every day, and it doesn't know what day
+
+275
+00:09:27,920 --> 00:09:31,600
+of the week it is. Hey, not bad, Chris
+
+276
+00:09:29,680 --> 00:09:33,280
+Cox, good save. But what is the company
+
+277
+00:09:31,600 --> 00:09:34,960
+doing? Now, this is, I think, the
+
+278
+00:09:33,280 --> 00:09:36,440
+largest failure of this entire
+
+279
+00:09:34,960 --> 00:09:39,320
+situation. Okay, listen to this.
+
+280
+00:09:36,440 --> 00:09:41,600
+Zuckerberg reiterated a vow not to carry
+
+281
+00:09:39,320 --> 00:09:42,520
+out additional mass layoffs this year.
+
+282
+00:09:41,600 --> 00:09:44,400
+Okay,
+
+283
+00:09:42,520 --> 00:09:45,800
+so he's letting you know, you got 6
+
+284
+00:09:44,400 --> 00:09:48,520
+months of peace. By the way, just saying
+
+285
+00:09:45,800 --> 00:09:49,720
+it that way is so nuts. Like he's even
+
+286
+00:09:48,520 --> 00:09:51,640
+he's saying, "Hey, we're going to
+
+287
+00:09:49,720 --> 00:09:53,640
+probably lay off more people, just not
+
+288
+00:09:51,640 --> 00:09:55,160
+right now." He introduced a plan to
+
+289
+00:09:53,640 --> 00:09:57,000
+limit the number of employees per
+
+290
+00:09:55,160 --> 00:09:59,240
+manager, which some teams, such as
+
+291
+00:09:57,000 --> 00:10:02,560
+Applied AI, had deliberately ballooned
+
+292
+00:09:59,240 --> 00:10:04,880
+to a ratio of 50 to 1. That's That
+
+293
+00:10:02,560 --> 00:10:06,320
+number makes no sense. Like Jensen Huang
+
+294
+00:10:04,880 --> 00:10:09,240
+doesn't even have that many, and he's
+
+295
+00:10:06,320 --> 00:10:11,920
+considered the most unusual CEO of a
+
+296
+00:10:09,240 --> 00:10:14,400
+company of all time. Like how does this
+
+297
+00:10:11,920 --> 00:10:17,360
+even happen on a team? Like how do you
+
+298
+00:10:14,400 --> 00:10:19,760
+even organize or do anything with 50
+
+299
+00:10:17,360 --> 00:10:22,680
+direct reports? So, the big plan, of
+
+300
+00:10:19,760 --> 00:10:24,680
+course, is more money for team events,
+
+301
+00:10:22,680 --> 00:10:26,520
+which, of course, everybody knows team
+
+302
+00:10:24,680 --> 00:10:28,360
+events is really what makes you happy.
+
+303
+00:10:26,520 --> 00:10:30,600
+You know, like nothing's better than
+
+304
+00:10:28,360 --> 00:10:32,880
+spending a little extra time at the
+
+305
+00:10:30,600 --> 00:10:34,640
+office and getting something bougie out
+
+306
+00:10:32,880 --> 00:10:36,320
+of it, right? Like that's that's what
+
+307
+00:10:34,640 --> 00:10:38,520
+makes you a good employee. And the other
+
+308
+00:10:36,320 --> 00:10:40,560
+one, of course, is a hackathon designed
+
+309
+00:10:38,520 --> 00:10:42,400
+to bring the company back together
+
+310
+00:10:40,560 --> 00:10:43,839
+again. Now, let's not We I don't think
+
+311
+00:10:42,400 --> 00:10:46,080
+we have to think too hard about this
+
+312
+00:10:43,839 --> 00:10:47,720
+one, okay? I think we could both see the
+
+313
+00:10:46,080 --> 00:10:49,560
+problem with this.
+
+314
+00:10:47,720 --> 00:10:52,920
+Now, imagine for a second, you're at a
+
+315
+00:10:49,560 --> 00:10:55,720
+company in which you've been drafted
+
+316
+00:10:52,920 --> 00:10:58,040
+into a new organization, you're doing
+
+317
+00:10:55,720 --> 00:10:59,760
+menial work you're not happy about,
+
+318
+00:10:58,040 --> 00:11:01,680
+you're getting a lot of tasks you feel
+
+319
+00:10:59,760 --> 00:11:03,640
+like you have no insight into it, a
+
+320
+00:11:01,680 --> 00:11:05,000
+bunch of your, you know, co-employees
+
+321
+00:11:03,640 --> 00:11:07,520
+have all been fired. So, what does
+
+322
+00:11:05,000 --> 00:11:10,600
+management do? Hey, everybody, let's
+
+323
+00:11:07,520 --> 00:11:13,160
+recreate Navy SEALs Hell Week, except
+
+324
+00:11:10,600 --> 00:11:16,520
+instead of trouncing through the ocean
+
+325
+00:11:13,160 --> 00:11:18,960
+sand, we are instead going to be hacking
+
+326
+00:11:16,520 --> 00:11:20,760
+on the products you already work on
+
+327
+00:11:18,960 --> 00:11:22,600
+nonstop for a week. We're going to call
+
+328
+00:11:20,760 --> 00:11:25,640
+it a hackathon, and then everybody's
+
+329
+00:11:22,600 --> 00:11:27,640
+going to get pizza and an award at the
+
+330
+00:11:25,640 --> 00:11:30,000
+end of it. How
+
+331
+00:11:27,640 --> 00:11:33,200
+do you not see that that's not going
+
+332
+00:11:30,000 --> 00:11:34,840
+going a good idea? Okay, like I am I am
+
+333
+00:11:33,200 --> 00:11:38,160
+no Nostradamus,
+
+334
+00:11:34,840 --> 00:11:41,120
+but hackathons aren't great when people
+
+335
+00:11:38,160 --> 00:11:43,640
+feel burnt out, okay? This is not a way
+
+336
+00:11:41,120 --> 00:11:45,080
+to win the employees. Anyways, I just
+
+337
+00:11:43,640 --> 00:11:47,880
+thought this was so funny because we're
+
+338
+00:11:45,080 --> 00:11:50,200
+watching in real time one of the largest
+
+339
+00:11:47,880 --> 00:11:52,280
+companies on Earth slowly implode in on
+
+340
+00:11:50,200 --> 00:11:55,080
+itself. Now, will it actually implode in
+
+341
+00:11:52,280 --> 00:11:58,160
+on itself? I don't know. Right now, it's
+
+342
+00:11:55,080 --> 00:12:00,760
+set on pace to exceed uh Google for ad
+
+343
+00:11:58,160 --> 00:12:03,400
+revenue. It is by all accounts
+
+344
+00:12:00,760 --> 00:12:05,840
+absolutely just making hand over fist
+
+345
+00:12:03,400 --> 00:12:07,960
+money. So, will it actually implode? I
+
+346
+00:12:05,840 --> 00:12:10,280
+don't know. But, will it lose a lot of
+
+347
+00:12:07,960 --> 00:12:12,640
+the top-tier talent? Likely. And now,
+
+348
+00:12:10,280 --> 00:12:15,440
+will that lead it into such a technical
+
+349
+00:12:12,640 --> 00:12:16,880
+disaster that it has no other choice but
+
+350
+00:12:15,440 --> 00:12:18,200
+people leaving the platform for
+
+351
+00:12:16,880 --> 00:12:20,680
+somewhere else? Now, that is actually a
+
+352
+00:12:18,200 --> 00:12:22,680
+real situation. Again, hundreds of
+
+353
+00:12:20,680 --> 00:12:25,840
+thousands of Down Detector reports,
+
+354
+00:12:22,680 --> 00:12:28,640
+Facebook absolutely crashing, and JSON
+
+355
+00:12:25,840 --> 00:12:31,680
+lexical errors being brought to the
+
+356
+00:12:28,640 --> 00:12:33,880
+front end, letting you know that a JSON
+
+357
+00:12:31,680 --> 00:12:35,920
+cannot be parsed. This cannot be a
+
+358
+00:12:33,880 --> 00:12:40,240
+coincidence, okay? This cannot be a
+
+359
+00:12:35,920 --> 00:12:43,400
+coincidence. Deep employee morale hits,
+
+360
+00:12:40,240 --> 00:12:46,560
+plus increasing instability, plus
+
+361
+00:12:43,400 --> 00:12:48,360
+increasingly weird management decisions,
+
+362
+00:12:46,560 --> 00:12:50,400
+all are going to come together just to
+
+363
+00:12:48,360 --> 00:12:51,920
+create some of the worst products on
+
+364
+00:12:50,400 --> 00:12:52,839
+Earth. I just wanted to talk about this
+
+365
+00:12:51,920 --> 00:12:54,240
+because
+
+366
+00:12:52,839 --> 00:12:55,640
+it's just shocking to see. You know, as
+
+367
+00:12:54,240 --> 00:12:57,600
+somebody who worked in the Valley,
+
+368
+00:12:55,640 --> 00:12:59,400
+Facebook at one time was considered a
+
+369
+00:12:57,600 --> 00:13:00,880
+very prestigious place to work, right?
+
+370
+00:12:59,400 --> 00:13:02,520
+The best engineers got to go work there,
+
+371
+00:13:00,880 --> 00:13:03,600
+okay? You were going to get treated the
+
+372
+00:13:02,520 --> 00:13:04,480
+best, you were going to get paid the
+
+373
+00:13:03,600 --> 00:13:05,560
+most, and you're going to work on
+
+374
+00:13:04,480 --> 00:13:06,960
+problems that were likely some of the
+
+375
+00:13:05,560 --> 00:13:08,920
+hardest problems you've worked on,
+
+376
+00:13:06,960 --> 00:13:11,280
+right? It was supposed to be a great
+
+377
+00:13:08,920 --> 00:13:13,160
+place to go and work super hard if
+
+378
+00:13:11,280 --> 00:13:15,000
+that's what you were into. But now, look
+
+379
+00:13:13,160 --> 00:13:17,800
+at it. It's like
+
+380
+00:13:15,000 --> 00:13:19,720
+a disaster. It's like every single month
+
+381
+00:13:17,800 --> 00:13:22,960
+the reporting gets worse and worse
+
+382
+00:13:19,720 --> 00:13:22,960
+coming out of it. I just
+
+383
+00:13:23,080 --> 00:13:28,440
+It's It's crazy to see these things
+
+384
+00:13:25,880 --> 00:13:30,680
+happen to companies in which used to be
+
+385
+00:13:28,440 --> 00:13:33,560
+the tippity top. All right, anyhow, hey,
+
+386
+00:13:30,680 --> 00:13:36,120
+the name is
+
+387
+00:13:33,560 --> 00:13:38,160
+you know, the prime gen, okay, hey, hi.
+
+388
+00:13:36,120 --> 00:13:39,520
+It's nice to see you. I hope I hope
+
+389
+00:13:38,160 --> 00:13:41,000
+you're doing well. Are you doing well?
+
+390
+00:13:39,520 --> 00:13:42,680
+Like what's going on with you, you know?
+
+391
+00:13:41,000 --> 00:13:44,080
+Do you come here often?
+
+392
+00:13:42,680 --> 00:13:45,200
+I don't know, you know,
+
+393
+00:13:44,080 --> 00:13:46,440
+you guys
+
+394
+00:13:45,200 --> 00:13:48,440
+What are you guys doing? I'm going to
+
+395
+00:13:46,440 --> 00:13:49,680
+get a haircut. Did you know that?
+
+396
+00:13:48,440 --> 00:13:51,320
+Yeah, I'm going to get a haircut. It's
+
+397
+00:13:49,680 --> 00:13:52,800
+honestly, it's just too big like look at
+
+398
+00:13:51,320 --> 00:13:55,040
+this. Like
+
+399
+00:13:52,800 --> 00:13:56,480
+like 50% of my head size is devoted to
+
+400
+00:13:55,040 --> 00:13:59,600
+the hair. I think I just got to do
+
+401
+00:13:56,480 --> 00:13:59,600
+something about it, you know?
+
+402
+00:14:00,120 --> 00:14:02,840
+Oh, Jen.

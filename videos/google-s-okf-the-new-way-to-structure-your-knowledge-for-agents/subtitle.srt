@@ -1,0 +1,1847 @@
+1
+00:00:00,000 --> 00:00:03,600
+Google just announced something called
+
+2
+00:00:01,400 --> 00:00:05,800
+the Open Knowledge Format, and boy am I
+
+3
+00:00:03,600 --> 00:00:08,080
+excited about this. This is a whole new
+
+4
+00:00:05,800 --> 00:00:09,880
+layer for the internet. It's a way to
+
+5
+00:00:08,080 --> 00:00:11,680
+take your knowledge, your business
+
+6
+00:00:09,880 --> 00:00:15,120
+knowledge, your personal knowledge,
+
+7
+00:00:11,680 --> 00:00:16,960
+whatever it is, and structure it so that
+
+8
+00:00:15,120 --> 00:00:18,720
+agents can understand it. Now, this is
+
+9
+00:00:16,960 --> 00:00:20,640
+nothing new. The way that they do it is
+
+10
+00:00:18,720 --> 00:00:22,200
+they structure it in markdown files.
+
+11
+00:00:20,640 --> 00:00:24,680
+It's actually very, very simple. We'll
+
+12
+00:00:22,200 --> 00:00:27,600
+look at some examples in just a minute.
+
+13
+00:00:24,680 --> 00:00:30,760
+But, what is new is that it is a
+
+14
+00:00:27,600 --> 00:00:34,640
+standardized way of doing this. So that
+
+15
+00:00:30,760 --> 00:00:36,840
+if my agent wants to access your public
+
+16
+00:00:34,640 --> 00:00:38,640
+OKF, then
+
+17
+00:00:36,840 --> 00:00:41,080
+it can happen standardized. I don't need
+
+18
+00:00:38,640 --> 00:00:43,240
+to use any particular software to do it.
+
+19
+00:00:41,080 --> 00:00:45,640
+I could use something like Notion or
+
+20
+00:00:43,240 --> 00:00:48,040
+Obsidian to look at the markdown files.
+
+21
+00:00:45,640 --> 00:00:49,840
+I could ask my agent to make a web page
+
+22
+00:00:48,040 --> 00:00:52,480
+out of it. I could do all sorts of
+
+23
+00:00:49,840 --> 00:00:55,480
+things, but the key thing is that I have
+
+24
+00:00:52,480 --> 00:00:57,880
+access to the knowledge that a business
+
+25
+00:00:55,480 --> 00:01:00,080
+has chosen to provide. This is a really
+
+26
+00:00:57,880 --> 00:01:02,360
+big deal. I think it's going to change
+
+27
+00:01:00,080 --> 00:01:04,280
+how we do SEO. I think we're going to
+
+28
+00:01:02,360 --> 00:01:06,960
+need a different acronym. It's not SEO,
+
+29
+00:01:04,280 --> 00:01:08,920
+it's not GEO, it's not even agentic
+
+30
+00:01:06,960 --> 00:01:13,040
+search optimization. This isn't about
+
+31
+00:01:08,920 --> 00:01:15,960
+getting found, rather it is a way to
+
+32
+00:01:13,040 --> 00:01:17,840
+make your business accessible to agents.
+
+33
+00:01:15,960 --> 00:01:20,000
+Not just accessible, but make it so that
+
+34
+00:01:17,840 --> 00:01:23,040
+agents can do things with your business
+
+35
+00:01:20,000 --> 00:01:26,120
+knowledge. I do think that people who
+
+36
+00:01:23,040 --> 00:01:27,440
+understand OKF will be in high demand. I
+
+37
+00:01:26,120 --> 00:01:30,120
+think it's going to be a new service
+
+38
+00:01:27,440 --> 00:01:31,800
+that SEOs offer where kind of like
+
+39
+00:01:30,120 --> 00:01:34,600
+making a site map, but much more
+
+40
+00:01:31,800 --> 00:01:36,360
+detailed, where people will be really
+
+41
+00:01:34,600 --> 00:01:38,920
+good at understanding how to take a
+
+42
+00:01:36,360 --> 00:01:41,440
+business's knowledge and turn it into a
+
+43
+00:01:38,920 --> 00:01:43,200
+knowledge graph that is an OKF. But, I
+
+44
+00:01:41,440 --> 00:01:45,880
+think it's even more exciting for people
+
+45
+00:01:43,200 --> 00:01:47,920
+who actually have proprietary knowledge,
+
+46
+00:01:45,880 --> 00:01:50,880
+processes, or something that people
+
+47
+00:01:47,920 --> 00:01:53,240
+already pay you for, because you will be
+
+48
+00:01:50,880 --> 00:01:55,400
+able to, I'm fairly certain, I'm not I
+
+49
+00:01:53,240 --> 00:01:59,200
+don't know this 100% for sure, but you
+
+50
+00:01:55,400 --> 00:02:03,120
+should be able to sell your OKF bundles
+
+51
+00:01:59,200 --> 00:02:05,720
+and that way you can have access to an
+
+52
+00:02:03,120 --> 00:02:09,119
+expert's knowledge and even integrate it
+
+53
+00:02:05,720 --> 00:02:11,200
+into your own OKF. So that you will
+
+54
+00:02:09,119 --> 00:02:13,440
+have, you know, we'll probably buy OKF
+
+55
+00:02:11,200 --> 00:02:16,600
+bundles from a lawyer, from an
+
+56
+00:02:13,440 --> 00:02:18,520
+accountant, from an SEO. And I I think
+
+57
+00:02:16,600 --> 00:02:21,320
+this is a very very exciting thing. So
+
+58
+00:02:18,520 --> 00:02:23,120
+this is a proposed standard. It is just
+
+59
+00:02:21,320 --> 00:02:24,480
+the very first version and so if you're
+
+60
+00:02:23,120 --> 00:02:26,800
+watching this in the future, I'm
+
+61
+00:02:24,480 --> 00:02:28,320
+recording this mid-June. There probably
+
+62
+00:02:26,800 --> 00:02:30,160
+are some new versions that are out
+
+63
+00:02:28,320 --> 00:02:32,760
+there. I'd encourage you to do what I
+
+64
+00:02:30,160 --> 00:02:35,240
+did is take I've put some links in the
+
+65
+00:02:32,760 --> 00:02:38,120
+description for Google's documentation
+
+66
+00:02:35,240 --> 00:02:40,440
+on this and also the spec file in
+
+67
+00:02:38,120 --> 00:02:43,120
+GitHub. Put all of that into a Notebook
+
+68
+00:02:40,440 --> 00:02:45,840
+LM. Give that notebook to Gemini and
+
+69
+00:02:43,120 --> 00:02:48,280
+then ask Gemini to summarize the
+
+70
+00:02:45,840 --> 00:02:50,320
+information and tell you how you can use
+
+71
+00:02:48,280 --> 00:02:52,920
+this in your business. One good prompt
+
+72
+00:02:50,320 --> 00:02:56,040
+would say would be to say, "Give me 20
+
+73
+00:02:52,920 --> 00:02:58,480
+ideas of how I could use OKF in my
+
+74
+00:02:56,040 --> 00:03:01,160
+business." So let's get into Google's
+
+75
+00:02:58,480 --> 00:03:03,560
+description of what OKF is. OKF is a
+
+76
+00:03:01,160 --> 00:03:05,680
+specification that formalizes something
+
+77
+00:03:03,560 --> 00:03:08,400
+called the LLM Wiki pattern. This
+
+78
+00:03:05,680 --> 00:03:09,680
+pattern was described by Andre Karpathy.
+
+79
+00:03:08,400 --> 00:03:12,200
+We're going to look at that in just a
+
+80
+00:03:09,680 --> 00:03:14,560
+minute. But first let's look at what an
+
+81
+00:03:12,200 --> 00:03:16,280
+OKF is. It is just Markdown. If you're
+
+82
+00:03:14,560 --> 00:03:20,440
+not familiar with Markdown, it's just a
+
+83
+00:03:16,280 --> 00:03:22,760
+really simple way to describe text, you
+
+84
+00:03:20,440 --> 00:03:24,280
+know, as text. Uh
+
+85
+00:03:22,760 --> 00:03:25,720
+basically a text file that might have a
+
+86
+00:03:24,280 --> 00:03:28,200
+little bit of markup to say this is a
+
+87
+00:03:25,720 --> 00:03:30,400
+heading, this is bolded, or whatever.
+
+88
+00:03:28,200 --> 00:03:32,640
+Just a very simple way to understand
+
+89
+00:03:30,400 --> 00:03:34,560
+text. It is really easy for agents to
+
+90
+00:03:32,640 --> 00:03:37,040
+understand text. Now, we're not going to
+
+91
+00:03:34,560 --> 00:03:39,440
+be taking every page of our website and
+
+92
+00:03:37,040 --> 00:03:41,320
+turning that into a Markdown file. I
+
+93
+00:03:39,440 --> 00:03:43,280
+mean, we could. We're actually going to
+
+94
+00:03:41,320 --> 00:03:45,959
+take the things that we have on our
+
+95
+00:03:43,280 --> 00:03:48,360
+website, extract the concepts from
+
+96
+00:03:45,959 --> 00:03:50,239
+those, and make those concepts their own
+
+97
+00:03:48,360 --> 00:03:51,960
+Markdown files. Let's see if if can
+
+98
+00:03:50,239 --> 00:03:53,440
+explain that a little more clearly. I
+
+99
+00:03:51,960 --> 00:03:55,640
+found that this was the most helpful
+
+100
+00:03:53,440 --> 00:03:57,880
+document that Google produced. It's on
+
+101
+00:03:55,640 --> 00:04:01,080
+GitHub. Again, it's linked to in the
+
+102
+00:03:57,880 --> 00:04:02,600
+description, the spec.md file. I'm
+
+103
+00:04:01,080 --> 00:04:04,960
+actually going to read a part of this
+
+104
+00:04:02,600 --> 00:04:08,120
+because it explained things really well.
+
+105
+00:04:04,960 --> 00:04:10,480
+OKF is an open human and agent-friendly
+
+106
+00:04:08,120 --> 00:04:12,480
+format, so it's not just for agents,
+
+107
+00:04:10,480 --> 00:04:15,120
+humans can use it as well, for
+
+108
+00:04:12,480 --> 00:04:17,760
+representing knowledge, the metadata,
+
+109
+00:04:15,120 --> 00:04:20,000
+the context, and the curated insight
+
+110
+00:04:17,760 --> 00:04:22,000
+that surrounds data and systems. It's
+
+111
+00:04:20,000 --> 00:04:24,840
+designed to be authored by people,
+
+112
+00:04:22,000 --> 00:04:26,400
+generated by agents, exchanged across
+
+113
+00:04:24,840 --> 00:04:29,040
+organizations, which I think is the
+
+114
+00:04:26,400 --> 00:04:31,240
+really exciting thing, and consumed by
+
+115
+00:04:29,040 --> 00:04:33,160
+both. They say that the format is
+
+116
+00:04:31,240 --> 00:04:34,480
+intentionally minimal, and what they
+
+117
+00:04:33,160 --> 00:04:35,919
+mean by this
+
+118
+00:04:34,480 --> 00:04:38,840
+they're going to say some words that if
+
+119
+00:04:35,919 --> 00:04:41,760
+you're not into markdown, cuz I I didn't
+
+120
+00:04:38,840 --> 00:04:43,440
+know what a YAML front matter is, but
+
+121
+00:04:41,760 --> 00:04:45,280
+we're going to discover that. It's
+
+122
+00:04:43,440 --> 00:04:48,040
+actually very, very simple. There's no
+
+123
+00:04:45,280 --> 00:04:50,440
+schema registry. When I first saw this,
+
+124
+00:04:48,040 --> 00:04:52,800
+my thought was this is just schema. The
+
+125
+00:04:50,440 --> 00:04:55,360
+thing is that it's so simple that you
+
+126
+00:04:52,800 --> 00:04:57,800
+don't need to specifically outline every
+
+127
+00:04:55,360 --> 00:04:59,280
+specific thing that this is an entity,
+
+128
+00:04:57,800 --> 00:05:00,720
+that this is
+
+129
+00:04:59,280 --> 00:05:02,120
+you'll see what I'm talking about. I
+
+130
+00:05:00,720 --> 00:05:04,440
+think it's important to look at the
+
+131
+00:05:02,120 --> 00:05:05,760
+terminology that Google gives us. We are
+
+132
+00:05:04,440 --> 00:05:09,040
+going to be creating what's called a
+
+133
+00:05:05,760 --> 00:05:12,280
+knowledge bundle. This is a collection
+
+134
+00:05:09,040 --> 00:05:14,360
+of files. So, OKF is essentially a
+
+135
+00:05:12,280 --> 00:05:15,880
+directory of directories, and in those
+
+136
+00:05:14,360 --> 00:05:18,160
+directories are a bunch of markdown
+
+137
+00:05:15,880 --> 00:05:20,520
+files. Nothing new, but again, the fact
+
+138
+00:05:18,160 --> 00:05:22,240
+that it's standardized is the important
+
+139
+00:05:20,520 --> 00:05:24,680
+thing here. I'm fairly certain that
+
+140
+00:05:22,240 --> 00:05:28,440
+these OKF bundles are things that you
+
+141
+00:05:24,680 --> 00:05:30,919
+could buy or sell. So, again, like if I
+
+142
+00:05:28,440 --> 00:05:33,520
+have I have my page on Google algorithm
+
+143
+00:05:30,919 --> 00:05:35,880
+updates and things that changed with AI
+
+144
+00:05:33,520 --> 00:05:39,400
+that might be relevant to rankings, I
+
+145
+00:05:35,880 --> 00:05:41,760
+might sell that as a knowledge bundle
+
+146
+00:05:39,400 --> 00:05:45,000
+that you can purchase, and then instead
+
+147
+00:05:41,760 --> 00:05:47,880
+of having to access an MCP for my
+
+148
+00:05:45,000 --> 00:05:50,560
+uh my website or to use Web MCP, you
+
+149
+00:05:47,880 --> 00:05:52,800
+would essentially integrate my knowledge
+
+150
+00:05:50,560 --> 00:05:56,200
+into your system. Each of the markdown
+
+151
+00:05:52,800 --> 00:05:58,720
+files in these directories represents a
+
+152
+00:05:56,200 --> 00:06:00,760
+concept. And this is the the concept, no
+
+153
+00:05:58,720 --> 00:06:04,160
+pun intended, that's hard to understand
+
+154
+00:06:00,760 --> 00:06:06,720
+here because we're used to as SEOs
+
+155
+00:06:04,160 --> 00:06:08,360
+uh taking a webpage and saying, "All
+
+156
+00:06:06,720 --> 00:06:11,080
+right, here is the summary of the
+
+157
+00:06:08,360 --> 00:06:13,600
+webpage." Instead, each markdown file is
+
+158
+00:06:11,080 --> 00:06:16,280
+a concept, a single unit of knowledge
+
+159
+00:06:13,600 --> 00:06:18,960
+within a bundle represented as one
+
+160
+00:06:16,280 --> 00:06:23,080
+markdown document. So, one website might
+
+161
+00:06:18,960 --> 00:06:25,840
+produce maybe 50 or maybe 10 or maybe
+
+162
+00:06:23,080 --> 00:06:27,720
+even more concepts that each would be
+
+163
+00:06:25,840 --> 00:06:30,360
+their own markdown file. Let's talk
+
+164
+00:06:27,720 --> 00:06:33,120
+about what this YAML front matter is.
+
+165
+00:06:30,360 --> 00:06:35,800
+This is the information that is required
+
+166
+00:06:33,120 --> 00:06:37,400
+in these markdown files. And then after
+
+167
+00:06:35,800 --> 00:06:40,080
+this information, you can put whatever
+
+168
+00:06:37,400 --> 00:06:43,040
+you want in the file. So, the you're
+
+169
+00:06:40,080 --> 00:06:45,240
+going to have the the type, the title,
+
+170
+00:06:43,040 --> 00:06:46,240
+the description of here's what's in this
+
+171
+00:06:45,240 --> 00:06:49,680
+file,
+
+172
+00:06:46,240 --> 00:06:52,640
+uh resource, tags. The tags can be
+
+173
+00:06:49,680 --> 00:06:54,760
+different topics that are covered and uh
+
+174
+00:06:52,640 --> 00:06:56,760
+and then a timestamp. All of this will
+
+175
+00:06:54,760 --> 00:06:58,320
+be really easy. Your agent will do it
+
+176
+00:06:56,760 --> 00:07:00,120
+for you. It's not something that you
+
+177
+00:06:58,320 --> 00:07:01,800
+need to really pay a lot of attention
+
+178
+00:07:00,120 --> 00:07:04,360
+to. What you're probably going to do is
+
+179
+00:07:01,800 --> 00:07:07,400
+give this spec.md file to your language
+
+180
+00:07:04,360 --> 00:07:10,320
+model and say, "Create the YAML front
+
+181
+00:07:07,400 --> 00:07:13,640
+matter for me." Then, after that, are
+
+182
+00:07:10,320 --> 00:07:16,160
+the instructions or the knowledge or the
+
+183
+00:07:13,640 --> 00:07:18,440
+data tables or whatever it is that you
+
+184
+00:07:16,160 --> 00:07:20,480
+want to share on that particular topic.
+
+185
+00:07:18,440 --> 00:07:23,280
+After the front matter, then there is
+
+186
+00:07:20,480 --> 00:07:25,600
+the body that has everything else in it.
+
+187
+00:07:23,280 --> 00:07:27,480
+And there can also be links. And this is
+
+188
+00:07:25,600 --> 00:07:29,200
+where it's really interesting because
+
+189
+00:07:27,480 --> 00:07:30,560
+eventually what you're creating is a
+
+190
+00:07:29,200 --> 00:07:32,360
+knowledge graph of all of your
+
+191
+00:07:30,560 --> 00:07:35,240
+knowledge, which is really, really
+
+192
+00:07:32,360 --> 00:07:37,840
+interesting. You can also have citations
+
+193
+00:07:35,240 --> 00:07:39,760
+that help support a claim in the body.
+
+194
+00:07:37,840 --> 00:07:43,160
+You don't necessarily have to have that.
+
+195
+00:07:39,760 --> 00:07:44,800
+Here's an example of how the bundle can
+
+196
+00:07:43,160 --> 00:07:48,560
+be structured or how it's supposed to be
+
+197
+00:07:44,800 --> 00:07:50,440
+structured. The index file is where the
+
+198
+00:07:48,560 --> 00:07:52,000
+every one of these has to have an index
+
+199
+00:07:50,440 --> 00:07:54,960
+file. This is really interesting, the
+
+200
+00:07:52,000 --> 00:07:57,000
+log file. A log file can be so that your
+
+201
+00:07:54,960 --> 00:07:59,760
+agent says, "Oh, I updated this today. I
+
+202
+00:07:57,000 --> 00:08:01,600
+did this today." And we'll look at
+
+203
+00:07:59,760 --> 00:08:03,880
+Karpathy's wiki in a minute because it's
+
+204
+00:08:01,600 --> 00:08:06,400
+really interesting how the role that
+
+205
+00:08:03,880 --> 00:08:08,560
+your agents play in this. The concept is
+
+206
+00:08:06,400 --> 00:08:12,320
+the most important thing here. Again, my
+
+207
+00:08:08,560 --> 00:08:14,280
+concept might be web MCP. And then I
+
+208
+00:08:12,320 --> 00:08:16,800
+will have a sub I could have
+
+209
+00:08:14,280 --> 00:08:18,840
+subdirectories. Maybe my concept is MCP
+
+210
+00:08:16,800 --> 00:08:20,840
+and I have subdirectories for web MCP
+
+211
+00:08:18,840 --> 00:08:22,280
+and for other things. This is what's
+
+212
+00:08:20,840 --> 00:08:23,919
+going to take some time is for us to
+
+213
+00:08:22,280 --> 00:08:25,360
+figure out how to structure these
+
+214
+00:08:23,919 --> 00:08:27,200
+because every business is going to be
+
+215
+00:08:25,360 --> 00:08:29,560
+different. Then you can store all these
+
+216
+00:08:27,200 --> 00:08:31,360
+files in a Git repository. If you don't
+
+217
+00:08:29,560 --> 00:08:33,680
+know what that is, it's essentially just
+
+218
+00:08:31,360 --> 00:08:36,440
+uploading it to GitHub, totally free to
+
+219
+00:08:33,680 --> 00:08:38,880
+do that. You can also store it in a
+
+220
+00:08:36,440 --> 00:08:42,280
+markdown organizer like Notion or like
+
+221
+00:08:38,880 --> 00:08:44,039
+Obsidian. Um when this first came out, I
+
+222
+00:08:42,280 --> 00:08:46,520
+thought that it would be a replacement
+
+223
+00:08:44,039 --> 00:08:49,400
+for Obsidian. I haven't used Obsidian,
+
+224
+00:08:46,520 --> 00:08:51,240
+but here's why I said that because I was
+
+225
+00:08:49,400 --> 00:08:53,400
+considering getting something like
+
+226
+00:08:51,240 --> 00:08:55,360
+Obsidian. And now I'm like, "Oh,
+
+227
+00:08:53,400 --> 00:08:58,160
+actually I can just create my own
+
+228
+00:08:55,360 --> 00:09:00,520
+markdown files. I could create my own
+
+229
+00:08:58,160 --> 00:09:02,560
+front end to look at those markdown
+
+230
+00:09:00,520 --> 00:09:05,600
+files. I don't think I'm going to need a
+
+231
+00:09:02,560 --> 00:09:07,320
+way to store and to organize all the
+
+232
+00:09:05,600 --> 00:09:08,800
+markdown files." But who knows, I could
+
+233
+00:09:07,320 --> 00:09:11,520
+be wrong on that. Now, many of the
+
+234
+00:09:08,800 --> 00:09:13,320
+examples that Google gives us are not
+
+235
+00:09:11,520 --> 00:09:17,640
+quite what I'm talking about. So, they
+
+236
+00:09:13,320 --> 00:09:20,240
+talk about using the OKF as a way to get
+
+237
+00:09:17,640 --> 00:09:21,240
+big query data, especially from GA4,
+
+238
+00:09:20,240 --> 00:09:23,000
+which I think is really, really
+
+239
+00:09:21,240 --> 00:09:24,880
+interesting. And it is something that I
+
+240
+00:09:23,000 --> 00:09:27,000
+want to do. I don't think it's actually
+
+241
+00:09:24,880 --> 00:09:29,560
+where the power is for most of us who
+
+242
+00:09:27,000 --> 00:09:32,200
+are are watching this video. And this
+
+243
+00:09:29,560 --> 00:09:33,800
+example that they give is is it takes a
+
+244
+00:09:32,200 --> 00:09:35,960
+while, at least it took me a while to
+
+245
+00:09:33,800 --> 00:09:38,160
+wrap my head around it. So, we have the
+
+246
+00:09:35,960 --> 00:09:39,720
+stuff that needs to happen, that needs
+
+247
+00:09:38,160 --> 00:09:42,440
+to be there at the top, which we just
+
+248
+00:09:39,720 --> 00:09:44,680
+talked about. And then this is the body,
+
+249
+00:09:42,440 --> 00:09:45,840
+which you don't need to have schema in
+
+250
+00:09:44,680 --> 00:09:46,880
+your body. You don't need to have
+
+251
+00:09:45,840 --> 00:09:49,720
+joints. You don't need to have
+
+252
+00:09:46,880 --> 00:09:52,200
+citations. These are things that this
+
+253
+00:09:49,720 --> 00:09:54,640
+business, this organization is saying,
+
+254
+00:09:52,200 --> 00:09:56,760
+"When we look at customer orders, this
+
+255
+00:09:54,640 --> 00:09:59,360
+is how we organize them." If you didn't
+
+256
+00:09:56,760 --> 00:10:00,960
+have this, if you were just using rag,
+
+257
+00:09:59,360 --> 00:10:04,120
+if you were just using a language model
+
+258
+00:10:00,960 --> 00:10:07,120
+to say, "Get me the information from
+
+259
+00:10:04,120 --> 00:10:09,480
+BigQuery and organize it," it would
+
+260
+00:10:07,120 --> 00:10:11,360
+guess in how you are going to organize
+
+261
+00:10:09,480 --> 00:10:13,520
+things. This way you can say, "This is
+
+262
+00:10:11,360 --> 00:10:15,320
+how we do it. This is our way of
+
+263
+00:10:13,520 --> 00:10:17,240
+organizing things." Here's another
+
+264
+00:10:15,320 --> 00:10:19,240
+example, and I think this is one that
+
+265
+00:10:17,240 --> 00:10:20,840
+I'm going to use a lot. The type is a
+
+266
+00:10:19,240 --> 00:10:23,040
+playbook, which is kind of like the
+
+267
+00:10:20,840 --> 00:10:25,440
+process. And this playbook would be
+
+268
+00:10:23,040 --> 00:10:28,720
+triggered when a particular thing
+
+269
+00:10:25,440 --> 00:10:32,600
+happens. So mine might be in my overall
+
+270
+00:10:28,720 --> 00:10:35,160
+OKR of my knowledge, might be a trigger
+
+271
+00:10:32,600 --> 00:10:37,240
+that happens uh when somebody talks
+
+272
+00:10:35,160 --> 00:10:39,800
+about a traffic drop. And then I would
+
+273
+00:10:37,240 --> 00:10:42,080
+say I have a playbook for diagnosing why
+
+274
+00:10:39,800 --> 00:10:44,080
+your traffic has dropped. Uh that's the
+
+275
+00:10:42,080 --> 00:10:46,960
+type of thing. So basically I'm saying
+
+276
+00:10:44,080 --> 00:10:49,280
+to your agent, "Here's where you go in
+
+277
+00:10:46,960 --> 00:10:50,320
+my brain to get this information." And
+
+278
+00:10:49,280 --> 00:10:52,680
+then the interesting thing is the
+
+279
+00:10:50,320 --> 00:10:54,240
+cross-linking. And this is something
+
+280
+00:10:52,680 --> 00:10:56,720
+where I think it's going to be very
+
+281
+00:10:54,240 --> 00:10:58,160
+exciting, where we can start to see the
+
+282
+00:10:56,720 --> 00:10:59,720
+connections between things that we've
+
+283
+00:10:58,160 --> 00:11:01,280
+talked about. I'm going to we'll we'll
+
+284
+00:10:59,720 --> 00:11:03,240
+know more about this. This will be more
+
+285
+00:11:01,280 --> 00:11:05,600
+interesting when we look at Karpathy's
+
+286
+00:11:03,240 --> 00:11:07,480
+wiki, because I think this is uh really,
+
+287
+00:11:05,600 --> 00:11:09,640
+really important to pay attention to. So
+
+288
+00:11:07,480 --> 00:11:12,560
+let's actually look at Andrej Karpathy's
+
+289
+00:11:09,640 --> 00:11:15,280
+LLM wiki. This is not exactly what the
+
+290
+00:11:12,560 --> 00:11:17,520
+OKR is, but I found that reading this
+
+291
+00:11:15,280 --> 00:11:20,240
+helped me understand the power of what
+
+292
+00:11:17,520 --> 00:11:22,680
+we can do with these OKRs a lot better.
+
+293
+00:11:20,240 --> 00:11:25,120
+Karpathy says that uh he talks about the
+
+294
+00:11:22,680 --> 00:11:27,560
+idea that most people with when we're
+
+295
+00:11:25,120 --> 00:11:30,040
+using LLMs and you're using documents,
+
+296
+00:11:27,560 --> 00:11:32,600
+you're thinking of rag, that you're
+
+297
+00:11:30,040 --> 00:11:35,440
+giving your LLM this massive amount of
+
+298
+00:11:32,600 --> 00:11:38,920
+context and saying, here's a question,
+
+299
+00:11:35,440 --> 00:11:40,880
+go find the parts that are relevant in
+
+300
+00:11:38,920 --> 00:11:42,600
+all of this context in the entirety of
+
+301
+00:11:40,880 --> 00:11:45,360
+your website, and you're relying on your
+
+302
+00:11:42,600 --> 00:11:49,440
+agent to do a lot of work. Whereas, his
+
+303
+00:11:45,360 --> 00:11:52,480
+LLM Wiki is basically saying, like, here
+
+304
+00:11:49,440 --> 00:11:54,280
+are Here's a Here's a map to where the
+
+305
+00:11:52,480 --> 00:11:56,640
+important things are in our in our
+
+306
+00:11:54,280 --> 00:11:59,240
+knowledge. But, here's the part that I'm
+
+307
+00:11:56,640 --> 00:12:01,120
+really excited about. In his model,
+
+308
+00:11:59,240 --> 00:12:03,280
+instead of just retrieving from raw
+
+309
+00:12:01,120 --> 00:12:05,880
+documents at query time, the language
+
+310
+00:12:03,280 --> 00:12:08,640
+model incrementally builds and maintains
+
+311
+00:12:05,880 --> 00:12:10,960
+a persistent Wiki. And so, he talks
+
+312
+00:12:08,640 --> 00:12:13,600
+about when you add a source, it's not
+
+313
+00:12:10,960 --> 00:12:16,200
+like you're adding a page to a site map
+
+314
+00:12:13,600 --> 00:12:17,360
+in your website. Instead, your language
+
+315
+00:12:16,200 --> 00:12:19,560
+model, I think we're all going to have
+
+316
+00:12:17,360 --> 00:12:21,480
+to create There probably will be tools
+
+317
+00:12:19,560 --> 00:12:23,280
+that do this for us, but I think the
+
+318
+00:12:21,480 --> 00:12:25,680
+best ones will be ones that we create
+
+319
+00:12:23,280 --> 00:12:27,520
+ourselves. We will When you add a
+
+320
+00:12:25,680 --> 00:12:30,280
+source, the language model doesn't just
+
+321
+00:12:27,520 --> 00:12:32,720
+index it for later retrieval. It reads
+
+322
+00:12:30,280 --> 00:12:35,200
+it, extracts the key information, and
+
+323
+00:12:32,720 --> 00:12:37,880
+integrates it into the existing Wiki,
+
+324
+00:12:35,200 --> 00:12:39,960
+updating entity pages, revising topic
+
+325
+00:12:37,880 --> 00:12:42,320
+summaries, noting where new data
+
+326
+00:12:39,960 --> 00:12:44,640
+contradicts old claims, strengthening or
+
+327
+00:12:42,320 --> 00:12:48,240
+challenging the evolving synthesis. So,
+
+328
+00:12:44,640 --> 00:12:51,480
+let's say that today this video goes
+
+329
+00:12:48,240 --> 00:12:54,120
+into my OKF. The topics that I talk
+
+330
+00:12:51,480 --> 00:12:56,680
+about get extracted, and each of them
+
+331
+00:12:54,120 --> 00:12:59,480
+get their own markdown file. Now, let's
+
+332
+00:12:56,680 --> 00:13:01,520
+say that a couple months from now, I do
+
+333
+00:12:59,480 --> 00:13:04,160
+another thing about OKF. Maybe I give an
+
+334
+00:13:01,520 --> 00:13:06,760
+example of how I used it. I did actually
+
+335
+00:13:04,160 --> 00:13:08,560
+create an OKF of our peppers in our
+
+336
+00:13:06,760 --> 00:13:10,920
+garden. I'll share that at some point.
+
+337
+00:13:08,560 --> 00:13:12,920
+So, let's say I share that, then it's
+
+338
+00:13:10,920 --> 00:13:16,360
+not like that's going to create a whole
+
+339
+00:13:12,920 --> 00:13:18,200
+new set of concepts. The concept of OKF
+
+340
+00:13:16,360 --> 00:13:21,200
+has already been discussed, and so what
+
+341
+00:13:18,200 --> 00:13:23,560
+my language model should do is say, "Oh,
+
+342
+00:13:21,200 --> 00:13:26,320
+we already have discussed the idea of
+
+343
+00:13:23,560 --> 00:13:29,120
+OKF. Let's see where I can add to the
+
+344
+00:13:26,320 --> 00:13:32,520
+body in that information, and then it
+
+345
+00:13:29,120 --> 00:13:36,280
+might also discover new links that maybe
+
+346
+00:13:32,520 --> 00:13:37,640
+I have said that OKF is connected to
+
+347
+00:13:36,280 --> 00:13:40,280
+revenue
+
+348
+00:13:37,640 --> 00:13:42,000
+that you can can gain from building this
+
+349
+00:13:40,280 --> 00:13:43,720
+type of thing. Again, more on that in
+
+350
+00:13:42,000 --> 00:13:46,920
+just a minute. In Karpathy's version, he
+
+351
+00:13:43,720 --> 00:13:49,240
+says you never or rarely write the wiki
+
+352
+00:13:46,920 --> 00:13:50,600
+yourself. And this is the part that's
+
+353
+00:13:49,240 --> 00:13:52,080
+hard to wrap my head around that the
+
+354
+00:13:50,600 --> 00:13:54,120
+language model is going to write and
+
+355
+00:13:52,080 --> 00:13:56,120
+maintain all of it. So, once you get it
+
+356
+00:13:54,120 --> 00:13:59,720
+going, your job is to find new
+
+357
+00:13:56,120 --> 00:14:02,680
+information. Your job is to learn things
+
+358
+00:13:59,720 --> 00:14:04,600
+and to maybe write about them, to share
+
+359
+00:14:02,680 --> 00:14:06,960
+them. It doesn't even have to be your
+
+360
+00:14:04,600 --> 00:14:09,400
+knowledge. Perhaps when Google publishes
+
+361
+00:14:06,960 --> 00:14:11,880
+new documentation, I put that into my
+
+362
+00:14:09,400 --> 00:14:14,920
+OKF and that becomes, you know, the
+
+363
+00:14:11,880 --> 00:14:16,560
+concepts are Google documentation and
+
+364
+00:14:14,920 --> 00:14:18,920
+and things like that. He talks about a
+
+365
+00:14:16,560 --> 00:14:20,600
+few ex- here and I I honestly I think
+
+366
+00:14:18,920 --> 00:14:22,880
+that it's endless what we could use this
+
+367
+00:14:20,600 --> 00:14:24,720
+for. I think that anytime you want to
+
+368
+00:14:22,880 --> 00:14:26,880
+take a bunch of knowledge and you want
+
+369
+00:14:24,720 --> 00:14:28,720
+to do stuff with agents, this is what
+
+370
+00:14:26,880 --> 00:14:32,240
+we're going to use. So, let's talk about
+
+371
+00:14:28,720 --> 00:14:34,760
+where this is going because I think that
+
+372
+00:14:32,240 --> 00:14:36,839
+this is the new schema. I think it's
+
+373
+00:14:34,760 --> 00:14:39,120
+funny because I have historically really
+
+374
+00:14:36,839 --> 00:14:40,600
+struggled with understanding I
+
+375
+00:14:39,120 --> 00:14:43,000
+understand the importance of some
+
+376
+00:14:40,600 --> 00:14:44,760
+schema. If you have an e-commerce site
+
+377
+00:14:43,000 --> 00:14:48,240
+and you have rapidly changing product
+
+378
+00:14:44,760 --> 00:14:50,720
+prices and things, schema helps the the
+
+379
+00:14:48,240 --> 00:14:52,760
+web helps Google, helps agents
+
+380
+00:14:50,720 --> 00:14:56,400
+understand rapidly changing things on
+
+381
+00:14:52,760 --> 00:14:59,280
+your website. But I didn't like the idea
+
+382
+00:14:56,400 --> 00:15:01,880
+of mapping out every individual entity
+
+383
+00:14:59,280 --> 00:15:04,400
+on your site, every piece of schema. I
+
+384
+00:15:01,880 --> 00:15:07,760
+just didn't understand that. And the
+
+385
+00:15:04,400 --> 00:15:09,520
+reason is that the web is not our
+
+386
+00:15:07,760 --> 00:15:12,440
+knowledge is not like that. It's not
+
+387
+00:15:09,520 --> 00:15:15,480
+natural. This what Google has described
+
+388
+00:15:12,440 --> 00:15:17,680
+here is a natural way to say, here's
+
+389
+00:15:15,480 --> 00:15:19,880
+what I learned, now go categorize it
+
+390
+00:15:17,680 --> 00:15:21,720
+into my brain. And I think that this is
+
+391
+00:15:19,880 --> 00:15:24,120
+going going evolve over time. Again,
+
+392
+00:15:21,720 --> 00:15:27,240
+this is just a very early first version.
+
+393
+00:15:24,120 --> 00:15:29,520
+I do think that we will have two revenue
+
+394
+00:15:27,240 --> 00:15:32,560
+streams here for most of you who are
+
+395
+00:15:29,520 --> 00:15:35,400
+watching this video. One is selling this
+
+396
+00:15:32,560 --> 00:15:38,120
+service to businesses. There will be
+
+397
+00:15:35,400 --> 00:15:40,680
+tools. I know Saganth Mahanadossan has
+
+398
+00:15:38,120 --> 00:15:43,760
+created already a tool that will take
+
+399
+00:15:40,680 --> 00:15:46,600
+your web pages and turn them into an OKF
+
+400
+00:15:43,760 --> 00:15:48,760
+bundle. However, he is, I think, just
+
+401
+00:15:46,600 --> 00:15:50,280
+taking each web page. He's not actually
+
+402
+00:15:48,760 --> 00:15:51,960
+doing the concepts. I'm sure that that
+
+403
+00:15:50,280 --> 00:15:54,960
+will come. I'm sure there will be many
+
+404
+00:15:51,960 --> 00:15:58,200
+tools, but I think that there will be
+
+405
+00:15:54,960 --> 00:15:59,480
+great skill in knowing individually and
+
+406
+00:15:58,200 --> 00:16:02,080
+understanding a business and
+
+407
+00:15:59,480 --> 00:16:04,000
+understanding how to organize that
+
+408
+00:16:02,080 --> 00:16:06,520
+knowledge that is going to be very, very
+
+409
+00:16:04,000 --> 00:16:09,280
+valuable. So, I would encourage you to
+
+410
+00:16:06,520 --> 00:16:10,560
+play with this, to create an OKF of just
+
+411
+00:16:09,280 --> 00:16:12,640
+something. It doesn't have to be your
+
+412
+00:16:10,560 --> 00:16:16,000
+entire website, but just something so
+
+413
+00:16:12,640 --> 00:16:17,880
+that you can use it. The next thing is
+
+414
+00:16:16,000 --> 00:16:20,440
+that this will be valuable to people who
+
+415
+00:16:17,880 --> 00:16:22,520
+have knowledge to sell. And I you think
+
+416
+00:16:20,440 --> 00:16:24,839
+that we're going to sell OKF bundles to
+
+417
+00:16:22,520 --> 00:16:28,400
+each other. I think that kind of blows
+
+418
+00:16:24,839 --> 00:16:30,920
+my mind at how all of a sudden, I won't
+
+419
+00:16:28,400 --> 00:16:33,800
+just have an MCP where I can get legal
+
+420
+00:16:30,920 --> 00:16:37,000
+information to review a document. Like,
+
+421
+00:16:33,800 --> 00:16:39,400
+I could have my lawyer or the best
+
+422
+00:16:37,000 --> 00:16:43,320
+lawyer in this area, you know, have his
+
+423
+00:16:39,400 --> 00:16:45,960
+or her OKF and and have that as part of
+
+424
+00:16:43,320 --> 00:16:48,200
+my business intelligence. It is really
+
+425
+00:16:45,960 --> 00:16:50,280
+hard to to wrap my head around that. And
+
+426
+00:16:48,200 --> 00:16:52,200
+I think and then not only that, it's not
+
+427
+00:16:50,280 --> 00:16:54,839
+like I'm just having their files and
+
+428
+00:16:52,200 --> 00:16:57,240
+their static knowledge, but as the law
+
+429
+00:16:54,839 --> 00:16:59,560
+changes, then what I need to know for my
+
+430
+00:16:57,240 --> 00:17:00,880
+business knowledge gets updated as well.
+
+431
+00:16:59,560 --> 00:17:04,280
+But we're going to build this whole
+
+432
+00:17:00,880 --> 00:17:07,000
+entire network of a brain where those
+
+433
+00:17:04,280 --> 00:17:09,640
+who have knowledge and expertise in an
+
+434
+00:17:07,000 --> 00:17:12,280
+area will be very, very valued. Another
+
+435
+00:17:09,640 --> 00:17:15,439
+question that I saw come up is how will
+
+436
+00:17:12,280 --> 00:17:16,720
+agents know that you have this OKF? And
+
+437
+00:17:15,439 --> 00:17:18,560
+I actually think it's going to be in
+
+438
+00:17:16,720 --> 00:17:20,640
+your LLMs.txt
+
+439
+00:17:18,560 --> 00:17:23,439
+that there will be a direction to agents
+
+440
+00:17:20,640 --> 00:17:25,160
+to say that you have an OKF bundle.
+
+441
+00:17:23,439 --> 00:17:26,680
+We'll see what happens with that. I'm
+
+442
+00:17:25,160 --> 00:17:28,960
+going to end with this phrase that
+
+443
+00:17:26,680 --> 00:17:31,440
+Gemini gave me. I've spent endless hours
+
+444
+00:17:28,960 --> 00:17:33,440
+brainstorming on what OKF means, and
+
+445
+00:17:31,440 --> 00:17:36,040
+Gemini gave me the phrase semantic
+
+446
+00:17:33,440 --> 00:17:37,560
+unbaking. And I think that that's just
+
+447
+00:17:36,040 --> 00:17:40,200
+amazing. I think that we're going to be
+
+448
+00:17:37,560 --> 00:17:43,160
+able to take our knowledge and instead
+
+449
+00:17:40,200 --> 00:17:45,560
+of having to work like machines and make
+
+450
+00:17:43,160 --> 00:17:47,400
+it into something that is machine
+
+451
+00:17:45,560 --> 00:17:49,320
+readable, we're actually just going to
+
+452
+00:17:47,400 --> 00:17:51,440
+be able to have these lives where we
+
+453
+00:17:49,320 --> 00:17:54,720
+learn stuff and we share stuff, and
+
+454
+00:17:51,440 --> 00:17:56,440
+those who work hard to develop expertise
+
+455
+00:17:54,720 --> 00:17:58,600
+will be able to be rewarded and we'll be
+
+456
+00:17:56,440 --> 00:18:00,280
+able to help a lot of people with this.
+
+457
+00:17:58,600 --> 00:18:02,640
+I hope you found this interesting. I
+
+458
+00:18:00,280 --> 00:18:05,640
+will be writing more about OKF in my
+
+459
+00:18:02,640 --> 00:18:07,440
+community, community.maryhines.com,
+
+460
+00:18:05,640 --> 00:18:08,680
+and uh thanks so much for watching. I
+
+461
+00:18:07,440 --> 00:18:11,320
+wish you the best of luck with
+
+462
+00:18:08,680 --> 00:18:11,320
+everything.
