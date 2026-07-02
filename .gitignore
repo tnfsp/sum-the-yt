@@ -18,5 +18,8 @@ dist/
 # Generated artifacts (uncomment to keep summaries out of git)
 # videos/
 
+# 付費課程轉錄稿不入版控（版權考量）
+videos/local/
+
 # Scratch test logs
 *.err
